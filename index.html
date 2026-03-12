@@ -90,25 +90,26 @@
     .s1-sub { font-size:14px; color:var(--g3); line-height:1.65; margin-bottom:24px; max-width:440px; }
     .s1-img { background:var(--fill2); border:1.5px dashed var(--g1); border-radius:8px; height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; color:var(--g2); font-size:11px; }
 
-    /* AGENDA ESTÁTICA (dobra abaixo do banner) */
-    .agenda-fold { background:var(--fill2); border-bottom:2px solid var(--g1); padding:36px 48px; }
-    .agenda-fold-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 380px; gap:48px; align-items:center; }
-    .agenda-fold-left strong { display:block; font-size:20px; font-weight:800; color:var(--black); margin-bottom:8px; }
-    .agenda-fold-left p { font-size:13px; color:var(--g3); line-height:1.7; margin-bottom:16px; max-width:520px; }
-    .agenda-fold-img { background:var(--fill3); border:2px dashed var(--g2); border-radius:8px; height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
-    .agenda-fold-img span { font-size:13px; font-weight:700; color:var(--g3); }
-    .agenda-fold-img small { font-size:11px; color:var(--g2); }
+    /* AGENDA — nova faixa horizontal simples */
+    .agenda-fold { background:var(--black); border-bottom:2px solid var(--g3); padding:0; overflow:hidden; }
+    .agenda-fold-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:280px 1fr; gap:0; align-items:stretch; min-height:160px; }
+    .agenda-fold-img { background:var(--g3); border-right:2px solid var(--g4); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:24px; }
+    .agenda-fold-img span { font-size:12px; font-weight:700; color:var(--g1); }
+    .agenda-fold-img small { font-size:10px; color:var(--g2); }
+    .agenda-fold-right { padding:28px 40px; display:flex; align-items:center; justify-content:space-between; gap:40px; }
+    .agenda-fold-right-text strong { display:block; font-size:18px; font-weight:800; color:var(--white); margin-bottom:6px; }
+    .agenda-fold-right-text p { font-size:12px; color:var(--g1); line-height:1.6; max-width:480px; }
 
     /* BENEFÍCIOS — listagem */
-    .benefits-band { background:var(--white); border-bottom:2px solid var(--fill3); padding:48px; }
+    .benefits-band { background:var(--white); border-bottom:2px solid var(--fill3); padding:24px 48px; }
     .benefits-band-inner { max-width:1200px; margin:0 auto; }
-    .benefits-band-inner .sec-h { font-size:22px; font-weight:800; color:var(--black); margin-bottom:6px; }
-    .benefits-band-inner .sec-sub { font-size:14px; color:var(--g3); margin-bottom:32px; line-height:1.6; }
-    .benefits-grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-    .benefit-card { background:var(--fill); border:1.5px solid var(--g1); border-radius:8px; padding:22px 20px; }
-    .benefit-card .bc-num { font-size:24px; font-weight:900; color:var(--fill3); line-height:1; margin-bottom:10px; }
-    .benefit-card strong { display:block; font-size:13px; font-weight:800; color:var(--black); margin-bottom:6px; }
-    .benefit-card p { font-size:12px; color:var(--g3); line-height:1.6; }
+    .benefits-band-inner .sec-h-sm { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--g2); margin-bottom:14px; }
+    .benefits-row { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1.5px solid var(--g1); border-radius:6px; overflow:hidden; }
+    .brow-item { display:flex; align-items:center; gap:10px; padding:12px 16px; border-right:1px solid var(--g1); background:var(--fill); }
+    .brow-item:nth-child(3n) { border-right:none; }
+    .brow-item:nth-child(n+4) { border-top:1px solid var(--g1); }
+    .brow-check { width:18px; height:18px; background:var(--g4); border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:800; color:var(--white); flex-shrink:0; }
+    .brow-item span { font-size:12px; font-weight:700; color:var(--black); }
 
     /* TURMAS CORPORATIVAS */
     .corp-callout { background:var(--g4); border-radius:10px; padding:22px 26px; margin-bottom:32px; display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center; }
@@ -131,15 +132,16 @@
     .cat-option:hover { background:rgba(255,255,255,.07); color:var(--white); }
     .cat-option.selected { color:var(--annot); }
     .cat-option .cat-dot-sm { width:8px; height:8px; border-radius:2px; flex-shrink:0; }
-    .search-box { margin-left:auto; display:flex; align-items:center; gap:8px; background:var(--white); border:1.5px solid var(--g1); border-radius:4px; padding:7px 14px; width:240px; }
+    .search-box { display:flex; align-items:center; gap:8px; background:var(--white); border:1.5px solid var(--g1); border-radius:4px; padding:7px 14px; width:240px; }
     .search-box div { flex:1; height:11px; background:var(--fill); border-radius:2px; }
+    .filter-bar-right { margin-left:auto; display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+    .sec-count { font-size:12px; color:var(--g3); }
+    .sec-count strong { color:var(--black); }
 
     /* GRID */
     .section { max-width:1200px; margin:0 auto; padding:36px 48px 48px; }
     .sec-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; }
     .sec-title { font-size:18px; font-weight:800; color:var(--black); }
-    .sec-count { font-size:12px; color:var(--g3); }
-    .sec-count strong { color:var(--black); }
     .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
     .card { background:var(--white); border:1.5px solid var(--g1); border-radius:8px; overflow:hidden; cursor:pointer; transition:box-shadow .2s,border-color .2s; }
     .card:hover { box-shadow:0 6px 24px rgba(0,0,0,.12); border-color:var(--g3); }
@@ -342,77 +344,74 @@
         <span class="s1-tag">Treinamentos Selbetti</span>
         <div class="s1-h1">Certifique-se com quem<br/>é referência no mercado</div>
         <p class="s1-sub">Treinamentos oficiais, práticos e conduzidos por profissionais que vivem a TI todos os dias.</p>
-        <div style="display:flex;gap:12px">
-          <div class="btn-p">Garanta sua vaga!</div>
-          <div class="btn-s" onclick="document.getElementById('agenda-section').scrollIntoView({behavior:'smooth'})">Ver agenda de turmas</div>
-        </div>
+        <div class="btn-p">Garanta sua vaga!</div>
       </div>
       <div class="s1-img"><span>IMAGEM / ILUSTRAÇÃO DO BANNER</span></div>
     </div>
   </div>
   <span class="annot" style="padding-left:48px;display:block">Banner fixo. Não alterna. Trocado manualmente pelo time conforme campanha.</span>
 
-  <!-- ── DOBRA AGENDA ESTÁTICA ── -->
+  <!-- ── FAIXA AGENDA ── -->
   <div class="agenda-fold" id="agenda-section">
     <div class="agenda-fold-inner">
-      <div class="agenda-fold-left">
-        <span style="display:inline-block;background:var(--fill3);border:1px dashed var(--g2);color:var(--g3);font-size:10px;font-weight:700;padding:3px 10px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;">Agenda de Turmas</span>
-        <strong>Confira as próximas turmas</strong>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <div class="btn-p">Quero uma vaga →</div>
-      </div>
       <div class="agenda-fold-img">
-        <span>IMAGEM DA AGENDA DE TURMAS</span>
-        <small>JPG/PNG atualizado manualmente pelo time</small>
+        <span>IMAGEM DA AGENDA</span>
+        <small>JPG/PNG atualizado manualmente</small>
+      </div>
+      <div class="agenda-fold-right">
+        <div class="agenda-fold-right-text">
+          <span style="display:inline-block;background:var(--g3);border:1px dashed var(--g2);color:var(--g1);font-size:10px;font-weight:700;padding:3px 10px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Agenda de Turmas</span>
+          <strong>Confira as próximas turmas</strong>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
+        </div>
       </div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">Dobra de agenda. Imagem estática, atualizada manualmente conforme agenda.</span>
+  <span class="annot" style="padding-left:48px;display:block">Faixa agenda: fundo em contraste com banner. Imagem à esquerda.</span>
 
   <!-- ── POR QUE ESCOLHER ── -->
-  <div class="benefits-band">
-    <div class="benefits-band-inner">
-      <div class="sec-h">Por que escolher nossos treinamentos</div>
-      <p class="sec-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
-      <div class="benefits-grid3">
-        <div class="benefit-card">
-          <div class="bc-num">01</div>
-          <strong>Conhecimento Prático</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+  <div style="background:var(--bg);padding:32px 48px 0;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);margin-bottom:16px;">Por que nos escolher</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+
+        <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;">ICO</div>
+          <div><strong style="display:block;font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Conhecimento Prático</strong><span style="font-size:11px;color:var(--g3);line-height:1.5;">Instrutores que atuam em projetos reais.</span></div>
         </div>
-        <div class="benefit-card">
-          <div class="bc-num">02</div>
-          <strong>Certificação Internacional</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+
+        <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;">ICO</div>
+          <div><strong style="display:block;font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Certificação Internacional</strong><span style="font-size:11px;color:var(--g3);line-height:1.5;">Credencial oficial emitida pelo fabricante.</span></div>
         </div>
-        <div class="benefit-card">
-          <div class="bc-num">03</div>
-          <strong>Aulas 100% ao Vivo</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+
+        <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;">ICO</div>
+          <div><strong style="display:block;font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Aulas 100% ao Vivo</strong><span style="font-size:11px;color:var(--g3);line-height:1.5;">Tire dúvidas com o instrutor em tempo real.</span></div>
         </div>
-        <div class="benefit-card">
-          <div class="bc-num">04</div>
-          <strong>Turmas Pequenas e Focadas</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+
+        <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;">ICO</div>
+          <div><strong style="display:block;font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Turmas Corporativas</strong><span style="font-size:11px;color:var(--g3);line-height:1.5;">Exclusiva para seu time, online ou presencial.</span></div>
         </div>
-        <div class="benefit-card">
-          <div class="bc-num">05</div>
-          <strong>Turmas Corporativas Exclusivas</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+
+        <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;">ICO</div>
+          <div><strong style="display:block;font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">100% em Português</strong><span style="font-size:11px;color:var(--g3);line-height:1.5;">Trainers certificados, aulas no seu idioma.</span></div>
         </div>
-        <div class="benefit-card">
-          <div class="bc-num">06</div>
-          <strong>Networking</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+
+        <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;">ICO</div>
+          <div><strong style="display:block;font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Networking</strong><span style="font-size:11px;color:var(--g3);line-height:1.5;">Profissionais de diferentes empresas e setores.</span></div>
         </div>
+
       </div>
     </div>
   </div>
- 
 
   <!-- ── TURMAS CORPORATIVAS ── -->
   <div style="background:var(--bg);padding:0 48px">
-    <div style="max-width:1200px;margin:0 auto;padding:32px 0 0">
+    <div style="max-width:1200px;margin:0 auto;padding:24px 0 0">
       <div class="corp-callout">
         <div class="corp-callout-text">
           <strong>Precisa de uma turma exclusiva?</strong>
@@ -421,13 +420,6 @@
         <div class="corp-callout-cta" onclick="document.getElementById('listing-form-bottom').scrollIntoView({behavior:'smooth'})">Quero uma turma para meu time →</div>
       </div>
       <span class="annot" style="margin-bottom:0;display:block">Callout turmas fechadas. CTA ancora no formulário.</span>
-    </div>
-  </div>
-
-  <!-- FLOW NOTE -->
-  <div style="padding:10px 48px">
-    <div style="background:#FFF3EB;border:1.5px solid #FFB570;border-radius:6px;padding:10px 16px;max-width:1200px;margin:0 auto;font-size:11px;color:var(--annot);font-weight:700;line-height:1.7">
-      🔶 Produtos low ticket (até R$ 1.800) levam direto para a plataforma EAD · sem LP intermediária. Demais cursos abrem LP com formulário de captura de lead.
     </div>
   </div>
 
@@ -448,20 +440,26 @@
           <div class="cat-option" onclick="selectCat(this,'Grafana')"><span class="cat-dot-sm" style="background:#B0B0B0"></span> Grafana</div>
         </div>
       </div>
-      <div class="search-box">
+      <div class="search-box" style="margin-left:auto">
         <span style="color:var(--g2)">🔍</span><div></div>
         <span style="font-size:11px;color:#bbb">Buscar treinamento...</span>
       </div>
     </div>
-    <span class="annot">Filtros por categoria + busca por nome do curso</span>
+    <span class="annot">Filtros por categoria + busca por nome</span>
   </div>
 
-  <!-- ── GRID DE CURSOS (sem título de seção) ── -->
+  <!-- FLOW NOTE abaixo da barra de filtros -->
+  <div style="background:#FFF3EB;border-top:1.5px solid #FFB570;border-bottom:1.5px solid #FFB570;padding:8px 48px;">
+    <div style="max-width:1200px;margin:0 auto;font-size:11px;color:var(--annot);font-weight:700;line-height:1.6">
+      🔶 Produtos low ticket (até R$ 1.800) levam direto para a plataforma EAD · sem LP intermediária. Demais cursos abrem LP com formulário de captura de lead.
+    </div>
+  </div>
+
+  <!-- ── GRID DE CURSOS ── -->
   <div class="section">
-    <div class="sec-top">
+    <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
       <div class="sec-count">Exibindo <strong>todos</strong> os cursos</div>
     </div>
-   
     <div class="grid">
 
       <!-- ZCU -->
@@ -554,7 +552,7 @@
 
   <!-- ── FORMULÁRIO FINAL DA LISTAGEM ── -->
   <div class="bottom-cta-section" id="listing-form-bottom">
-    <span class="annot" style="padding:0;display:block;margin-bottom:16px;color:#FFB570;border-color:#FFB570">Formulário final · página de listagem. Converte quem navegou pelos cursos e quer falar com especialista ou pedir turma corporativa.</span>
+    <span class="annot" style="padding:0;display:block;margin-bottom:16px;color:#FFB570;border-color:#FFB570">Formulário da pagina · página de listagem. Converte quem navegou pelos cursos e quer falar com especialista ou pedir turma fechada</span>
     <div class="bottom-cta-inner">
       <div class="bottom-cta-text">
         <strong>Fale com nosso time<br/>de especialistas.</strong>
@@ -635,7 +633,7 @@
               <div class="trail-req done-req">sem pré-req</div>
             </div>
             <div class="trail-step step-active">
-              <div class="badge-box active">ZCS</div>
+              <div class="badge-box active" style="box-shadow:0 0 0 4px rgba(255,107,0,.18), 0 0 16px 4px rgba(255,107,0,.22);">ZCS</div>
               <div class="trail-lbl active">Zabbix Certified<br/>Specialist</div>
               <div class="trail-req" style="color:var(--black);font-size:9px;font-weight:700">você está aqui</div>
             </div>
