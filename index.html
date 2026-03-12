@@ -39,7 +39,6 @@
     .logo:hover { background:var(--fill2); }
     .nav { display:flex; gap:2px; flex:1; }
     .nav-item { padding:6px 14px; border-radius:4px; font-size:12px; color:var(--g3); font-weight:600; cursor:default; display:flex; align-items:center; gap:4px; }
-    .nav-item.on { color:var(--black); background:var(--fill); }
     .nav-item.on.clickable { color:var(--annot); background:transparent; font-weight:800; border-bottom:2px solid var(--annot); border-radius:0; padding-bottom:4px; }
     .nav-item.clickable { cursor:pointer; }
     .nav-item.clickable:hover { background:var(--fill); }
@@ -65,64 +64,60 @@
     .field-lbl { font-size:10px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--g3); display:block; margin-bottom:5px; }
     .field-inp { width:100%; height:38px; background:var(--fill); border:1.5px solid var(--g1); border-radius:4px; padding:0 12px; font-size:12px; color:var(--g2); display:flex; align-items:center; }
     .field-sel { width:100%; height:38px; background:var(--fill); border:1.5px solid var(--g1); border-radius:4px; padding:0 12px; font-size:12px; color:var(--g2); display:flex; align-items:center; justify-content:space-between; }
-    .consent { display:flex; gap:10px; align-items:flex-start; background:var(--fill); border:1px dashed var(--g1); border-radius:5px; padding:10px 12px; margin-bottom:16px; }
-    .consent-box { width:14px; height:14px; border:1.5px solid var(--g2); border-radius:3px; flex-shrink:0; margin-top:1px; }
-    .consent p { font-size:11px; color:var(--g3); line-height:1.5; }
     .modal-annot { background:#FFF3EB; border:1px solid #FFB570; border-radius:4px; padding:8px 10px; margin-top:10px; font-size:10px; color:var(--annot); font-weight:700; line-height:1.6; }
 
-    /* ── INLINE FORM ── */
-    .inline-form { background:var(--white); border:1.5px solid var(--g1); border-radius:10px; padding:22px; }
-    .inline-form .if-title { font-size:14px; font-weight:800; color:var(--black); margin-bottom:4px; }
-    .inline-form .if-sub { font-size:11px; color:var(--g3); margin-bottom:16px; line-height:1.5; }
-    .inline-form .if-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
-    .inline-form .if-field { margin-bottom:10px; }
-    .inline-form .if-lbl { font-size:9px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--g3); display:block; margin-bottom:4px; }
-    .inline-form .if-inp { width:100%; height:36px; background:var(--fill); border:1.5px solid var(--g1); border-radius:4px; padding:0 11px; font-size:12px; color:var(--g2); display:flex; align-items:center; }
-    .inline-form .if-sel { width:100%; height:36px; background:var(--fill); border:1.5px solid var(--g1); border-radius:4px; padding:0 11px; font-size:12px; color:var(--g2); display:flex; align-items:center; justify-content:space-between; }
-    .inline-form .if-consent { display:flex; gap:8px; align-items:flex-start; margin-bottom:14px; }
-    .inline-form .if-consent-box { width:13px; height:13px; border:1.5px solid var(--g2); border-radius:2px; flex-shrink:0; margin-top:1px; }
-    .inline-form .if-consent p { font-size:10px; color:var(--g3); line-height:1.5; }
-    .inline-form .if-cta { width:100%; display:flex; align-items:center; justify-content:center; background:var(--g4); color:var(--white); font-size:13px; font-weight:700; padding:12px; border-radius:4px; cursor:pointer; }
-    .inline-form .if-cta:hover { background:var(--black); }
-    .inline-form .if-note { font-size:10px; color:var(--g2); text-align:center; margin-top:8px; }
-    .inline-form .if-urgency { background:var(--fill3); border:1px solid var(--g1); border-radius:4px; padding:7px 12px; font-size:11px; color:var(--g3); font-weight:600; text-align:center; margin-bottom:14px; }
-    /* Global form styles */
-    .if-urgency { background:var(--fill3); border:1px solid var(--g1); border-radius:4px; padding:7px 12px; font-size:11px; color:var(--g3); font-weight:600; text-align:center; margin-bottom:14px; }
+    /* GLOBAL FORM STYLES */
     .if-field { margin-bottom:10px; }
     .if-lbl { font-size:9px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--g3); display:block; margin-bottom:4px; }
     .if-inp { width:100%; height:36px; background:var(--fill); border:1.5px solid var(--g1); border-radius:4px; padding:0 11px; font-size:12px; color:var(--g2); display:flex; align-items:center; }
-    .if-sel { width:100%; height:36px; background:var(--fill); border:1.5px solid var(--g1); border-radius:4px; padding:0 11px; font-size:12px; color:var(--g2); display:flex; align-items:center; justify-content:space-between; }
     .if-consent { display:flex; gap:8px; align-items:flex-start; margin-bottom:14px; }
     .if-consent-box { width:13px; height:13px; border:1.5px solid var(--g2); border-radius:2px; flex-shrink:0; margin-top:1px; }
     .if-consent p { font-size:10px; color:var(--g3); line-height:1.5; }
     .if-cta { width:100%; display:flex; align-items:center; justify-content:center; background:var(--g4); color:var(--white); font-size:13px; font-weight:700; padding:12px; border-radius:4px; cursor:pointer; }
     .if-cta:hover { background:var(--black); }
-    .if-note { font-size:10px; color:var(--g2); text-align:center; margin-top:8px; }
     .if-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
+    .inline-form { background:var(--white); border:1.5px solid var(--g1); border-radius:10px; padding:22px; }
 
     /* ════════════════════
        PAGE 1 · LISTAGEM
     ════════════════════ */
-    .carousel { position:relative; overflow:hidden; border-bottom:2px solid var(--g1); }
-    .c-track { display:flex; transition:transform .55s ease; }
-    .c-slide { min-width:100%; }
-    .slide-1 { background:var(--fill3); min-height:300px; display:flex; align-items:center; padding:48px; position:relative; }
-    .slide-1-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; width:100%; }
+
+    /* BANNER ESTÁTICO */
+    .static-banner { background:var(--fill3); border-bottom:2px solid var(--g1); padding:48px; position:relative; }
+    .static-banner-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
     .s1-tag { display:inline-block; background:var(--fill2); border:1px dashed var(--g1); color:var(--g3); font-size:10px; font-weight:700; padding:3px 10px; border-radius:3px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px; }
     .s1-h1 { font-size:32px; font-weight:800; color:var(--black); line-height:1.15; margin-bottom:12px; }
     .s1-sub { font-size:14px; color:var(--g3); line-height:1.65; margin-bottom:24px; max-width:440px; }
     .s1-img { background:var(--fill2); border:1.5px dashed var(--g1); border-radius:8px; height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; color:var(--g2); font-size:11px; }
-    .slide-2 { background:var(--fill2); min-height:300px; display:flex; align-items:center; justify-content:center; position:relative; }
-    .slide-2-img { background:var(--fill3); border:2px dashed var(--g2); border-radius:8px; width:calc(100% - 96px); max-width:900px; height:240px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
-    .slide-2-img span { font-size:13px; font-weight:700; color:var(--g3); }
-    .slide-2-img small { font-size:11px; color:var(--g2); }
-    .c-arrows { position:absolute; top:50%; transform:translateY(-50%); width:100%; display:flex; justify-content:space-between; padding:0 14px; pointer-events:none; z-index:10; }
-    .c-arrow { width:36px; height:36px; border-radius:50%; background:var(--white); border:1.5px solid var(--g1); display:flex; align-items:center; justify-content:center; font-size:16px; color:var(--g3); cursor:pointer; pointer-events:all; }
-    .c-dots { position:absolute; bottom:10px; left:50%; transform:translateX(-50%); display:flex; gap:6px; z-index:10; }
-    .dot { width:8px; height:8px; border-radius:50%; background:var(--g1); cursor:pointer; border:1.5px solid var(--g2); }
-    .dot.on { background:var(--g4); }
-    .slide-label { position:absolute; top:10px; left:12px; background:var(--g4); color:var(--white); font-size:9px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:3px 10px; border-radius:3px; }
-    .slide-label.ag { background:var(--fill3); color:var(--g4); border:1.5px solid var(--g2); }
+
+    /* AGENDA ESTÁTICA (dobra abaixo do banner) */
+    .agenda-fold { background:var(--fill2); border-bottom:2px solid var(--g1); padding:36px 48px; }
+    .agenda-fold-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 380px; gap:48px; align-items:center; }
+    .agenda-fold-left strong { display:block; font-size:20px; font-weight:800; color:var(--black); margin-bottom:8px; }
+    .agenda-fold-left p { font-size:13px; color:var(--g3); line-height:1.7; margin-bottom:16px; max-width:520px; }
+    .agenda-fold-img { background:var(--fill3); border:2px dashed var(--g2); border-radius:8px; height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
+    .agenda-fold-img span { font-size:13px; font-weight:700; color:var(--g3); }
+    .agenda-fold-img small { font-size:11px; color:var(--g2); }
+
+    /* BENEFÍCIOS — listagem */
+    .benefits-band { background:var(--white); border-bottom:2px solid var(--fill3); padding:48px; }
+    .benefits-band-inner { max-width:1200px; margin:0 auto; }
+    .benefits-band-inner .sec-h { font-size:22px; font-weight:800; color:var(--black); margin-bottom:6px; }
+    .benefits-band-inner .sec-sub { font-size:14px; color:var(--g3); margin-bottom:32px; line-height:1.6; }
+    .benefits-grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .benefit-card { background:var(--fill); border:1.5px solid var(--g1); border-radius:8px; padding:22px 20px; }
+    .benefit-card .bc-num { font-size:24px; font-weight:900; color:var(--fill3); line-height:1; margin-bottom:10px; }
+    .benefit-card strong { display:block; font-size:13px; font-weight:800; color:var(--black); margin-bottom:6px; }
+    .benefit-card p { font-size:12px; color:var(--g3); line-height:1.6; }
+
+    /* TURMAS CORPORATIVAS */
+    .corp-callout { background:var(--g4); border-radius:10px; padding:22px 26px; margin-bottom:32px; display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center; }
+    .corp-callout-text strong { display:block; font-size:15px; font-weight:800; color:var(--white); margin-bottom:6px; }
+    .corp-callout-text p { font-size:12px; color:var(--g1); line-height:1.6; }
+    .corp-callout-cta { display:flex; align-items:center; justify-content:center; background:var(--white); color:var(--black); font-size:12px; font-weight:700; padding:11px 22px; border-radius:4px; cursor:pointer; white-space:nowrap; }
+    .corp-callout-cta:hover { background:var(--fill2); }
+
+    /* FILTROS */
     .filter-bar { background:var(--white); border-bottom:2px solid var(--fill3); padding:14px 48px; }
     .filter-bar-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
     .cat-dropdown { position:relative; display:inline-block; }
@@ -138,7 +133,9 @@
     .cat-option .cat-dot-sm { width:8px; height:8px; border-radius:2px; flex-shrink:0; }
     .search-box { margin-left:auto; display:flex; align-items:center; gap:8px; background:var(--white); border:1.5px solid var(--g1); border-radius:4px; padding:7px 14px; width:240px; }
     .search-box div { flex:1; height:11px; background:var(--fill); border-radius:2px; }
-    .section { max-width:1200px; margin:0 auto; padding:36px 48px 64px; }
+
+    /* GRID */
+    .section { max-width:1200px; margin:0 auto; padding:36px 48px 48px; }
     .sec-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; }
     .sec-title { font-size:18px; font-weight:800; color:var(--black); }
     .sec-count { font-size:12px; color:var(--g3); }
@@ -153,10 +150,6 @@
     .cat-gratis { background:var(--cat-gratis); }
     .card-thumb { height:142px; background:var(--fill3); border-bottom:1.5px solid var(--g1); display:flex; align-items:center; justify-content:center; position:relative; }
     .card-thumb-lbl { font-size:11px; color:var(--g2); }
-    .card-badge { position:absolute; top:8px; left:8px; font-size:9px; font-weight:700; padding:3px 10px; border-radius:3px; text-transform:uppercase; }
-    .card-badge.new { background:var(--g4); color:var(--white); }
-    .card-badge.dest { background:var(--g3); color:var(--white); }
-    .card-badge.default { background:var(--fill2); border:1px solid var(--g1); color:var(--g3); }
     .card-body { padding:14px 18px 18px; }
     .card-cat-label { display:inline-block; font-size:10px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; padding:3px 10px; border-radius:3px; margin-bottom:8px; }
     .card-cat-label.cat-obs { background:var(--cat-obs); color:#333; }
@@ -169,14 +162,25 @@
     .card-cta { width:100%; text-align:center; background:var(--g4); color:var(--white); font-size:12px; font-weight:700; padding:10px; border-radius:4px; display:block; }
     .card-cta:hover { background:var(--black); }
     .card-featured { border:2.5px solid var(--annot) !important; box-shadow:0 4px 20px rgba(255,107,0,.18); }
-    .card-featured:hover { box-shadow:0 8px 28px rgba(255,107,0,.28) !important; border-color:var(--annot) !important; }
-    .card-featured-hint { background:var(--annot); color:var(--white); font-size:9px; font-weight:800; padding:4px 12px; text-align:center; letter-spacing:.06em; text-transform:uppercase; }
+    .card-featured:hover { box-shadow:0 8px 28px rgba(255,107,0,.28) !important; }
     .card-cta-featured { background:var(--black); }
     .card-ead { border:2px solid var(--annot) !important; }
     .card-cta-ead { background:var(--annot); color:var(--white); }
-    .ead-overlay { display:none; position:absolute; inset:0; background:rgba(255,107,0,.93); color:var(--white); font-size:12px; font-weight:600; text-align:center; align-items:center; justify-content:center; flex-direction:column; gap:4px; border-radius:0; padding:12px; }
+    .ead-overlay { display:none; position:absolute; inset:0; background:rgba(255,107,0,.93); color:var(--white); font-size:12px; font-weight:600; text-align:center; align-items:center; justify-content:center; flex-direction:column; gap:4px; padding:12px; }
     .ead-overlay strong { font-size:13px; font-weight:800; display:block; }
     .ead-overlay.show { display:flex; }
+
+    /* BOTTOM CTA / FORM */
+    .bottom-cta-section { background:var(--black); padding:48px; }
+    .bottom-cta-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 400px; gap:60px; align-items:start; }
+    .bottom-cta-text strong { display:block; font-size:26px; font-weight:800; color:var(--white); line-height:1.2; margin-bottom:12px; }
+    .bottom-cta-text p { font-size:13px; color:var(--g2); line-height:1.7; margin-bottom:24px; }
+    .bottom-proof { display:flex; flex-direction:column; gap:8px; }
+    .bottom-proof-item { display:flex; gap:10px; align-items:flex-start; font-size:12px; color:var(--g2); }
+    .bottom-proof-check { width:16px; height:16px; background:var(--g3); border-radius:2px; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:800; color:var(--white); flex-shrink:0; margin-top:1px; }
+    .bottom-form { background:var(--white); border-radius:10px; padding:24px; }
+    .bottom-form .bf-title { font-size:15px; font-weight:800; color:var(--black); margin-bottom:4px; }
+    .bottom-form .bf-sub { font-size:11px; color:var(--g3); margin-bottom:16px; }
 
     /* ════════════════════
        PAGE 2 · LP CURSO
@@ -186,20 +190,12 @@
     .breadcrumb a:hover { color:var(--black); }
     .breadcrumb span { color:var(--g2); }
     .breadcrumb strong { color:var(--black); }
-
-    /* HERO */
     .hero { background:var(--fill3); border-bottom:2px solid var(--g1); padding:40px 48px; }
     .hero-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; }
     .hero-cat-tag { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; background:var(--cat-zabbix); color:var(--white); padding:3px 12px; border-radius:3px; display:inline-block; margin-bottom:14px; }
     .hero-title { font-size:34px; font-weight:800; color:var(--black); line-height:1.15; margin-bottom:10px; }
     .hero-sub { font-size:15px; font-weight:600; color:var(--g3); margin-bottom:14px; }
     .hero-desc { font-size:13px; color:var(--g3); line-height:1.7; margin-bottom:20px; max-width:600px; }
-
-    /* META PILLS */
-    .hero-meta { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; }
-    .meta-pill { background:var(--fill2); border:1px solid var(--g1); border-radius:999px; padding:5px 14px; font-size:11px; font-weight:600; color:var(--g3); }
-
-    /* TRILHA */
     .trail { background:var(--fill2); border:1.5px dashed var(--g1); border-radius:8px; padding:16px 20px; }
     .trail-title { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--g3); margin-bottom:16px; }
     .trail-steps { display:flex; align-items:flex-start; gap:0; }
@@ -216,37 +212,21 @@
     .trail-lbl.locked { opacity:.5; }
     .trail-req { font-size:8px; font-weight:700; text-align:center; color:var(--annot); }
     .trail-req.done-req { color:var(--g3); }
-
-    /* SIDEBAR */
     .sidebar-card { background:var(--white); border:1.5px solid var(--g1); border-radius:10px; overflow:visible; position:sticky; top:86px; }
     .sidebar-thumb { height:140px; background:var(--fill3); border-bottom:1.5px solid var(--g1); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; border-radius:10px 10px 0 0; }
-    .sidebar-thumb span { font-size:11px; color:var(--g2); }
     .sidebar-body { padding:20px; }
     .detail-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid var(--fill); font-size:12px; }
     .detail-row:last-of-type { border-bottom:none; }
     .detail-key { color:var(--g3); }
     .detail-val { font-weight:700; color:var(--black); }
-
-    /* CONTENT */
-    .lp-content { max-width:1200px; margin:0 auto; padding:0 48px 0; }
-    .lp-main { padding: 36px 0 0; }
+    .lp-content { max-width:1200px; margin:0 auto; padding:0 48px; }
+    .lp-main { padding:36px 0 0; }
     .sec-h { font-size:17px; font-weight:800; color:var(--black); margin-bottom:18px; padding-bottom:10px; border-bottom:2px solid var(--fill3); }
-
-    /* BENEFÍCIOS */
     .benefits-grid2 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:32px; }
-    .benefit-card { background:var(--white); border:1.5px solid var(--g1); border-radius:8px; padding:22px 20px; }
-    .benefit-card .bc-num { font-size:22px; font-weight:900; color:var(--fill3); line-height:1; margin-bottom:10px; }
-    .benefit-card strong { display:block; font-size:13px; font-weight:800; color:var(--black); margin-bottom:6px; }
-    .benefit-card p { font-size:12px; color:var(--g3); line-height:1.6; }
-
-    /* TURMAS CORPORATIVAS */
-    .corp-callout { background:var(--g4); border-radius:10px; padding:22px 26px; margin-bottom:32px; display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center; }
-    .corp-callout-text strong { display:block; font-size:15px; font-weight:800; color:var(--white); margin-bottom:6px; }
-    .corp-callout-text p { font-size:12px; color:var(--g1); line-height:1.6; }
-    .corp-callout-cta { display:flex; align-items:center; justify-content:center; background:var(--white); color:var(--black); font-size:12px; font-weight:700; padding:11px 22px; border-radius:4px; cursor:pointer; white-space:nowrap; }
-    .corp-callout-cta:hover { background:var(--fill2); }
-
-    /* SYLLABUS */
+    .benefit-card2 { background:var(--white); border:1.5px solid var(--g1); border-radius:8px; padding:22px 20px; }
+    .benefit-card2 .bc-num { font-size:22px; font-weight:900; color:var(--fill3); line-height:1; margin-bottom:10px; }
+    .benefit-card2 strong { display:block; font-size:13px; font-weight:800; color:var(--black); margin-bottom:6px; }
+    .benefit-card2 p { font-size:12px; color:var(--g3); line-height:1.6; }
     .syllabus { margin-bottom:32px; }
     .day-block { border:1.5px solid var(--g1); border-radius:8px; background:var(--white); margin-bottom:8px; overflow:hidden; }
     .day-head { padding:13px 18px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; font-size:13px; font-weight:700; color:var(--black); }
@@ -255,16 +235,8 @@
     .day-body { padding:0 18px 14px; display:none; }
     .day-body.open { display:block; }
     .day-topics { list-style:none; display:flex; flex-direction:column; gap:5px; margin-top:10px; }
-    /* CHANGED: visible dash bullet markers */
     .day-topics li { font-size:12px; color:var(--g3); padding-left:20px; position:relative; line-height:1.7; }
     .day-topics li::before { content:'—'; color:var(--annot); position:absolute; left:0; top:0; font-size:11px; font-weight:700; }
-
-    /* SKILLS */
-    .skills-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:32px; }
-    .skill-item { display:flex; gap:10px; align-items:flex-start; font-size:12px; color:var(--g3); line-height:1.6; background:var(--white); border:1.5px solid var(--g1); border-radius:6px; padding:12px 14px; }
-    .skill-check { width:18px; height:18px; background:var(--g4); border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:800; color:var(--white); flex-shrink:0; margin-top:1px; }
-
-    /* MID-PAGE FORM SECTION */
     .midform-section { background:var(--fill3); border-top:2px solid var(--g1); border-bottom:2px solid var(--g1); padding:36px 0; margin:0 0 32px; }
     .midform-inner { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
     .midform-left strong { font-size:20px; font-weight:800; color:var(--black); display:block; margin-bottom:10px; }
@@ -272,32 +244,12 @@
     .midform-proof { display:flex; flex-direction:column; gap:8px; }
     .proof-item { display:flex; gap:10px; align-items:flex-start; font-size:12px; color:var(--g3); }
     .proof-check { width:16px; height:16px; background:var(--g4); border-radius:2px; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:800; color:var(--white); flex-shrink:0; margin-top:1px; }
-
-    /* DEPOIMENTOS */
-    .testimonials { display:flex; flex-direction:column; gap:10px; margin-bottom:32px; }
-    .tcard { background:var(--white); border:1.5px solid var(--g1); border-radius:8px; padding:14px 18px; }
-    .tcard-quote { font-size:13px; color:var(--g3); line-height:1.6; font-style:italic; margin-bottom:8px; padding-left:12px; border-left:3px solid var(--g2); }
-    .tcard-author { font-size:11px; color:var(--g2); font-weight:600; }
-
-    /* FAQ */
     .faq { display:flex; flex-direction:column; gap:8px; margin-bottom:32px; }
     .faq-item { background:var(--white); border:1.5px solid var(--g1); border-radius:8px; overflow:hidden; }
     .faq-q { padding:13px 18px; font-size:13px; font-weight:700; color:var(--black); cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
     .faq-q:hover { background:var(--fill); }
     .faq-a { padding:0 18px 13px; font-size:12px; color:var(--g3); line-height:1.7; display:none; }
     .faq-a.open { display:block; }
-
-    /* BOTTOM CTA SECTION */
-    .bottom-cta-section { background:var(--black); padding:48px; margin-bottom:0; }
-    .bottom-cta-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 400px; gap:60px; align-items:start; }
-    .bottom-cta-text strong { display:block; font-size:26px; font-weight:800; color:var(--white); line-height:1.2; margin-bottom:12px; }
-    .bottom-cta-text p { font-size:13px; color:var(--g2); line-height:1.7; margin-bottom:24px; }
-    .bottom-proof { display:flex; flex-direction:column; gap:8px; }
-    .bottom-proof-item { display:flex; gap:10px; align-items:flex-start; font-size:12px; color:var(--g2); }
-    .bottom-proof-check { width:16px; height:16px; background:var(--g3); border-radius:2px; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:800; color:var(--white); flex-shrink:0; margin-top:1px; }
-    .bottom-form { background:var(--white); border-radius:10px; padding:24px; }
-    .bottom-form .bf-title { font-size:15px; font-weight:800; color:var(--black); margin-bottom:4px; }
-    .bottom-form .bf-sub { font-size:11px; color:var(--g3); margin-bottom:16px; }
 
     /* FOOTER */
     .footer { background:var(--fill3); border-top:2px solid var(--g2); padding:48px 48px 24px; }
@@ -330,10 +282,7 @@
 <div class="overlay" id="modal">
   <div class="modal">
     <div class="modal-head">
-      <div class="modal-head-text">
-        <h3>Garanta sua vaga!</h3>
-        <p>Nossa equipe entrará em contato em até 1 dia útil.</p>
-      </div>
+      <div class="modal-head-text"><h3>Garanta sua vaga!</h3><p>Nossa equipe entrará em contato em até 1 dia útil.</p></div>
       <div class="modal-close" onclick="closeModal()">✕</div>
     </div>
     <div class="modal-body">
@@ -356,7 +305,6 @@
       </div>
       <div class="form-field" style="margin-top:12px"><span class="field-lbl">Empresa</span><div class="field-inp">Nome da empresa</div></div>
       <div class="form-field"><span class="field-lbl">Curso de interesse</span><div class="field-sel"><span>Selecione um curso</span><span>▾</span></div></div>
-      <!-- CHANGED: checkbox para Política de Privacidade -->
       <div class="if-consent" style="margin-bottom:14px"><div class="if-consent-box"></div><p style="font-size:11px;color:var(--g3)">Ao enviar, você concorda com nossa <strong>Política de Privacidade</strong></p></div>
       <div class="btn-block" onclick="closeModal()">Quero minha vaga →</div>
       <div class="btn-block-s" onclick="closeModal()">Pular e acessar sem salvar meus dados</div>
@@ -369,14 +317,15 @@
 <div class="header">
   <div class="logo" onclick="goTo('listing')">LOGO SELBETTI</div>
   <div class="nav">
-    <div class="nav-item">Sobre <span class="arr">▾</span></div>
-    <div class="nav-item">Unidades de Negócio <span class="arr">▾</span></div>
+    <div class="nav-item clickable">Sobre <span class="arr">▾</span></div>
+    <div class="nav-item clickable">Unidades de Negócio <span class="arr">▾</span></div>
     <div class="nav-item on clickable" onclick="goTo('listing')">Treinamentos</div>
     <div class="nav-item">Blog</div>
     <div class="nav-item">Contato</div>
   </div>
   <div class="header-right"></div>
 </div>
+
 
 <!-- ══════════════════════════════════
      PAGE 1 — LISTAGEM
@@ -385,44 +334,95 @@
 
   <span class="annot" style="padding-left:48px">Header fixo do site principal Selbetti · item "Treinamentos" ativo</span>
 
-  <!-- BANNER -->
-  <div class="carousel">
-    <div class="c-track" id="track">
-      <div class="c-slide slide-1">
-        <span class="slide-label">Banner Principal</span>
-        <div class="slide-1-inner">
-          <div>
-            <span class="s1-tag">Treinamentos Selbetti</span>
-            <div class="s1-h1">Certifique-se com quem<br/>é referência no mercado</div>
-            <p class="s1-sub">Treinamentos oficiais, práticos e conduzidos por profissionais que vivem a TI todos os dias.</p>
-            <div style="display:flex;gap:12px">
-              <div class="btn-p">Garanta sua vaga!</div>
-              <div class="btn-s">Ver agenda de turmas</div>
-            </div>
-          </div>
-          <div class="s1-img"><span>IMAGEM / ILUSTRAÇÃO DO BANNER</span></div>
+  <!-- ── BANNER ESTÁTICO ── -->
+  <div class="static-banner">
+    <span style="position:absolute;top:10px;left:12px;background:var(--g4);color:var(--white);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:3px;">Banner Principal</span>
+    <div class="static-banner-inner">
+      <div>
+        <span class="s1-tag">Treinamentos Selbetti</span>
+        <div class="s1-h1">Certifique-se com quem<br/>é referência no mercado</div>
+        <p class="s1-sub">Treinamentos oficiais, práticos e conduzidos por profissionais que vivem a TI todos os dias.</p>
+        <div style="display:flex;gap:12px">
+          <div class="btn-p">Garanta sua vaga!</div>
+          <div class="btn-s" onclick="document.getElementById('agenda-section').scrollIntoView({behavior:'smooth'})">Ver agenda de turmas</div>
         </div>
-        <span class="annot" style="position:absolute;bottom:28px;left:48px">Slide 1 · banner institucional. Troca conforme campanha</span>
       </div>
-      <div class="c-slide slide-2">
-        <span class="slide-label ag">Agenda de Turmas</span>
-        <div class="slide-2-img">
-          <span>IMAGEM DA AGENDA DE TURMAS</span>
-          <small>Arquivo JPG/PNG, trocado manualmente pelo time</small>
-        </div>
-        <span class="annot" style="position:absolute;bottom:14px;left:48px">Slide 2 · imagem estática da agenda, atualizada manualmente</span>
-      </div>
-    </div>
-    <div class="c-arrows">
-      <div class="c-arrow" onclick="move(-1)">&#8249;</div>
-      <div class="c-arrow" onclick="move(1)">&#8250;</div>
-    </div>
-    <div class="c-dots">
-      <div class="dot on" onclick="go(0)"></div>
-      <div class="dot" onclick="go(1)"></div>
+      <div class="s1-img"><span>IMAGEM / ILUSTRAÇÃO DO BANNER</span></div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block;margin-bottom:2px">Banner rotativo. Alterna a cada 5s</span>
+  <span class="annot" style="padding-left:48px;display:block">Banner fixo. Não alterna. Trocado manualmente pelo time conforme campanha.</span>
+
+  <!-- ── DOBRA AGENDA ESTÁTICA ── -->
+  <div class="agenda-fold" id="agenda-section">
+    <div class="agenda-fold-inner">
+      <div class="agenda-fold-left">
+        <span style="display:inline-block;background:var(--fill3);border:1px dashed var(--g2);color:var(--g3);font-size:10px;font-weight:700;padding:3px 10px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;">Agenda de Turmas</span>
+        <strong>Confira as próximas turmas</strong>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="btn-p">Quero uma vaga →</div>
+      </div>
+      <div class="agenda-fold-img">
+        <span>IMAGEM DA AGENDA DE TURMAS</span>
+        <small>JPG/PNG atualizado manualmente pelo time</small>
+      </div>
+    </div>
+  </div>
+  <span class="annot" style="padding-left:48px;display:block">Dobra de agenda. Imagem estática, atualizada manualmente conforme agenda.</span>
+
+  <!-- ── POR QUE ESCOLHER ── -->
+  <div class="benefits-band">
+    <div class="benefits-band-inner">
+      <div class="sec-h">Por que escolher nossos treinamentos</div>
+      <p class="sec-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
+      <div class="benefits-grid3">
+        <div class="benefit-card">
+          <div class="bc-num">01</div>
+          <strong>Conhecimento Prático</strong>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="bc-num">02</div>
+          <strong>Certificação Internacional</strong>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="bc-num">03</div>
+          <strong>Aulas 100% ao Vivo</strong>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="bc-num">04</div>
+          <strong>Turmas Pequenas e Focadas</strong>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="bc-num">05</div>
+          <strong>Turmas Corporativas Exclusivas</strong>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="bc-num">06</div>
+          <strong>Networking</strong>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+  <!-- ── TURMAS CORPORATIVAS ── -->
+  <div style="background:var(--bg);padding:0 48px">
+    <div style="max-width:1200px;margin:0 auto;padding:32px 0 0">
+      <div class="corp-callout">
+        <div class="corp-callout-text">
+          <strong>Precisa de uma turma exclusiva?</strong>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="corp-callout-cta" onclick="document.getElementById('listing-form-bottom').scrollIntoView({behavior:'smooth'})">Quero uma turma para meu time →</div>
+      </div>
+      <span class="annot" style="margin-bottom:0;display:block">Callout turmas fechadas. CTA ancora no formulário.</span>
+    </div>
+  </div>
 
   <!-- FLOW NOTE -->
   <div style="padding:10px 48px">
@@ -431,7 +431,7 @@
     </div>
   </div>
 
-  <!-- FILTROS -->
+  <!-- ── FILTROS ── -->
   <div class="filter-bar">
     <div class="filter-bar-inner">
       <div class="cat-dropdown">
@@ -456,12 +456,12 @@
     <span class="annot">Filtros por categoria + busca por nome do curso</span>
   </div>
 
-  <!-- GRID -->
+  <!-- ── GRID DE CURSOS (sem título de seção) ── -->
   <div class="section">
     <div class="sec-top">
-      <div class="sec-title">Trilha de Certificação Zabbix</div>
       <div class="sec-count">Exibindo <strong>todos</strong> os cursos</div>
     </div>
+   
     <div class="grid">
 
       <!-- ZCU -->
@@ -508,7 +508,7 @@
         <div class="card-cat-bar cat-zabbix"></div>
         <div class="card-thumb"><span class="card-thumb-lbl">Capa do treinamento</span></div>
         <div class="card-body">
-          <span class="card-cat-label cat-zabbix">Zabbix</span>
+          <span class="card-cat-label cat-zabbix">Zabbix Oficial </span>
           <div class="card-meta">Avançado · Presencial · Req: ZCP</div>
           <div class="card-title">Zabbix Certified Expert (ZCE)</div>
           <div class="card-desc">Nível máximo da trilha Zabbix. Arquitetura de alta disponibilidade, tuning e troubleshooting avançado.</div>
@@ -516,7 +516,7 @@
         </div>
       </div>
 
-      <!-- Exame ZCU — vai para EAD -->
+      <!-- Exame ZCU — EAD -->
       <div class="card card-ead" onclick="showEad()">
         <div class="card-cat-bar cat-gratis"></div>
         <div class="card-thumb">
@@ -524,11 +524,11 @@
           <div class="ead-overlay" id="ead-overlay">Aluno redirecionado para<br/><strong>portal.selbetti.com.br</strong></div>
         </div>
         <div class="card-body">
-          <span class="card-cat-label cat-gratis">Gratuitos</span>
+          <span class="card-cat-label cat-gratis">Zabbix Oficial</span>
           <div class="card-meta">Online · Req: Não</div>
           <div class="card-title">Exame ZCU</div>
           <div class="card-desc">Acesso direto ao exame de certificação Zabbix Certified User via plataforma EAD Selbetti.</div>
-          <div class="card-cta card-cta-ead">Ver Treinamento →</div>
+          <div class="card-cta card-cta-ead">Acessar →</div>
         </div>
       </div>
 
@@ -549,7 +549,40 @@
     <div style="text-align:center;margin-top:36px">
       <div class="btn-s" style="padding:12px 40px;font-size:13px">Carregar mais treinamentos</div>
     </div>
-    <span class="annot" style="margin-top:10px">ZCS tem LP própria (clique ativo). Exame ZCU é low ticket e vai direto pro EAD.</span>
+    <span class="annot" style="margin-top:10px">ZCS tem LP própria (clique ativo). Exame ZCU é low ticket → direto pro EAD.</span>
+  </div>
+
+  <!-- ── FORMULÁRIO FINAL DA LISTAGEM ── -->
+  <div class="bottom-cta-section" id="listing-form-bottom">
+    <span class="annot" style="padding:0;display:block;margin-bottom:16px;color:#FFB570;border-color:#FFB570">Formulário final · página de listagem. Converte quem navegou pelos cursos e quer falar com especialista ou pedir turma corporativa.</span>
+    <div class="bottom-cta-inner">
+      <div class="bottom-cta-text">
+        <strong>Fale com nosso time<br/>de especialistas.</strong>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <div class="bottom-proof">
+          <div class="bottom-proof-item"><div class="bottom-proof-check">V</div><span>A Trainer Oficial mais experiente do Brasil</span></div>
+          <div class="bottom-proof-item"><div class="bottom-proof-check">V</div><span>Trainers que atuam em projetos todos os dias</span></div>
+          <div class="bottom-proof-item"><div class="bottom-proof-check">V</div><span>Turmas abertas e fechadas. Online e presencial</span></div>
+          <div class="bottom-proof-item"><div class="bottom-proof-check">V</div><span>Todos os treinamentos ministrados em português</span></div>
+        </div>
+      </div>
+      <div class="bottom-form">
+        <div class="bf-title">Fale com um especialista</div>
+        <div class="bf-sub">Turma individual ou corporativa.</div>
+        <div class="if-row">
+          <div><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
+          <div><span class="if-lbl">Telefone *</span><div class="if-inp">(00) 00000-0000</div></div>
+        </div>
+        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp">email@empresa.com</div></div>
+        <div class="if-row">
+          <div><span class="if-lbl">Empresa</span><div class="if-inp">Nome da empresa</div></div>
+          <div><span class="if-lbl">Cargo</span><div class="if-inp">Seu cargo</div></div>
+        </div>
+        <div class="if-field"><span class="if-lbl">Mensagem / dúvida</span><div class="if-inp" style="height:60px;align-items:flex-start;padding-top:10px;color:var(--g2)">Escreva aqui sua dúvida ou interesse...</div></div>
+        <div class="if-consent"><div class="if-consent-box"></div><p>Ao enviar, você concorda com nossa <strong>Política de Privacidade</strong></p></div>
+        <div class="if-cta">Enviar mensagem →</div>
+      </div>
+    </div>
   </div>
 
   <!-- FOOTER -->
@@ -576,7 +609,6 @@
 ══════════════════════════════════ -->
 <div class="page" id="page-curso-zcs">
 
-  <!-- BREADCRUMB -->
   <div style="background:var(--white);border-bottom:1px solid var(--fill3)">
     <div class="breadcrumb">
       <a onclick="goTo('listing')">Treinamentos</a><span>/</span>
@@ -585,23 +617,15 @@
     </div>
   </div>
 
-  <!-- ══ FORMULÁRIO 1 — HERO (acima da dobra) ══ -->
   <div class="hero">
     <div class="hero-inner">
-
-      <!-- esquerda -->
       <div>
         <span class="hero-cat-tag">Zabbix</span>
         <div class="hero-title">Zabbix Certified<br/>Specialist (ZCS)</div>
         <div class="hero-sub">Treinamento oficial conduzido por Zabbix Certified Expert Trainers</div>
         <p class="hero-desc">Aprenda a configurar e monitorar uma variedade de endpoints utilizando diferentes técnicas e protocolos de monitoramento. Foco em detecção de problemas, transformação de dados e os conceitos fundamentais do Zabbix.</p>
-
-        <!-- tag de exame -->
         <div style="margin-bottom:10px"><span style="background:var(--g4);color:var(--white);font-size:11px;font-weight:700;padding:5px 14px;border-radius:4px;letter-spacing:.03em">Exame incluído</span></div>
-        <!-- CHANGED: clarified exam vs certification logic -->
         <div style="margin-bottom:24px;font-size:8px;color:var(--g3);line-height:1.5">***O exame de certificação está incluído no treinamento. A certificação oficial Zabbix é emitida pelo fabricante após aprovação na prova, realizada ao final do curso.</div>
-
-        <!-- TRILHA -->
         <div class="trail">
           <div class="trail-title">Carreira oficial Zabbix</div>
           <div class="trail-steps">
@@ -627,10 +651,8 @@
             </div>
           </div>
         </div>
-
       </div>
 
-      <!-- FORM 1 — sidebar sticky, acima da dobra -->
       <div class="sidebar-card">
         <div class="sidebar-thumb">
           <span style="font-size:13px;font-weight:700;color:var(--g3)">Imagem do curso</span>
@@ -643,47 +665,40 @@
           </div>
           <div class="detail-row"><span class="detail-key">Formato</span><span class="detail-val">Online ao vivo</span></div>
           <div class="detail-row"><span class="detail-key">Duração</span><span class="detail-val">5 dias</span></div>
-          <!-- REMOVED: Turma / Até 15 alunos -->
           <div class="detail-row"><span class="detail-key">Produto</span><span class="detail-val">Zabbix 7.0</span></div>
           <div class="detail-row"><span class="detail-key">Pré-requisito</span><span class="detail-val">Linux básico</span></div>
           <div style="margin-top:16px">
             <div class="inline-form" style="border:none;padding:0">
-              <!-- CHANGED: removed "turma até 15 alunos" -->
               <div class="if-row">
                 <div><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
                 <div><span class="if-lbl">Telefone *</span><div class="if-inp">(00) 00000-0000</div></div>
               </div>
               <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp">email@empresa.com</div></div>
               <div class="if-field"><span class="if-lbl">Cargo</span><div class="if-inp">Seu cargo</div></div>
-              <!-- checkbox Política de Privacidade -->
               <div class="if-consent"><div class="if-consent-box"></div><p>Ao enviar, você concorda com nossa <strong>Política de Privacidade</strong></p></div>
               <div class="if-cta">Quero minha vaga →</div>
               <div style="text-align:center;font-size:10px;color:var(--g3);margin-top:8px;letter-spacing:.03em">Vagas limitadas</div>
             </div>
           </div>
         </div>
-        <span class="annot" style="padding:4px 20px 10px;display:block">Formulário 1, hero, acima da dobra. Sticky, sempre visível durante o scroll.</span>
+        <span class="annot" style="padding:4px 20px 10px;display:block">Formulário 1, hero, acima da dobra. Sticky.</span>
       </div>
-
     </div>
   </div>
 
-  <!-- CONTENT -->
   <div class="lp-content">
     <div class="lp-main">
 
-      <!-- BENEFÍCIOS -->
       <div class="sec-h">Por que escolher nossos treinamentos</div>
       <div class="benefits-grid2">
-        <div class="benefit-card"><div class="bc-num">01</div><strong>Conhecimento Prático</strong><p>Muito além da execução: visão crítica aplicada. Entenda o "como" e o "porquê" de cada atividade prática.</p></div>
-        <div class="benefit-card"><div class="bc-num">02</div><strong>Certificação Internacional</strong><p>Valorização profissional e diferencial competitivo com certificação reconhecida no mundo todo.</p></div>
-        <div class="benefit-card"><div class="bc-num">03</div><strong>Aulas 100% ao Vivo</strong><p>Tire dúvidas ao vivo e tenha acompanhamento imediato dos instrutores.</p></div>
-        <div class="benefit-card"><div class="bc-num">04</div><strong>Turmas Pequenas e Focadas</strong><p>Limitação de vagas para garantir grupos menores de alunos, participação ativa e atenção individual.</p></div>
-        <div class="benefit-card"><div class="bc-num">05</div><strong>Turmas Corporativas Exclusivas</strong><p>Capacitação personalizada e exclusiva para sua organização. Consulte nossos especialistas.</p></div>
-        <div class="benefit-card"><div class="bc-num">06</div><strong>Networking</strong><p>Participe de turmas com profissionais de diferentes empresas e segmentos que compartilham desafios semelhantes aos seus.</p></div>
+        <div class="benefit-card2"><div class="bc-num">01</div><strong>Conhecimento Prático</strong><p>Muito além da execução: visão crítica aplicada. Entenda o "como" e o "porquê" de cada atividade prática.</p></div>
+        <div class="benefit-card2"><div class="bc-num">02</div><strong>Certificação Internacional</strong><p>Valorização profissional e diferencial competitivo com certificação reconhecida no mundo todo.</p></div>
+        <div class="benefit-card2"><div class="bc-num">03</div><strong>Aulas 100% ao Vivo</strong><p>Tire dúvidas ao vivo e tenha acompanhamento imediato dos instrutores.</p></div>
+        <div class="benefit-card2"><div class="bc-num">04</div><strong>Turmas Pequenas e Focadas</strong><p>Limitação de vagas para garantir grupos menores, participação ativa e atenção individual.</p></div>
+        <div class="benefit-card2"><div class="bc-num">05</div><strong>Turmas Corporativas Exclusivas</strong><p>Capacitação personalizada e exclusiva para sua organização. Consulte nossos especialistas.</p></div>
+        <div class="benefit-card2"><div class="bc-num">06</div><strong>Networking</strong><p>Profissionais de diferentes empresas e segmentos que compartilham desafios semelhantes aos seus.</p></div>
       </div>
 
-      <!-- TURMAS CORPORATIVAS -->
       <div class="corp-callout">
         <div class="corp-callout-text">
           <strong>Precisa de uma turma exclusiva?</strong>
@@ -693,12 +708,10 @@
       </div>
       <span class="annot" style="margin-bottom:24px;display:block">Destaque para turmas corporativas, principal vetor de ticket alto para a Selbetti</span>
 
-      <!-- SYLLABUS — CHANGED: "Conteúdo" (era Conteúdo Programático) -->
       <div class="sec-h">Conteúdo</div>
       <div class="syllabus">
         <div class="day-block">
           <div class="day-head" onclick="toggleDay(this)"><span><span class="day-tag">Dia 1</span> Fundamentos e primeiros passos</span><span>▾</span></div>
-          <!-- CHANGED: list items now use visible dash bullets via CSS -->
           <div class="day-body open"><ul class="day-topics">
             <li>Principais componentes do Zabbix</li>
             <li>Visão geral da interface do usuário</li>
@@ -742,17 +755,14 @@
             <li>Visualização de dados com gráficos, mapas e painéis</li>
             <li>Serviços de relatórios Zabbix</li>
             <li>Ajuste de desempenho do Zabbix</li>
-            <!-- CHANGED: voucher → exame incluído -->
             <li>Exame ZCS incluído — ao final do curso, realize a prova. Sendo aprovado, você recebe a certificação oficial Zabbix emitida pelo fabricante</li>
           </ul></div>
         </div>
       </div>
       <span class="annot">SANFONA. Dia 1 começa expandido.</span>
 
-         
-      <!-- ══ FORMULÁRIO 2 — MEIO DA PÁGINA ══ -->
       <div class="midform-section">
-        <span class="annot" style="margin-bottom:12px;display:block">Formulário 2, posicionado após o conteúdo. Captura quem já teve informação suficiente para converter.</span>
+        <span class="annot" style="margin-bottom:12px;display:block">Formulário 2 — meio da página. Captura quem já leu conteúdo suficiente para converter.</span>
         <div class="midform-inner">
           <div class="midform-left">
             <strong>Sua certificação Zabbix começa aqui.</strong>
@@ -776,7 +786,6 @@
                 <div><span class="if-lbl">Empresa</span><div class="if-inp">Nome da empresa</div></div>
               </div>
               <div class="if-field"><span class="if-lbl">Cargo</span><div class="if-inp">Seu cargo</div></div>
-              <!-- checkbox Política de Privacidade -->
               <div class="if-consent"><div class="if-consent-box"></div><p>Ao enviar, você concorda com nossa <strong>Política de Privacidade</strong></p></div>
               <div class="if-cta">Quero minha vaga →</div>
             </div>
@@ -784,88 +793,32 @@
         </div>
       </div>
 
-      <!-- ── TRILHA ESCADA ── -->
       <div class="sec-h" style="margin-top:36px">Treinamentos oficiais Zabbix</div>
       <p style="font-size:12px;color:var(--g3);margin-bottom:24px;margin-top:-10px;font-style:italic">Como é a carreira Zabbix que a Selbetti fornece?</p>
-
       <div style="overflow-x:auto;margin-bottom:8px">
         <div style="min-width:680px">
           <div style="display:flex;align-items:flex-end;gap:2px">
-
-            <!-- ZCU -->
             <div style="flex:1;display:flex;flex-direction:column;align-items:stretch">
-              <div style="display:flex;justify-content:center;margin-bottom:6px">
-                <div style="width:60px;height:60px;background:var(--fill2);border:2px dashed var(--g2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--g2);text-align:center;line-height:1.3">BADGE<br/>ZCU</div>
-              </div>
-              <div style="background:var(--g1);height:48px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px">
-                <span style="font-size:16px;font-weight:900;color:var(--g4)">ZCU</span>
-                <span style="font-size:8px;font-weight:700;color:var(--g3);letter-spacing:.06em">1</span>
-              </div>
-              <div style="background:var(--white);border:1.5px solid var(--g1);border-top:2px solid var(--g2);padding:10px 12px">
-                <div style="font-size:11px;font-weight:800;color:var(--black);margin-bottom:4px">Zabbix Certified User</div>
-                <div style="width:24px;height:2px;background:var(--g2);margin-bottom:8px"></div>
-                <div style="font-size:8px;font-weight:700;text-transform:uppercase;color:var(--g3);letter-spacing:.06em;margin-bottom:4px">Opções:</div>
-                <div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative;margin-bottom:3px"><span style="position:absolute;left:0">•</span>Treinamento e Exame</div>
-                <div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative"><span style="position:absolute;left:0">•</span>Exame de Certificação</div>
-              </div>
+              <div style="display:flex;justify-content:center;margin-bottom:6px"><div style="width:60px;height:60px;background:var(--fill2);border:2px dashed var(--g2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--g2);text-align:center;line-height:1.3">BADGE<br/>ZCU</div></div>
+              <div style="background:var(--g1);height:48px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:900;color:var(--g4)">ZCU</span><span style="font-size:8px;font-weight:700;color:var(--g3);letter-spacing:.06em">1</span></div>
+              <div style="background:var(--white);border:1.5px solid var(--g1);border-top:2px solid var(--g2);padding:10px 12px"><div style="font-size:11px;font-weight:800;color:var(--black);margin-bottom:4px">Zabbix Certified User</div><div style="width:24px;height:2px;background:var(--g2);margin-bottom:8px"></div><div style="font-size:8px;font-weight:700;text-transform:uppercase;color:var(--g3);letter-spacing:.06em;margin-bottom:4px">Opções:</div><div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative;margin-bottom:3px"><span style="position:absolute;left:0">•</span>Treinamento e Exame</div><div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative"><span style="position:absolute;left:0">•</span>Exame de Certificação</div></div>
             </div>
-
-            <!-- ZCS -->
             <div style="flex:1;display:flex;flex-direction:column;align-items:stretch">
-              <div style="display:flex;justify-content:center;margin-bottom:6px">
-                <div style="width:64px;height:64px;background:var(--fill2);border:2px dashed var(--g2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--g2);text-align:center;line-height:1.3">BADGE<br/>ZCS</div>
-              </div>
-              <div style="background:var(--g2);height:80px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px">
-                <span style="font-size:16px;font-weight:900;color:var(--white)">ZCS</span>
-                <span style="font-size:8px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.06em">1</span>
-              </div>
-              <div style="background:var(--white);border:1.5px solid var(--g1);border-top:2px solid var(--g3);padding:10px 12px">
-                <div style="font-size:11px;font-weight:800;color:var(--black);margin-bottom:4px">Zabbix Certified Specialist</div>
-                <div style="width:24px;height:2px;background:var(--g3);margin-bottom:8px"></div>
-                <div style="font-size:8px;font-weight:700;text-transform:uppercase;color:var(--g3);letter-spacing:.06em;margin-bottom:4px">Opções:</div>
-                <div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative;margin-bottom:3px"><span style="position:absolute;left:0">•</span>Treinamento e Exame</div>
-                <div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative"><span style="position:absolute;left:0">•</span>Exame de Certificação</div>
-              </div>
+              <div style="display:flex;justify-content:center;margin-bottom:6px"><div style="width:64px;height:64px;background:var(--fill2);border:2px dashed var(--g2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--g2);text-align:center;line-height:1.3">BADGE<br/>ZCS</div></div>
+              <div style="background:var(--g2);height:80px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:900;color:var(--white)">ZCS</span><span style="font-size:8px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.06em">1</span></div>
+              <div style="background:var(--white);border:1.5px solid var(--g1);border-top:2px solid var(--g3);padding:10px 12px"><div style="font-size:11px;font-weight:800;color:var(--black);margin-bottom:4px">Zabbix Certified Specialist</div><div style="width:24px;height:2px;background:var(--g3);margin-bottom:8px"></div><div style="font-size:8px;font-weight:700;text-transform:uppercase;color:var(--g3);letter-spacing:.06em;margin-bottom:4px">Opções:</div><div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative;margin-bottom:3px"><span style="position:absolute;left:0">•</span>Treinamento e Exame</div><div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative"><span style="position:absolute;left:0">•</span>Exame de Certificação</div></div>
             </div>
-
-            <!-- ZCP -->
             <div style="flex:1;display:flex;flex-direction:column;align-items:stretch">
-              <div style="display:flex;justify-content:center;margin-bottom:6px">
-                <div style="width:68px;height:68px;background:var(--fill2);border:2px dashed var(--g2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--g2);text-align:center;line-height:1.3">BADGE<br/>ZCP</div>
-              </div>
-              <div style="background:var(--g3);height:112px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px">
-                <span style="font-size:16px;font-weight:900;color:var(--white)">ZCP</span>
-                <span style="font-size:8px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.06em">2</span>
-              </div>
-              <div style="background:var(--white);border:1.5px solid var(--g1);border-top:2px solid var(--g4);padding:10px 12px">
-                <div style="font-size:11px;font-weight:800;color:var(--black);margin-bottom:4px">Zabbix Certified Professional</div>
-                <div style="width:24px;height:2px;background:var(--g4);margin-bottom:8px"></div>
-                <div style="font-size:8px;font-weight:700;text-transform:uppercase;color:var(--g3);letter-spacing:.06em;margin-bottom:4px">Opções:</div>
-                <div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative;margin-bottom:3px"><span style="position:absolute;left:0">•</span>Treinamento e Exame</div>
-                <div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative"><span style="position:absolute;left:0">•</span>Exame de Certificação</div>
-              </div>
+              <div style="display:flex;justify-content:center;margin-bottom:6px"><div style="width:68px;height:68px;background:var(--fill2);border:2px dashed var(--g2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--g2);text-align:center;line-height:1.3">BADGE<br/>ZCP</div></div>
+              <div style="background:var(--g3);height:112px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:900;color:var(--white)">ZCP</span><span style="font-size:8px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.06em">2</span></div>
+              <div style="background:var(--white);border:1.5px solid var(--g1);border-top:2px solid var(--g4);padding:10px 12px"><div style="font-size:11px;font-weight:800;color:var(--black);margin-bottom:4px">Zabbix Certified Professional</div><div style="width:24px;height:2px;background:var(--g4);margin-bottom:8px"></div><div style="font-size:8px;font-weight:700;text-transform:uppercase;color:var(--g3);letter-spacing:.06em;margin-bottom:4px">Opções:</div><div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative;margin-bottom:3px"><span style="position:absolute;left:0">•</span>Treinamento e Exame</div><div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative"><span style="position:absolute;left:0">•</span>Exame de Certificação</div></div>
             </div>
-
-            <!-- ZCE -->
             <div style="flex:1;display:flex;flex-direction:column;align-items:stretch">
-              <div style="display:flex;justify-content:center;margin-bottom:6px">
-                <div style="width:72px;height:72px;background:var(--fill2);border:2px dashed var(--g2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--g2);text-align:center;line-height:1.3">BADGE<br/>ZCE</div>
-              </div>
-              <div style="background:var(--g4);height:148px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px">
-                <span style="font-size:16px;font-weight:900;color:var(--white)">ZCE</span>
-                <span style="font-size:8px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.06em">3</span>
-              </div>
-              <div style="background:var(--white);border:1.5px solid var(--g1);border-top:2px solid var(--black);padding:10px 12px">
-                <div style="font-size:11px;font-weight:800;color:var(--black);margin-bottom:4px">Zabbix Certified Expert</div>
-                <div style="width:24px;height:2px;background:var(--black);margin-bottom:8px"></div>
-                <div style="font-size:8px;font-weight:700;text-transform:uppercase;color:var(--g3);letter-spacing:.06em;margin-bottom:4px">Opções:</div>
-                <div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative"><span style="position:absolute;left:0">•</span>Treinamento e Exame</div>
-                <div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative"><span style="position:absolute;left:0">•</span>Exame de Certificação</div>
-              </div>
+              <div style="display:flex;justify-content:center;margin-bottom:6px"><div style="width:72px;height:72px;background:var(--fill2);border:2px dashed var(--g2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--g2);text-align:center;line-height:1.3">BADGE<br/>ZCE</div></div>
+              <div style="background:var(--g4);height:148px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:900;color:var(--white)">ZCE</span><span style="font-size:8px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.06em">3</span></div>
+              <div style="background:var(--white);border:1.5px solid var(--g1);border-top:2px solid var(--black);padding:10px 12px"><div style="font-size:11px;font-weight:800;color:var(--black);margin-bottom:4px">Zabbix Certified Expert</div><div style="width:24px;height:2px;background:var(--black);margin-bottom:8px"></div><div style="font-size:8px;font-weight:700;text-transform:uppercase;color:var(--g3);letter-spacing:.06em;margin-bottom:4px">Opções:</div><div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative"><span style="position:absolute;left:0">•</span>Treinamento e Exame</div><div style="font-size:10px;color:var(--g3);padding-left:10px;position:relative"><span style="position:absolute;left:0">•</span>Exame de Certificação</div></div>
             </div>
-
           </div>
-
           <div style="margin-top:12px;padding:10px 14px;background:var(--white);border:1.5px solid var(--g1);border-radius:6px;display:flex;flex-direction:column;gap:4px">
             <div style="font-size:10px;color:var(--g3)"><strong style="color:var(--black)">1</strong> – Não possui requisitos</div>
             <div style="font-size:10px;color:var(--g3)"><strong style="color:var(--black)">2</strong> – Requer certificação ZCS de mesma versão do ZCP desejado</div>
@@ -873,83 +826,32 @@
           </div>
         </div>
       </div>
-      <span class="annot" style="margin-bottom:32px;display:block">Diagrama de carreira Zabbix em escada. Seguindo padrões já utilizados pelo fabricante.</span>
+      <span class="annot" style="margin-bottom:32px;display:block">Diagrama de carreira Zabbix em escada. Modelo segue padrão já tuilizado pelo fabricante.</span>
 
-      <!-- FAQ -->
       <div class="sec-h" style="margin-top:8px">Perguntas Frequentes</div>
       <div class="faq">
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span>Como funciona a trilha Zabbix?</span><span>▾</span></div>
-          <div class="faq-a open">A trilha Zabbix é composta de 4 níveis de certificações que iniciam do Certified User até o Certified Expert. É uma trilha que a partir do terceiro nível, o Professional, é necessário cumprir o nível anterior para prosseguir. Apenas User e Specialist não têm requisitos.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span>Como posso me inscrever nos treinamentos?</span><span>▾</span></div>
-          <div class="faq-a">Depois de selecionar um curso que atenda às suas necessidades, você poderá solicitar sua inscrição via formulário. Assim que recebermos sua solicitação, a equipe de vendas entrará em contato com você, normalmente em um dia útil.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span>Preciso atender pré-requisitos para participar?</span><span>▾</span></div>
-          <div class="faq-a">Para cursos de nível inicial, não é necessário conhecimento prévio porque nós te guiamos desde os primeiros passos. Para outros, para que você tenha um bom aproveitamento é necessário conhecimento prévio em determinadas tecnologias. Consulte a página do treinamento para verificar o pré-requisito de cada um.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span>O treinamento dá direito ao exame?</span><span>▾</span></div>
-          <div class="faq-a">Adquirindo o treinamento oficial, o participante ganha um voucher para realizar o exame. Quando apto na prova, conquista a credencial de certificação, seguindo os requisitos do fabricante.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span>Os treinamentos são online ou presenciais?</span><span>▾</span></div>
-          <div class="faq-a">Prioritariamente online ao vivo. Para empresas, é possível agendar turmas fechadas exclusivas, online ou presenciais na sua região.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)"><span>Qual a diferença entre os cursos?</span><span>▾</span></div>
-          <div class="faq-a">A trilha de treinamento Zabbix é um programa desenvolvido para participantes com diferentes habilidades e necessidades. Porém, existem requisitos para alguns cursos — por exemplo, se você deseja receber o certificado de Profissional Certificado Zabbix, é obrigatório que você tenha concluído o curso de Especialista Certificado Zabbix. Você pode ver os pré-requisitos na descrição de cada curso.</div>
-        </div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Como funciona a trilha Zabbix?</span><span>▾</span></div><div class="faq-a open">A trilha Zabbix é composta de 4 níveis de certificações que iniciam do Certified User até o Certified Expert. É uma trilha que a partir do terceiro nível, o Professional, é necessário cumprir o nível anterior para prosseguir. Apenas User e Specialist não têm requisitos.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Como posso me inscrever nos treinamentos?</span><span>▾</span></div><div class="faq-a">Depois de selecionar um curso que atenda às suas necessidades, você poderá solicitar sua inscrição via formulário. Assim que recebermos sua solicitação, a equipe de vendas entrará em contato com você, normalmente em um dia útil.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Preciso atender pré-requisitos para participar?</span><span>▾</span></div><div class="faq-a">Para cursos de nível inicial, não é necessário conhecimento prévio porque nós te guiamos desde os primeiros passos. Para outros, é necessário conhecimento prévio em determinadas tecnologias. Consulte a página do treinamento para verificar o pré-requisito de cada um.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>O treinamento dá direito ao exame?</span><span>▾</span></div><div class="faq-a">Adquirindo o treinamento oficial, o participante ganha um voucher para realizar o exame. Quando apto na prova, conquista a credencial de certificação, seguindo os requisitos do fabricante.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Os treinamentos são online ou presenciais?</span><span>▾</span></div><div class="faq-a">Prioritariamente online ao vivo. Para empresas, é possível agendar turmas fechadas exclusivas, online ou presenciais na sua região.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Qual a diferença entre os cursos?</span><span>▾</span></div><div class="faq-a">A trilha de treinamento Zabbix é um programa desenvolvido para participantes com diferentes habilidades e necessidades. Existem requisitos para alguns cursos — por exemplo, para receber o certificado de Profissional, é obrigatório ter concluído o de Especialista.</div></div>
       </div>
 
-      <!-- CURSOS RELACIONADOS -->
       <div class="sec-h" style="margin-top:8px">Cursos Relacionados</div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px">
-
-        <div class="card">
-          <div class="card-cat-bar cat-zabbix"></div>
-          <div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">ZCU</span></div>
-          <div class="card-body">
-            <span class="card-cat-label cat-zabbix">Zabbix</span>
-            <div class="card-title" style="font-size:13px">Zabbix Certified User (ZCU)</div>
-            <div class="card-desc" style="-webkit-line-clamp:1">Introdução à interface do Zabbix. Sem pré-requisitos.</div>
-            <div class="card-cta">Ver Treinamento</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-cat-bar cat-zabbix"></div>
-          <div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">ZCP</span></div>
-          <div class="card-body">
-            <span class="card-cat-label cat-zabbix">Zabbix</span>
-            <div class="card-title" style="font-size:13px">Zabbix Certified Professional (ZCP)</div>
-            <div class="card-desc" style="-webkit-line-clamp:1">Monitoramento avançado. Req: ZCS.</div>
-            <div class="card-cta">Ver Treinamento</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-cat-bar cat-obs"></div>
-          <div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">Grafana</span></div>
-          <div class="card-body">
-            <span class="card-cat-label cat-obs">Grafana</span>
-            <div class="card-title" style="font-size:13px">Grafana</div>
-            <div class="card-desc" style="-webkit-line-clamp:1">Dashboards profissionais e visualização de métricas.</div>
-            <div class="card-cta">Ver Treinamento</div>
-          </div>
-        </div>
-
+        <div class="card"><div class="card-cat-bar cat-zabbix"></div><div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">ZCU</span></div><div class="card-body"><span class="card-cat-label cat-zabbix">Zabbix</span><div class="card-title" style="font-size:13px">Zabbix Certified User (ZCU)</div><div class="card-desc" style="-webkit-line-clamp:1">Introdução à interface do Zabbix. Sem pré-requisitos.</div><div class="card-cta">Ver Treinamento</div></div></div>
+        <div class="card"><div class="card-cat-bar cat-zabbix"></div><div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">ZCP</span></div><div class="card-body"><span class="card-cat-label cat-zabbix">Zabbix</span><div class="card-title" style="font-size:13px">Zabbix Certified Professional (ZCP)</div><div class="card-desc" style="-webkit-line-clamp:1">Monitoramento avançado. Req: ZCS.</div><div class="card-cta">Ver Treinamento</div></div></div>
+        <div class="card"><div class="card-cat-bar cat-obs"></div><div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">Grafana</span></div><div class="card-body"><span class="card-cat-label cat-obs">Grafana</span><div class="card-title" style="font-size:13px">Grafana</div><div class="card-desc" style="-webkit-line-clamp:1">Dashboards profissionais e visualização de métricas.</div><div class="card-cta">Ver Treinamento</div></div></div>
       </div>
-      <span class="annot" style="margin-bottom:8px;display:block">Cursos relacionados. Importante manter navegação do usuário.</span>
+      <span class="annot" style="margin-bottom:8px;display:block">Cursos relacionados. Manter navegação do usuário.</span>
 
-    </div><!-- /lp-main -->
-  </div><!-- /lp-content -->
+    </div>
+  </div>
 
-  <!-- FORMULÁRIO 3 — BOTTOM / ÚLTIMA CHANCE -->
+  <!-- FORMULÁRIO 3 — BOTTOM -->
   <div class="bottom-cta-section" id="form-bottom">
-    <span class="annot" style="padding:0 48px;display:block;margin-bottom:16px;color:#FFB570;border-color:#FFB570">Formulário 3, seção final antes do rodapé. Captura quem chegou até o fim sem preencher.</span>
+    <span class="annot" style="padding:0;display:block;margin-bottom:16px;color:#FFB570;border-color:#FFB570">Formulário 3 · seção final antes do rodapé da LP.</span>
     <div class="bottom-cta-inner">
       <div class="bottom-cta-text">
         <strong>Fale com nosso time<br/>de especialistas.</strong>
@@ -969,14 +871,12 @@
         <div class="if-field"><span class="if-lbl">Telefone / WhatsApp *</span><div class="if-inp">(00) 00000-0000</div></div>
         <div class="if-field"><span class="if-lbl">Cargo</span><div class="if-inp">Seu cargo</div></div>
         <div class="if-field"><span class="if-lbl">Mensagem / dúvida</span><div class="if-inp" style="height:60px;align-items:flex-start;padding-top:10px;color:var(--g2)">Escreva aqui sua dúvida ou interesse...</div></div>
-        <!-- checkbox Política de Privacidade -->
         <div class="if-consent"><div class="if-consent-box"></div><p>Ao enviar, você concorda com nossa <strong>Política de Privacidade</strong></p></div>
         <div class="if-cta">Enviar mensagem →</div>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     <div class="footer-inner">
       <div class="footer-cols">
@@ -1007,11 +907,6 @@
   }
   function closeModal() { document.getElementById('modal').classList.remove('open'); }
   document.getElementById('modal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
-  var cur=0, total=2, timer;
-  function go(n){ cur=n; document.getElementById('track').style.transform='translateX(-'+(n*100)+'%)'; document.querySelectorAll('.dot').forEach(function(d,i){d.classList.toggle('on',i===n);}); }
-  function move(d){ cur=(cur+d+total)%total; go(cur); reset(); }
-  function reset(){ clearInterval(timer); timer=setInterval(function(){ cur=(cur+1)%total; go(cur); },5000); }
-  reset();
   function toggleCat(){
     document.getElementById('catBtn').classList.toggle('open');
     document.getElementById('catMenu').classList.toggle('open');
@@ -1023,12 +918,10 @@
     toggleCat();
   }
   function toggleDay(el){
-    var body = el.nextElementSibling;
-    body.classList.toggle('open');
+    el.nextElementSibling.classList.toggle('open');
   }
   function toggleFaq(el){
-    var ans = el.nextElementSibling;
-    ans.classList.toggle('open');
+    el.nextElementSibling.classList.toggle('open');
   }
   function showEad(){
     var ov = document.getElementById('ead-overlay');
