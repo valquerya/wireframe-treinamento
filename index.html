@@ -12,13 +12,14 @@
       --annot:#FF6B00;
       --cat-obs:#B0B0B0; --cat-zabbix:#888888; --cat-ciber:#606060; --cat-gratis:#D8D8D8;
     }
-    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--black); font-size: 13px; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #DCDCDC; color: var(--black); font-size: 13px; }
+    #app { max-width: 1440px; margin: 0 auto; background: var(--bg); box-shadow: 0 0 48px rgba(0,0,0,.13); position: relative; }
     .page { display:none; }
     .page.active { display:block; }
     .annot { font-size:10px; color:var(--annot); font-weight:700; letter-spacing:.04em; text-transform:uppercase; border-left:2px solid var(--annot); padding-left:6px; display:block; margin-top:5px; }
     .wf-tag { font-size:9px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--g3); background:var(--fill2); border:1px dashed var(--g1); padding:2px 8px; border-radius:3px; display:inline-block; }
     /* LEGENDA */
-    .legend { position:fixed; bottom:16px; left:16px; z-index:9999; background:var(--white); border:1.5px solid var(--g1); border-radius:8px; padding:10px 14px; font-size:10px; color:var(--g3); box-shadow:0 4px 16px rgba(0,0,0,.1); max-width:200px; }
+    .legend { position:absolute; bottom:16px; left:16px; z-index:9999; background:var(--white); border:1.5px solid var(--g1); border-radius:8px; padding:10px 14px; font-size:10px; color:var(--g3); box-shadow:0 4px 16px rgba(0,0,0,.1); max-width:200px; }
     .legend strong { display:block; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--black); margin-bottom:7px; }
     .lr { display:flex; align-items:center; gap:6px; margin-bottom:4px; }
     .ls { width:12px; height:12px; border-radius:2px; flex-shrink:0; }
@@ -278,6 +279,7 @@
   </style>
 </head>
 <body>
+<div id="app">
 <!-- ── LEGENDA ── -->
 <div class="legend">
   <strong>Legenda</strong>
@@ -489,7 +491,7 @@
           <span class="card-cat-label cat-zabbix">Zabbix Oficial</span>
           <div class="card-meta">Avançado · Presencial · Req: ZCP</div>
           <div class="card-title">Zabbix Certified Expert (ZCE)</div>
-          <div class="card-desc">Nível máximo da trilha Zabbix. Arquitetura de alta disponibilidade, tuning e troubleshooting avançado.</div>
+          <div class="card-desc">Nível máximo da carreira Zabbix. Arquitetura de alta disponibilidade, tuning e troubleshooting avançado.</div>
           <div class="card-cta">Ver Treinamento →</div>
         </div>
       </div>
@@ -560,7 +562,7 @@
     <div class="footer-inner">
       <div class="footer-cols">
         <div><div class="fc-logo">LOGO SELBETTI</div><p class="fc-desc">Treinamentos oficiais, práticos e conduzidos por profissionais que vivem a TI todos os dias. A Trainer Oficial Zabbix mais experiente do Brasil.</p></div>
-        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a>Trilha Zabbix</a><a>Observabilidade</a><a>Cibersegurança</a><a>Gratuitos</a><a>Ver agenda completa</a></div></div>
+        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a>Carreira Zabbix</a><a>Observabilidade</a><a>Cibersegurança</a><a>Gratuitos</a><a>Ver agenda completa</a></div></div>
         <div><div class="fc-title">Selbetti</div><div class="fc-links"><a>IT Solutions</a><a>Selbetti Datacenter</a><a>Cybersecurity SOC</a><a>Business Consulting</a><a>Sobre nós</a></div></div>
         <div><div class="fc-title">Suporte</div><div class="fc-links"><a>Central de Ajuda</a><a>Fale Conosco</a><a>Blog Selbetti</a><a>Política de Privacidade</a><a>Termos de Uso</a></div></div>
       </div>
@@ -572,8 +574,8 @@
   </div>
 </div>
 <!-- BOTÃO FLUTUANTE TRILHA ZABBIX -->
-<div id="btn-trilha" style="display:none;position:fixed;bottom:28px;right:24px;z-index:8000;cursor:pointer;background:rgba(255,255,255,.95);color:var(--annot);font-size:11px;font-weight:700;padding:9px 16px;border-radius:999px;box-shadow:0 2px 12px rgba(0,0,0,.15);border:1.5px dashed var(--annot);letter-spacing:.04em;transition:all .2s;backdrop-filter:blur(4px);" onclick="goTo('trilha-zabbix')" onmouseover="this.style.background='#FFF3EB'" onmouseout="this.style.background='rgba(255,255,255,.95)'">
-  ⬡ Ver proposta: página trilha Zabbix
+<div id="btn-trilha" style="display:none;position:fixed;bottom:28px;right:calc(50% - 720px + 24px);z-index:8000;cursor:pointer;background:rgba(255,255,255,.95);color:var(--annot);font-size:11px;font-weight:700;padding:9px 16px;border-radius:999px;box-shadow:0 2px 12px rgba(0,0,0,.15);border:1.5px dashed var(--annot);letter-spacing:.04em;transition:all .2s;backdrop-filter:blur(4px);" onclick="goTo('carreira-zabbix')" onmouseover="this.style.background='#FFF3EB'" onmouseout="this.style.background='rgba(255,255,255,.95)'">
+  ⬡ Ver proposta: página Carreira Zabbix
 </div>
 <span class="annot" style="display:none" id="annot-btn-trilha">Botão flutuante discreto (laranja pontilhado). Só aparece após 300px de scroll. Sinalizador interno — não é elemento final do site.</span>
 
@@ -792,7 +794,7 @@
       <span class="annot" style="margin-bottom:32px;display:block">Diagrama de carreira Zabbix em escada. Modelo segue padrão já utilizado pelo fabricante.</span>
       <div class="sec-h" style="margin-top:8px">Perguntas Frequentes</div>
       <div class="faq">
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Como funciona a trilha Zabbix?</span><span>▾</span></div><div class="faq-a open">A trilha Zabbix é composta de 4 níveis de certificações que iniciam do Certified User até o Certified Expert. É uma trilha que a partir do terceiro nível, o Professional, é necessário cumprir o nível anterior para prosseguir. Apenas User e Specialist não têm requisitos.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Como funciona a carreira Zabbix?</span><span>▾</span></div><div class="faq-a open">A carreira Zabbix é composta de 4 níveis de certificações que iniciam do Certified User até o Certified Expert. É uma trilha que a partir do terceiro nível, o Professional, é necessário cumprir o nível anterior para prosseguir. Apenas User e Specialist não têm requisitos.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Como posso me inscrever nos treinamentos?</span><span>▾</span></div><div class="faq-a">Depois de selecionar um curso que atenda às suas necessidades, você poderá solicitar sua inscrição via formulário. Assim que recebermos sua solicitação, a equipe de vendas entrará em contato com você, normalmente em um dia útil.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Preciso atender pré-requisitos para participar?</span><span>▾</span></div><div class="faq-a">Para cursos de nível inicial, não é necessário conhecimento prévio porque nós te guiamos desde os primeiros passos. Para outros, é necessário conhecimento prévio em determinadas tecnologias. Consulte a página do treinamento para verificar o pré-requisito de cada um.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>O treinamento dá direito ao exame?</span><span>▾</span></div><div class="faq-a">Adquirindo o treinamento oficial, o participante ganha um voucher para realizar o exame. Quando apto na prova, conquista a credencial de certificação, seguindo os requisitos do fabricante.</div></div>
@@ -839,7 +841,7 @@
     <div class="footer-inner">
       <div class="footer-cols">
         <div><div class="fc-logo">LOGO SELBETTI</div><p class="fc-desc">Treinamentos oficiais, práticos e conduzidos por profissionais que vivem a TI todos os dias. A Trainer Oficial Zabbix mais experiente do Brasil.</p></div>
-        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a>Trilha Zabbix</a><a>Observabilidade</a><a>Cibersegurança</a><a>Gratuitos</a><a>Ver agenda completa</a></div></div>
+        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a>Carreira Zabbix</a><a>Observabilidade</a><a>Cibersegurança</a><a>Gratuitos</a><a>Ver agenda completa</a></div></div>
         <div><div class="fc-title">Selbetti</div><div class="fc-links"><a>IT Solutions</a><a>Selbetti Datacenter</a><a>Cybersecurity SOC</a><a>Business Consulting</a><a>Sobre nós</a></div></div>
         <div><div class="fc-title">Suporte</div><div class="fc-links"><a>Central de Ajuda</a><a>Fale Conosco</a><a>Blog Selbetti</a><a>Política de Privacidade</a><a>Termos de Uso</a></div></div>
       </div>
@@ -851,33 +853,19 @@
   </div>
 </div>
 <!-- PAGE 3 — TRILHA ZABBIX -->
-<div class="page" id="page-trilha-zabbix">
-  <span class="annot" style="display:block;margin:6px 16px;padding:8px 12px;background:#FFF3EB;border:1.5px solid #FFB570;border-left:3px solid var(--annot);border-radius:4px;font-size:11px;line-height:1.6;text-transform:none;letter-spacing:0">📋 PÁGINA INDEPENDENTE — Proposta da equipe para fortalecer o posicionamento da Selbetti na trilha Zabbix. Não está atrelada ao fluxo principal do site. Apresentar como opção.</span>
+<div class="page" id="page-carreira-zabbix">
+  <span class="annot" style="display:block;margin:6px 16px;padding:8px 12px;background:#FFF3EB;border:1.5px solid #FFB570;border-left:3px solid var(--annot);border-radius:4px;font-size:11px;line-height:1.6;text-transform:none;letter-spacing:0">📋 PÁGINA INDEPENDENTE — Proposta da equipe para fortalecer o posicionamento da Selbetti na Carreira Zabbix. Não está atrelada ao fluxo principal do site. Apresentar como opção.</span>
 
   <!-- HERO TRILHA -->
   <div style="background:var(--black);padding:64px 48px;border-bottom:2px solid var(--g3);">
-    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
-      <div>
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="max-width:620px;">
         <span style="display:inline-block;background:var(--g3);color:var(--g1);font-size:10px;font-weight:700;padding:3px 12px;border-radius:3px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;">Certificação Oficial Zabbix</span>
         <div style="font-size:40px;font-weight:900;color:var(--white);line-height:1.1;margin-bottom:16px;">Torne-se um especialista<br/>certificado em Zabbix</div>
         <p style="font-size:14px;color:var(--g2);line-height:1.7;margin-bottom:28px;max-width:440px;">A Selbetti é a Trainer Oficial Zabbix mais experiente do Brasil. Formamos profissionais do nível iniciante ao expert com a trilha completa de certificações reconhecida mundialmente.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <div class="btn-p" style="background:var(--white);color:var(--black);" onclick="document.getElementById('trilha-form').scrollIntoView({behavior:'smooth'})">Quero me certificar →</div>
           <div class="btn-s" style="border-color:var(--g3);color:var(--g2);" onclick="document.getElementById('trilha-cursos').scrollIntoView({behavior:'smooth'})">Ver os cursos</div>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div style="background:var(--g4);border:1.5px solid var(--g3);border-radius:10px;padding:18px 20px;display:flex;gap:16px;align-items:center;">
-          <div style="width:44px;height:44px;background:var(--g3);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:var(--g1);">ICO</div>
-          <div><strong style="display:block;font-size:13px;font-weight:800;color:var(--white);margin-bottom:3px;">Certificação reconhecida globalmente</strong><span style="font-size:11px;color:var(--g2);">Emitida diretamente pelo fabricante Zabbix.</span></div>
-        </div>
-        <div style="background:var(--g4);border:1.5px solid var(--g3);border-radius:10px;padding:18px 20px;display:flex;gap:16px;align-items:center;">
-          <div style="width:44px;height:44px;background:var(--g3);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:var(--g1);">ICO</div>
-          <div><strong style="display:block;font-size:13px;font-weight:800;color:var(--white);margin-bottom:3px;">Instrutores ZCE ativos no mercado</strong><span style="font-size:11px;color:var(--g2);">Profissionais que aplicam Zabbix em projetos reais.</span></div>
-        </div>
-        <div style="background:var(--g4);border:1.5px solid var(--g3);border-radius:10px;padding:18px 20px;display:flex;gap:16px;align-items:center;">
-          <div style="width:44px;height:44px;background:var(--g3);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:var(--g1);">ICO</div>
-          <div><strong style="display:block;font-size:13px;font-weight:800;color:var(--white);margin-bottom:3px;">100% em português</strong><span style="font-size:11px;color:var(--g2);">Aulas ao vivo com turmas limitadas para máxima atenção.</span></div>
         </div>
       </div>
     </div>
@@ -1064,7 +1052,7 @@
                   <div style="font-size:11px;color:var(--g2);">Nível máximo · Req: ZCP · Presencial</div>
                 </div>
               </div>
-              <p style="font-size:13px;color:var(--g2);line-height:1.7;margin-bottom:14px;">O nível mais alto da trilha Zabbix. Arquitetura de alta disponibilidade, tuning avançado, troubleshooting em ambientes complexos e HA clustering. Formação para quem quer ser referência absoluta em Zabbix.</p>
+              <p style="font-size:13px;color:var(--g2);line-height:1.7;margin-bottom:14px;">O nível mais alto da carreira Zabbix. Arquitetura de alta disponibilidade, tuning avançado, troubleshooting em ambientes complexos e HA clustering. Formação para quem quer ser referência absoluta em Zabbix.</p>
               <div style="display:flex;gap:8px;flex-wrap:wrap;">
                 <span style="font-size:10px;font-weight:700;background:var(--g4);color:var(--g1);padding:3px 10px;border-radius:3px;">Presencial</span>
                 <span style="font-size:10px;font-weight:700;background:var(--g4);color:var(--g1);padding:3px 10px;border-radius:3px;">Exame incluído</span>
@@ -1184,9 +1172,10 @@
         <div style="flex:1;min-width:280px;">
           <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px;">Só o exame</div>
           <div style="font-size:18px;font-weight:900;color:var(--black);margin-bottom:6px;">Exames Oficiais de Certificação</div>
-          <p style="font-size:12px;color:var(--g3);line-height:1.6;max-width:420px;">Já domina o conteúdo e quer apenas validar seu conhecimento com a certificação oficial? Adquira somente o exame e realize a prova diretamente pela plataforma EAD Selbetti.</p>
-          <div style="margin-top:12px;padding:10px 14px;background:#FFF3EB;border:1.5px solid #FFB570;border-radius:6px;font-size:11px;color:var(--annot);font-weight:700;">
-            🔶 EAD · Clique em "Acessar" redireciona direto para portal.selbetti.com.br (sem LP intermediária)
+          <p style="font-size:12px;color:var(--g3);line-height:1.6;max-width:420px;">Para quem já tem experiência sólida com Zabbix e quer formalizar o conhecimento com a certificação oficial do fabricante. Os exames são agendados pela plataforma EAD Selbetti e realizados em data combinada.</p>
+          <div style="margin-top:10px;font-size:11px;color:var(--g3);line-height:1.6;max-width:420px;font-style:italic;">Vale lembrar: as provas são exigentes. Se tiver dúvida se está pronto, nossos instrutores podem orientar.</div>
+          <div style="margin-top:12px;padding:10px 14px;background:var(--fill);border:1.5px solid var(--g1);border-radius:6px;font-size:11px;color:var(--g3);">
+            🔶 EAD · Botão "Acessar" inicia o fluxo de agendamento do exame na plataforma Selbetti.
           </div>
         </div>
         <div style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:8px;">
@@ -1215,7 +1204,26 @@
       </div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">Exames: seção compacta. Botão "Acessar" vai direto pro EAD, sem LP. ZCE não listado (sem opção de exame isolado pelo fabricante).</span>
+  <span class="annot" style="padding-left:48px;display:block">Exames: seção compacta. Botão "Acessar" inicia agendamento via EAD. ZCE não listado (sem opção de exame isolado pelo fabricante).</span>
+
+  <!-- FAQ CARREIRA ZABBIX -->
+  <div style="background:var(--bg);padding:48px 48px 40px;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px;">Dúvidas frequentes</div>
+      <div style="font-size:20px;font-weight:900;color:var(--black);margin-bottom:24px;">Perguntas sobre a Carreira Zabbix</div>
+      <div class="faq" style="margin-bottom:0">
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Como funciona a carreira de certificações Zabbix?</span><span>▾</span></div><div class="faq-a open">A carreira Zabbix é composta por 4 níveis de certificações: Certified User (ZCU), Certified Specialist (ZCS), Certified Professional (ZCP) e Certified Expert (ZCE). ZCU e ZCS não exigem pré-requisitos. Para o ZCP é necessário ter o ZCS e para o ZCE é necessário ter o ZCP, sempre na mesma versão do Zabbix.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Por onde devo começar?</span><span>▾</span></div><div class="faq-a">Para quem está entrando no Zabbix agora, o ZCU é uma boa introdução à plataforma. Para quem já tem alguma experiência ou quer ingressar diretamente na carreira técnica, o ZCS é o ponto de partida mais comum — é o treinamento mais completo e prepara para os níveis seguintes.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>O exame já vem incluído nos treinamentos?</span><span>▾</span></div><div class="faq-a">Sim. Nos treinamentos ZCS, ZCP e ZCE o exame de certificação está incluído. Ao final do treinamento, o participante recebe um voucher para agendar a prova. Sendo aprovado, a certificação oficial é emitida diretamente pelo fabricante Zabbix.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>As provas são difíceis?</span><span>▾</span></div><div class="faq-a">As provas do fabricante são exigentes e testam tanto o conhecimento teórico quanto a aplicação prática. O treinamento oficial é projetado para preparar o aluno para a prova, mas dedicação e estudo complementar fazem diferença. Nossos instrutores orientam sobre os pontos de maior atenção ao longo do curso.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Posso fazer o ZCP sem ter feito o ZCS com a Selbetti?</span><span>▾</span></div><div class="faq-a">Sim. O pré-requisito é a certificação ZCS, independente de onde foi obtida. Se você já tem o ZCS de outra escola ou pelo exame avulso, pode ingressar diretamente no ZCP. O importante é que a versão do ZCS seja compatível com a versão do ZCP desejado.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Os treinamentos são online ou presenciais?</span><span>▾</span></div><div class="faq-a">Os treinamentos ZCU, ZCS e ZCP são realizados online ao vivo com instrutor. O ZCE é presencial. Para empresas, é possível contratar turmas fechadas exclusivas em qualquer formato — online ou presencial na sua localidade. Consulte nossos especialistas.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>O que muda entre versões do Zabbix?</span><span>▾</span></div><div class="faq-a">O Zabbix lança novas versões LTS periodicamente com mudanças significativas na plataforma. As certificações são vinculadas à versão — um ZCS 6.0 não equivale a um ZCS 7.0. Para quem já é certificado em versão anterior, os cursos de Upgrade atualizam a certificação para a versão mais recente sem precisar refazer o treinamento completo.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Como funciona o agendamento do exame avulso?</span><span>▾</span></div><div class="faq-a">Para quem adquire apenas o exame (sem o treinamento), o agendamento é feito pela plataforma EAD Selbetti após a compra. A prova é realizada em data combinada com o candidato, conforme disponibilidade da agenda.</div></div>
+      </div>
+    </div>
+  </div>
+  <span class="annot" style="padding-left:48px;display:block">FAQ da Carreira Zabbix. 8 perguntas cobrindo progressão, exames, versões e turmas.</span>
 
   <!-- FORMULÁRIO -->
   <div class="bottom-cta-section" id="trilha-form">
@@ -1253,7 +1261,7 @@
     <div class="footer-inner">
       <div class="footer-cols">
         <div><div class="fc-logo">LOGO SELBETTI</div><p class="fc-desc">Treinamentos oficiais, práticos e conduzidos por profissionais que vivem a TI todos os dias. A Trainer Oficial Zabbix mais experiente do Brasil.</p></div>
-        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a onclick="goTo('listing')">Ver todos os cursos</a><a>Trilha Zabbix</a><a>Observabilidade</a><a>Cibersegurança</a></div></div>
+        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a onclick="goTo('listing')">Ver todos os cursos</a><a>Carreira Zabbix</a><a>Observabilidade</a><a>Cibersegurança</a></div></div>
         <div><div class="fc-title">Selbetti</div><div class="fc-links"><a>IT Solutions</a><a>Selbetti Datacenter</a><a>Cybersecurity SOC</a><a>Sobre nós</a></div></div>
         <div><div class="fc-title">Suporte</div><div class="fc-links"><a>Central de Ajuda</a><a>Fale Conosco</a><a>Blog Selbetti</a><a>Política de Privacidade</a></div></div>
       </div>
@@ -1263,7 +1271,7 @@
       </div>
     </div>
   </div>
-</div><!-- /page-trilha-zabbix -->
+</div><!-- /page-carreira-zabbix -->
 
 <script>
   function goTo(page) {
@@ -1297,7 +1305,13 @@
   }
   window.addEventListener('scroll', function(){
     var btn = document.getElementById('btn-trilha');
-    if(window.scrollY > 300){ btn.style.display='block'; } else { btn.style.display='none'; }
+    if(window.scrollY > 300){
+      btn.style.display='block';
+      var appRight = document.getElementById('app').getBoundingClientRect().right;
+      btn.style.right = (window.innerWidth - appRight + 24) + 'px';
+    } else {
+      btn.style.display='none';
+    }
   });
   document.addEventListener('click', function(e){
     if(!e.target.closest('.cat-dropdown')){ 
@@ -1306,5 +1320,6 @@
     }
   });
 </script>
+</div><!-- /app -->
 </body>
 </html>
