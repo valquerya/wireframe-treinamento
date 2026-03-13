@@ -19,7 +19,7 @@
     .annot { font-size:10px; color:var(--annot); font-weight:700; letter-spacing:.04em; text-transform:uppercase; border-left:2px solid var(--annot); padding-left:6px; display:block; margin-top:5px; }
     .wf-tag { font-size:9px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--g3); background:var(--fill2); border:1px dashed var(--g1); padding:2px 8px; border-radius:3px; display:inline-block; }
     /* LEGENDA */
-    .legend { position:absolute; bottom:16px; left:16px; z-index:9999; background:var(--white); border:1.5px solid var(--g1); border-radius:8px; padding:10px 14px; font-size:10px; color:var(--g3); box-shadow:0 4px 16px rgba(0,0,0,.1); max-width:200px; }
+    .legend { position:fixed; bottom:16px; left:16px; z-index:9999; background:var(--white); border:1.5px solid var(--g1); border-radius:8px; padding:10px 14px; font-size:10px; color:var(--g3); box-shadow:0 4px 16px rgba(0,0,0,.1); max-width:200px; }
     .legend strong { display:block; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--black); margin-bottom:7px; }
     .lr { display:flex; align-items:center; gap:6px; margin-bottom:4px; }
     .ls { width:12px; height:12px; border-radius:2px; flex-shrink:0; }
@@ -722,7 +722,7 @@
             <li>Visualização de dados com gráficos, mapas e painéis</li>
             <li>Serviços de relatórios Zabbix</li>
             <li>Ajuste de desempenho do Zabbix</li>
-            <li>Exame ZCS incluído — ao final do curso, realize a prova. Sendo aprovado, você recebe a certificação oficial Zabbix emitida pelo fabricante</li>
+            <li>Exame ZCS incluído. Ao final do curso, realize a prova. Sendo aprovado, você recebe a certificação oficial Zabbix emitida pelo fabricante</li>
           </ul></div>
         </div>
       </div>
@@ -1076,43 +1076,40 @@
     <div style="max-width:1100px;margin:0 auto;">
       <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px;">Atualize sua certificação</div>
       <div style="font-size:20px;font-weight:900;color:var(--black);margin-bottom:6px;">Cursos de Upgrade</div>
-      <p style="font-size:12px;color:var(--g3);margin-bottom:24px;line-height:1.6;">Já é certificado mas sua versão ficou para trás? Os cursos de upgrade atualizam seu conhecimento e certificação para a versão mais recente do Zabbix.</p>
+      <p style="font-size:12px;color:var(--g3);margin-bottom:24px;line-height:1.6;">Já é certificado mas sua versão ficou para trás? Os cursos de upgrade atualizam seu conhecimento e certificação para a versão mais recente do Zabbix — sem precisar refazer o treinamento completo.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+
         <div style="background:var(--fill);border:1.5px solid var(--g1);border-radius:8px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;">
-          <svg width="40" height="46" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#C8C8C8" stroke="#666" stroke-width="2.5"/><text x="48" y="55" text-anchor="middle" font-size="11" font-weight="900" fill="#333" font-family="Arial">ZCS</text><text x="48" y="67" text-anchor="middle" font-size="8" font-weight="700" fill="#666" font-family="Arial">UP</text></svg>
-          <div>
-            <div style="font-size:13px;font-weight:800;color:var(--black);margin-bottom:4px;">ZCS Upgrade</div>
-            <div style="font-size:11px;color:var(--g3);margin-bottom:8px;line-height:1.6;">Atualiza a certificação Zabbix Certified Specialist de uma versão anterior para a versão mais recente. Foca nas mudanças e novas funcionalidades do Zabbix.</div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
-              <span style="font-size:9px;font-weight:700;background:var(--fill3);color:var(--g3);padding:2px 8px;border-radius:3px;">Online ao vivo</span>
-              <span style="font-size:9px;font-weight:700;background:var(--fill3);color:var(--g3);padding:2px 8px;border-radius:3px;">Req: ZCS versão anterior</span>
-            </div>
-            <div class="btn-s" style="padding:7px 16px;font-size:11px;display:inline-flex;">Ver treinamento</div>
+          <svg width="40" height="46" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#C8C8C8" stroke="#666" stroke-width="2.5"/><text x="48" y="52" text-anchor="middle" font-size="11" font-weight="900" fill="#333" font-family="Arial">ZCS</text><text x="48" y="65" text-anchor="middle" font-size="8" font-weight="700" fill="#666" font-family="Arial">UPGRADE</text></svg>
+          <div style="flex:1;">
+            <div style="font-size:13px;font-weight:800;color:var(--black);margin-bottom:2px;">Zabbix Certified Specialist: Upgrade</div>
+            <div style="font-size:10px;color:var(--g3);margin-bottom:8px;">Req: ZCS versão anterior · Online ao vivo</div>
+            <div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:12px;">Atualiza a certificação ZCS para a versão mais recente. Foca exclusivamente nas mudanças e novas funcionalidades introduzidas desde a versão que o aluno já possui.</div>
+            <div class="card-cta card-cta-ead" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:4px;font-size:11px;cursor:pointer;width:auto;">⬡ Acessar via EAD →</div>
           </div>
         </div>
+
         <div style="background:var(--fill);border:1.5px solid var(--g1);border-radius:8px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;">
-          <svg width="40" height="46" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#666" stroke="#444" stroke-width="2.5"/><text x="48" y="55" text-anchor="middle" font-size="11" font-weight="900" fill="#fff" font-family="Arial">ZCP</text><text x="48" y="67" text-anchor="middle" font-size="8" font-weight="700" fill="#ccc" font-family="Arial">UP</text></svg>
-          <div>
-            <div style="font-size:13px;font-weight:800;color:var(--black);margin-bottom:4px;">ZCP Upgrade</div>
-            <div style="font-size:11px;color:var(--g3);margin-bottom:8px;line-height:1.6;">Atualiza a certificação Zabbix Certified Professional para a versão mais recente. Cobre as evoluções da plataforma relevantes para profissionais avançados.</div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
-              <span style="font-size:9px;font-weight:700;background:var(--fill3);color:var(--g3);padding:2px 8px;border-radius:3px;">Online ao vivo</span>
-              <span style="font-size:9px;font-weight:700;background:var(--fill3);color:var(--g3);padding:2px 8px;border-radius:3px;">Req: ZCP versão anterior</span>
-            </div>
-            <div class="btn-s" style="padding:7px 16px;font-size:11px;display:inline-flex;">Ver treinamento</div>
+          <svg width="40" height="46" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#666" stroke="#444" stroke-width="2.5"/><text x="48" y="52" text-anchor="middle" font-size="11" font-weight="900" fill="#fff" font-family="Arial">ZCP</text><text x="48" y="65" text-anchor="middle" font-size="8" font-weight="700" fill="#ccc" font-family="Arial">UPGRADE</text></svg>
+          <div style="flex:1;">
+            <div style="font-size:13px;font-weight:800;color:var(--black);margin-bottom:2px;">Zabbix Certified Professional: Upgrade</div>
+            <div style="font-size:10px;color:var(--g3);margin-bottom:8px;">Req: ZCP versão anterior · Online ao vivo</div>
+            <div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:12px;">Atualiza a certificação ZCP para a versão mais recente. Cobre as evoluções da plataforma relevantes para profissionais avançados, com foco nas mudanças de arquitetura e novos recursos.</div>
+            <div class="card-cta card-cta-ead" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:4px;font-size:11px;cursor:pointer;width:auto;">⬡ Acessar via EAD →</div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">Upgrades: para quem já tem ZCS ou ZCP em versão anterior.</span>
+  <span class="annot" style="padding-left:48px;display:block">Upgrades: botão laranja EAD único. Para quem já tem ZCS ou ZCP em versão anterior.</span>
 
-  <!-- CURSOS AVANÇADOS EXTRA -->
+  <!-- CURSOS OFICIAIS EXTRAS -->
   <div style="background:var(--bg);padding:48px 48px 40px;">
     <div style="max-width:1100px;margin:0 auto;">
-      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px;">Aprofunde seu conhecimento</div>
-      <div style="font-size:20px;font-weight:900;color:var(--black);margin-bottom:6px;">Cursos Avançados Zabbix</div>
-      <p style="font-size:12px;color:var(--g3);margin-bottom:24px;line-height:1.6;">Treinamentos especializados para profissionais que já dominam os fundamentos e querem se aprofundar em tópicos específicos do ecossistema Zabbix.</p>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px;">Além da carreira</div>
+      <div style="font-size:20px;font-weight:900;color:var(--black);margin-bottom:6px;">Treinamentos Oficiais Extras</div>
+      <p style="font-size:12px;color:var(--g3);margin-bottom:24px;line-height:1.6;">Treinamentos oficiais do fabricante Zabbix que aprofundam tópicos específicos da plataforma. Não fazem parte da carreira de certificações, mas são reconhecidos pelo fabricante e voltados a quem já tem base no Zabbix.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
 
         <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;">
@@ -1163,7 +1160,21 @@
       </div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">5 cursos avançados. Não fazem parte da trilha principal, mas complementam a formação.</span>
+  <span class="annot" style="padding-left:48px;display:block">5 treinamentos oficiais extras. Reconhecidos pelo fabricante, fora da carreira de certificações.</span>
+
+  <!-- TURMA EXCLUSIVA -->
+  <div style="background:var(--bg);padding:0 48px 0;">
+    <div style="max-width:1100px;margin:0 auto;padding:32px 0 0">
+      <div class="corp-callout">
+        <div class="corp-callout-text">
+          <strong>Precisa de uma turma exclusiva?</strong>
+          <p>Capacite toda a equipe de uma vez. Oferecemos turmas fechadas para empresas nos formatos online ao vivo ou presencial, com conteúdo e agenda adaptados à sua realidade.</p>
+        </div>
+        <div class="corp-callout-cta" onclick="document.getElementById('trilha-form').scrollIntoView({behavior:'smooth'})">Quero uma turma para meu time →</div>
+      </div>
+      <span class="annot" style="margin-bottom:0;display:block">Callout turmas fechadas. CTA ancora no formulário.</span>
+    </div>
+  </div>
 
   <!-- EXAMES (LOW TICKET / EAD) -->
   <div style="background:var(--white);border-top:2px solid var(--fill3);border-bottom:2px solid var(--fill3);padding:36px 48px;">
@@ -1179,32 +1190,36 @@
           </div>
         </div>
         <div style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:8px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;background:var(--fill);border:1.5px solid var(--g1);border-radius:6px;padding:11px 16px;">
+
+          <div style="background:var(--fill);border:2px solid var(--annot);border-radius:6px;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;">
             <div style="display:flex;align-items:center;gap:10px;">
               <svg width="28" height="32" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#D4D4D4" stroke="#999" stroke-width="3"/><text x="48" y="62" text-anchor="middle" font-size="18" font-weight="900" fill="#444" font-family="Arial">ZCU</text></svg>
               <div><div style="font-size:12px;font-weight:700;color:var(--black);">Zabbix Certified User Exam</div><div style="font-size:10px;color:var(--g3);">Sem pré-requisitos</div></div>
             </div>
-            <div style="background:var(--g4);color:var(--white);font-size:11px;font-weight:700;padding:7px 16px;border-radius:4px;cursor:pointer;white-space:nowrap;">Acessar →</div>
+            <div class="card-cta-ead" style="background:var(--annot);color:var(--white);font-size:11px;font-weight:700;padding:7px 16px;border-radius:4px;cursor:pointer;white-space:nowrap;">Acessar →</div>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;background:var(--fill);border:1.5px solid var(--g1);border-radius:6px;padding:11px 16px;">
+
+          <div style="background:var(--fill);border:2px solid var(--annot);border-radius:6px;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;">
             <div style="display:flex;align-items:center;gap:10px;">
               <svg width="28" height="32" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#C8C8C8" stroke="#666" stroke-width="3"/><text x="48" y="62" text-anchor="middle" font-size="18" font-weight="900" fill="#333" font-family="Arial">ZCS</text></svg>
               <div><div style="font-size:12px;font-weight:700;color:var(--black);">Zabbix Certified Specialist Exam</div><div style="font-size:10px;color:var(--g3);">Sem pré-requisitos</div></div>
             </div>
-            <div style="background:var(--g4);color:var(--white);font-size:11px;font-weight:700;padding:7px 16px;border-radius:4px;cursor:pointer;white-space:nowrap;">Acessar →</div>
+            <div class="card-cta-ead" style="background:var(--annot);color:var(--white);font-size:11px;font-weight:700;padding:7px 16px;border-radius:4px;cursor:pointer;white-space:nowrap;">Acessar →</div>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;background:var(--fill);border:1.5px solid var(--g1);border-radius:6px;padding:11px 16px;">
+
+          <div style="background:var(--fill);border:2px solid var(--annot);border-radius:6px;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;">
             <div style="display:flex;align-items:center;gap:10px;">
               <svg width="28" height="32" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#666" stroke="#444" stroke-width="3"/><text x="48" y="62" text-anchor="middle" font-size="18" font-weight="900" fill="#fff" font-family="Arial">ZCP</text></svg>
               <div><div style="font-size:12px;font-weight:700;color:var(--black);">Zabbix Certified Professional Exam</div><div style="font-size:10px;color:var(--g3);">Req: ZCS</div></div>
             </div>
-            <div style="background:var(--g4);color:var(--white);font-size:11px;font-weight:700;padding:7px 16px;border-radius:4px;cursor:pointer;white-space:nowrap;">Acessar →</div>
+            <div class="card-cta-ead" style="background:var(--annot);color:var(--white);font-size:11px;font-weight:700;padding:7px 16px;border-radius:4px;cursor:pointer;white-space:nowrap;">Acessar →</div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">Exames: seção compacta. Botão "Acessar" inicia agendamento via EAD. ZCE não listado (sem opção de exame isolado pelo fabricante).</span>
+  <span class="annot" style="padding-left:48px;display:block">Exames: borda e botão laranja = mesmo esquema EAD do catálogo. Agendamento via plataforma Selbetti.</span>
 
   <!-- FAQ CARREIRA ZABBIX -->
   <div style="background:var(--bg);padding:48px 48px 40px;">
@@ -1305,14 +1320,22 @@
   }
   window.addEventListener('scroll', function(){
     var btn = document.getElementById('btn-trilha');
+    var leg = document.querySelector('.legend');
+    var appRect = document.getElementById('app').getBoundingClientRect();
+    if(leg) leg.style.left = Math.max(8, appRect.left + 16) + 'px';
     if(window.scrollY > 300){
       btn.style.display='block';
-      var appRight = document.getElementById('app').getBoundingClientRect().right;
-      btn.style.right = (window.innerWidth - appRight + 24) + 'px';
+      btn.style.right = (window.innerWidth - appRect.right + 24) + 'px';
     } else {
       btn.style.display='none';
     }
   });
+  // run once on load
+  (function(){
+    var leg = document.querySelector('.legend');
+    var appRect = document.getElementById('app').getBoundingClientRect();
+    if(leg) leg.style.left = Math.max(8, appRect.left + 16) + 'px';
+  })();
   document.addEventListener('click', function(e){
     if(!e.target.closest('.cat-dropdown')){ 
       document.getElementById('catBtn').classList.remove('open');
