@@ -1508,15 +1508,231 @@
     </div>
 
 
+
     <!-- VIEW MAPA DE CONTATOS -->
-    <div id="jornada-view-mapa" style="display:none">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 24px 10px;border-bottom:1px solid #eee;background:#f8f8f8">
-        <p style="font-size:11px;color:#666;margin:0;font-style:italic">Do primeiro contato ao acesso na plataforma — por tipo de ticket.</p>
-        <div style="display:flex;gap:6px">
-          <button onclick="filterFlow('all')" id="fbtn-all" style="padding:5px 14px;border-radius:20px;border:1.5px solid #1B4332;background:#1B4332;color:#fff;font-size:11px;font-weight:700;cursor:pointer">Todos</button>
-          <button onclick="filterFlow('low')" id="fbtn-low" style="padding:5px 14px;border-radius:20px;border:1.5px solid #ccc;background:transparent;color:#555;font-size:11px;font-weight:700;cursor:pointer">Low ticket</button>
-          <button onclick="filterFlow('high')" id="fbtn-high" style="padding:5px 14px;border-radius:20px;border:1.5px solid #ccc;background:transparent;color:#555;font-size:11px;font-weight:700;cursor:pointer">High ticket</button>
-        </div>
+    <div id="jornada-view-mapa" style="display:none;padding:20px 24px 24px">
+      <p style="font-size:11px;color:#666;margin:0 0 16px;line-height:1.6">Do primeiro contato ao acesso na plataforma — por tipo de ticket.</p>
+      <div style="overflow-x:auto;overflow-y:visible">
+      <svg viewBox="0 0 1080 430" width="100%" style="min-width:860px;display:block;font-family:Arial,Helvetica,sans-serif">
+        <defs>
+          <marker id="mg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M1 2L9 5L1 8" fill="none" stroke="#1B4332" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="mhg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M1 2L9 5L1 8" fill="none" stroke="#2D7A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="mo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M1 2L9 5L1 8" fill="none" stroke="#C05A10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="mrecusa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M1 2L9 5L1 8" fill="none" stroke="#8B1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="mnutri" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M1 2L9 5L1 8" fill="none" stroke="#8B4A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+
+        <!-- ===== SHARED ENTRY (cy=187) ===== -->
+        <polygon points="14,165 118,165 132,187 118,209 14,209" fill="#1B4332"/>
+        <text x="73" y="183" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Campanha</text>
+        <text x="73" y="196" text-anchor="middle" fill="#A8D5B8" font-size="9">Ads · SEO · Social</text>
+
+        <polygon points="134,165 228,165 242,187 228,209 134,209 148,187" fill="#1B4332"/>
+        <text x="188" y="183" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Site</text>
+        <text x="188" y="196" text-anchor="middle" fill="#A8D5B8" font-size="9">selbetti.com</text>
+
+        <!-- Fork diamond -->
+        <polygon points="250,179 260,187 250,195 240,187" fill="#2D7A5F" stroke="#A8D5B8" stroke-width="1.5"/>
+        <text x="250" y="191" text-anchor="middle" fill="white" font-size="8" font-weight="bold">?</text>
+        <text x="250" y="205" text-anchor="middle" fill="#2D7A5F" font-size="8" font-weight="bold">Qual ticket?</text>
+
+        <!-- ===== LOW TICKET ROW (cy=131) ===== -->
+        <text x="510" y="87" text-anchor="middle" fill="#1B4332" font-size="8" font-weight="bold" letter-spacing="1.5">BAIXO TICKET — AUTOMAÇÃO TOTAL</text>
+
+        <polygon points="264,109 360,109 374,131 360,153 264,153 278,131" fill="#1B4332"/>
+        <text x="319" y="127" text-anchor="middle" fill="white" font-size="11" font-weight="bold">EAD</text>
+        <text x="319" y="140" text-anchor="middle" fill="#A8D5B8" font-size="9">Externo</text>
+
+        <polygon points="376,109 470,109 484,131 470,153 376,153 390,131" fill="#1B4332"/>
+        <text x="430" y="127" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Checkout</text>
+        <text x="430" y="140" text-anchor="middle" fill="#A8D5B8" font-size="9">Cartão / PIX</text>
+
+        <polygon points="486,109 582,109 596,131 582,153 486,153 500,131" fill="#1B4332"/>
+        <text x="541" y="127" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Pagamento</text>
+        <text x="541" y="140" text-anchor="middle" fill="#A8D5B8" font-size="9">Aprovado</text>
+
+        <polygon points="598,109 696,109 710,131 696,153 598,153 612,131" fill="#1B4332"/>
+        <text x="654" y="127" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Acesso</text>
+        <text x="654" y="140" text-anchor="middle" fill="#A8D5B8" font-size="9">Imediato · EAD</text>
+
+        <!-- SUPORTE BAR: Pagamento → Certificação -->
+        <rect x="486" y="153" width="436" height="10" rx="3" fill="#4A9068" opacity="0.22"/>
+        <rect x="486" y="153" width="436" height="10" rx="3" fill="none" stroke="#4A9068" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <text x="704" y="161" text-anchor="middle" fill="#1B4332" font-size="7" font-weight="bold">SUPORTE ATIVO — PAGAMENTO ATÉ CERTIFICAÇÃO</text>
+
+        <!-- ===== HIGH TICKET ROW (cy=249) ===== -->
+        <text x="510" y="280" text-anchor="middle" fill="#2D7A5F" font-size="8" font-weight="bold" letter-spacing="1.5">ALTO TICKET — JORNADA COMERCIAL</text>
+
+        <polygon points="264,227 368,227 382,249 368,271 264,271 278,249" fill="#2D7A5F"/>
+        <text x="323" y="245" text-anchor="middle" fill="white" font-size="11" font-weight="bold">LP Curso</text>
+        <text x="323" y="258" text-anchor="middle" fill="#C8EAD8" font-size="9">HubSpot</text>
+
+        <polygon points="384,227 480,227 494,249 480,271 384,271 398,249" fill="#2D7A5F"/>
+        <text x="439" y="245" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Formulário</text>
+        <text x="439" y="258" text-anchor="middle" fill="#C8EAD8" font-size="9">HubSpot Form</text>
+
+        <polygon points="496,227 608,227 622,249 608,271 496,271 510,249" fill="#2D7A5F"/>
+        <text x="559" y="240" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Vendas</text>
+        <text x="559" y="252" text-anchor="middle" fill="#C8EAD8" font-size="9">Especialista /</text>
+        <text x="559" y="264" text-anchor="middle" fill="#C8EAD8" font-size="9">SDR / AM</text>
+
+        <polygon points="624,227 730,227 744,249 730,271 624,271 638,249" fill="#2D7A5F"/>
+        <text x="684" y="241" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Fechamento</text>
+        <text x="684" y="253" text-anchor="middle" fill="#C8EAD8" font-size="9">Contrato ·</text>
+        <text x="684" y="265" text-anchor="middle" fill="#C8EAD8" font-size="9">Pagamento</text>
+
+        <!-- ===== SHARED EXIT — saída COMUM (cy=187) ===== -->
+        <text x="815" y="222" text-anchor="middle" fill="#888" font-size="8">saída COMUM</text>
+
+        <polygon points="748,165 862,165 876,187 862,209 748,209 762,187" fill="#1B4332"/>
+        <text x="812" y="183" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Treinamento</text>
+        <text x="812" y="196" text-anchor="middle" fill="#A8D5B8" font-size="9">Plataforma EAD</text>
+
+        <polygon points="878,165 952,165 966,187 952,209 878,209 892,187" fill="#C05A10"/>
+        <text x="922" y="181" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Certifi-</text>
+        <text x="922" y="193" text-anchor="middle" fill="white" font-size="10" font-weight="bold">cação</text>
+        <text x="922" y="205" text-anchor="middle" fill="#FFD0A8" font-size="8">Zabbix</text>
+
+        <polygon points="968,165 1048,165 1060,187 1048,209 968,209 980,187" fill="#0B5E6E"/>
+        <text x="1014" y="183" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Case</text>
+        <text x="1014" y="196" text-anchor="middle" fill="#A8E0EC" font-size="9">Cliente ref.</text>
+
+        <!-- ===== ARROWS ===== -->
+        <line x1="132" y1="187" x2="134" y2="187" stroke="#1B4332" stroke-width="2" marker-end="url(#mg)"/>
+        <line x1="242" y1="187" x2="240" y2="187" stroke="#1B4332" stroke-width="1.5"/>
+        <path d="M250,179 L250,131 L264,131" fill="none" stroke="#1B4332" stroke-width="1.5" marker-end="url(#mg)"/>
+        <path d="M250,195 L250,249 L264,249" fill="none" stroke="#2D7A5F" stroke-width="1.5" marker-end="url(#mhg)"/>
+        <line x1="374" y1="131" x2="376" y2="131" stroke="#1B4332" stroke-width="1.5" marker-end="url(#mg)"/>
+        <line x1="484" y1="131" x2="486" y2="131" stroke="#1B4332" stroke-width="1.5" marker-end="url(#mg)"/>
+        <line x1="596" y1="131" x2="598" y2="131" stroke="#1B4332" stroke-width="1.5" marker-end="url(#mg)"/>
+        <path d="M710,131 L736,131 L736,170 L748,170" fill="none" stroke="#1B4332" stroke-width="1.5" marker-end="url(#mg)"/>
+        <line x1="382" y1="249" x2="384" y2="249" stroke="#2D7A5F" stroke-width="1.5" marker-end="url(#mhg)"/>
+        <line x1="494" y1="249" x2="496" y2="249" stroke="#2D7A5F" stroke-width="1.5" marker-end="url(#mhg)"/>
+        <line x1="622" y1="249" x2="624" y2="249" stroke="#2D7A5F" stroke-width="1.5" marker-end="url(#mhg)"/>
+        <path d="M744,249 L748,249 L748,204 L748,204" fill="none" stroke="#2D7A5F" stroke-width="1.5" marker-end="url(#mhg)"/>
+        <line x1="876" y1="187" x2="878" y2="187" stroke="#1B4332" stroke-width="1.5" marker-end="url(#mg)"/>
+        <line x1="966" y1="187" x2="968" y2="187" stroke="#C05A10" stroke-width="1.5" marker-end="url(#mo)"/>
+
+        <!-- ABANDONO/RECUSA loop (vermelho escuro) -->
+        <path d="M484,153 Q484,172 428,172 Q380,172 376,153" fill="none" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#mrecusa)"/>
+        <rect x="366" y="168" width="136" height="18" rx="4" fill="#FDE8E8" stroke="#8B1A1A" stroke-width="1"/>
+        <text x="434" y="181" text-anchor="middle" fill="#6B0A0A" font-size="9" font-weight="bold">Abandono/recusa · retry</text>
+
+        <!-- NUTRIÇÃO CRM loop (laranja mais escuro) -->
+        <path d="M622,271 Q622,314 554,322 Q480,330 382,314 Q360,308 360,271" fill="none" stroke="#8B4A1A" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#mnutri)"/>
+        <rect x="462" y="320" width="100" height="18" rx="4" fill="#FEF0E4" stroke="#8B4A1A" stroke-width="1"/>
+        <text x="512" y="333" text-anchor="middle" fill="#6B300A" font-size="9" font-weight="bold">Nutrição CRM</text>
+
+        <!-- ===== TOUCHPOINTS ===== -->
+        <!-- Campanha: Tráfego Pago/Email/SDR/AM -->
+        <line x1="55" y1="165" x2="55" y2="145" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+        <circle cx="55" cy="145" r="4" fill="#4A9068"/>
+        <rect x="0" y="118" width="110" height="25" rx="4" fill="white" stroke="#4A9068" stroke-width="1.2"/>
+        <text x="55" y="131" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">Tráfego Pago /</text>
+        <text x="55" y="141" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">Email MKT / SDR / AM</text>
+
+        <!-- Campanha: Tráfego Direto/SEO -->
+        <line x1="94" y1="165" x2="94" y2="148" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+        <circle cx="94" cy="148" r="4" fill="#4A9068"/>
+        <rect x="36" y="102" width="116" height="22" rx="4" fill="white" stroke="#4A9068" stroke-width="1.2"/>
+        <text x="94" y="117" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">Tráfego Direto / SEO</text>
+
+        <!-- Site Selbetti -->
+        <line x1="188" y1="165" x2="188" y2="148" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+        <circle cx="188" cy="148" r="4" fill="#4A9068"/>
+        <rect x="146" y="126" width="84" height="20" rx="4" fill="white" stroke="#4A9068" stroke-width="1.2"/>
+        <text x="188" y="140" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">Site Selbetti</text>
+
+        <!-- EAD: Plataforma EAD -->
+        <line x1="319" y1="109" x2="319" y2="92" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+        <circle cx="319" cy="92" r="4" fill="#4A9068"/>
+        <rect x="268" y="70" width="102" height="20" rx="4" fill="white" stroke="#4A9068" stroke-width="1.2"/>
+        <text x="319" y="84" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">Plataforma EAD</text>
+
+        <!-- Pagamento: Início CRM auto -->
+        <line x1="516" y1="109" x2="516" y2="92" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+        <circle cx="516" cy="92" r="4" fill="#4A9068"/>
+        <rect x="464" y="70" width="104" height="20" rx="4" fill="white" stroke="#4A9068" stroke-width="1.2"/>
+        <text x="516" y="84" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">Início CRM auto</text>
+
+        <!-- Pagamento: E-mail boas-vindas -->
+        <line x1="551" y1="109" x2="551" y2="70" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+        <circle cx="551" cy="70" r="4" fill="#4A9068"/>
+        <rect x="493" y="46" width="116" height="22" rx="4" fill="white" stroke="#4A9068" stroke-width="1.2"/>
+        <text x="551" y="61" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">E-mail boas-vindas</text>
+
+        <!-- Pagamento: E-mail data da turma -->
+        <line x1="586" y1="109" x2="586" y2="46" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+        <circle cx="586" cy="46" r="4" fill="#4A9068"/>
+        <rect x="528" y="22" width="116" height="22" rx="4" fill="white" stroke="#4A9068" stroke-width="1.2"/>
+        <text x="586" y="37" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">E-mail data da turma</text>
+
+        <!-- Treinamento: Moodle/EAD -->
+        <line x1="780" y1="165" x2="780" y2="146" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+        <circle cx="780" cy="146" r="4" fill="#4A9068"/>
+        <rect x="736" y="124" width="88" height="20" rx="4" fill="white" stroke="#4A9068" stroke-width="1.2"/>
+        <text x="780" y="138" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">Moodle / EAD</text>
+
+        <!-- Treinamento: VM Zabbix (próximo ao Moodle) -->
+        <line x1="828" y1="165" x2="828" y2="128" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+        <circle cx="828" cy="128" r="4" fill="#4A9068"/>
+        <rect x="776" y="104" width="104" height="22" rx="4" fill="white" stroke="#4A9068" stroke-width="1.2"/>
+        <text x="828" y="118" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">VM Zabbix</text>
+        <text x="828" y="128" text-anchor="middle" fill="#666" font-size="7.5">(trein. oficial)</text>
+
+        <!-- HIGH: HubSpot Form -->
+        <line x1="323" y1="271" x2="323" y2="289" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+        <circle cx="323" cy="289" r="4" fill="#2D7A5F"/>
+        <rect x="270" y="291" width="106" height="20" rx="4" fill="white" stroke="#2D7A5F" stroke-width="1.2"/>
+        <text x="323" y="305" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">HubSpot Form</text>
+
+        <!-- HIGH: SDR/AM/CRM -->
+        <line x1="559" y1="271" x2="559" y2="289" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+        <circle cx="559" cy="289" r="4" fill="#2D7A5F"/>
+        <rect x="509" y="291" width="100" height="20" rx="4" fill="white" stroke="#2D7A5F" stroke-width="1.2"/>
+        <text x="559" y="305" text-anchor="middle" fill="#1B4332" font-size="8.5" font-weight="bold">SDR / AM / CRM</text>
+
+        <!-- ===== LEGEND ===== -->
+        <rect x="10" y="350" width="700" height="72" rx="6" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1"/>
+        <text x="22" y="368" fill="#222" font-size="10" font-weight="bold">Legenda</text>
+
+        <rect x="22" y="375" width="12" height="12" rx="2" fill="#1B4332"/>
+        <text x="40" y="385" fill="#333" font-size="9.5">Baixo ticket (automação total)</text>
+
+        <rect x="22" y="395" width="12" height="12" rx="2" fill="#2D7A5F"/>
+        <text x="40" y="405" fill="#333" font-size="9.5">Alto ticket (jornada comercial)</text>
+
+        <rect x="210" y="375" width="12" height="12" rx="2" fill="#C05A10"/>
+        <text x="228" y="385" fill="#333" font-size="9.5">Certificação Zabbix</text>
+
+        <rect x="210" y="395" width="12" height="12" rx="2" fill="#0B5E6E"/>
+        <text x="228" y="405" fill="#333" font-size="9.5">Case de sucesso</text>
+
+        <rect x="380" y="375" width="12" height="12" rx="2" fill="#4A9068" opacity="0.35"/>
+        <rect x="380" y="375" width="12" height="12" rx="2" fill="none" stroke="#4A9068" stroke-width="0.8" stroke-dasharray="3,2"/>
+        <text x="398" y="385" fill="#333" font-size="9.5">Suporte ativo (automação)</text>
+
+        <line x1="380" y1="401" x2="392" y2="401" stroke="#8B1A1A" stroke-width="1.5" stroke-dasharray="4,2"/>
+        <circle cx="392" cy="401" r="3" fill="#8B1A1A"/>
+        <text x="400" y="405" fill="#333" font-size="9.5">Abandono/recusa · retry (low ticket)</text>
+
+        <line x1="570" y1="401" x2="582" y2="401" stroke="#8B4A1A" stroke-width="1.5" stroke-dasharray="4,2"/>
+        <circle cx="582" cy="401" r="3" fill="#8B4A1A"/>
+        <text x="590" y="405" fill="#333" font-size="9.5">Nutrição CRM (high ticket)</text>
+      </svg>
+      </div>
+    </div>
+
       </div>
       <div style="overflow-x:auto;padding:10px 16px 8px">
       <svg id="flow-svg" viewBox="0 0 1100 410" width="100%" style="min-width:860px;display:block;font-family:Arial,sans-serif">
