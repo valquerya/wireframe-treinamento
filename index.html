@@ -236,10 +236,12 @@
     .fc-desc { font-size:12px; color:var(--g3); line-height:1.7; }
     .fc-title { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--g2); margin-bottom:14px; }
     .fc-links { display:flex; flex-direction:column; gap:8px; }
-    .fc-links a { font-size:12px; color:var(--g3); text-decoration:none; cursor:default; }
+    .fc-links a { font-size:12px; color:var(--g3); text-decoration:none; cursor:pointer; }
+    .fc-links a:hover { color:var(--black); text-decoration:underline; }
     .footer-bottom { display:flex; align-items:center; justify-content:space-between; font-size:11px; color:var(--g3); }
     .footer-socials { display:flex; gap:14px; }
-    .footer-socials a { font-size:11px; color:var(--g3); text-decoration:none; border-bottom:1px solid var(--g2); cursor:default; }
+    .footer-socials a { font-size:11px; color:var(--g3); text-decoration:none; border-bottom:1px solid var(--g2); cursor:pointer; }
+    .footer-socials a:hover { color:var(--black); }
 
     /* MOBILE */
     @media (max-width: 768px) {
@@ -292,6 +294,7 @@
   <div class="lr"><div class="ls" style="background:#FF6B00"></div> Anotação de UX</div>
   <div class="lr"><div class="ls" style="background:none;border:2px solid #FF6B00"></div> Item clicável / LP</div>
 </div>
+
 <!-- ── MODAL ── -->
 <div class="overlay" id="modal">
   <div class="modal">
@@ -311,7 +314,7 @@
       <div class="wf-tag" style="margin-bottom:12px">Seus dados</div>
       <div class="form-row">
         <div class="form-field" style="margin-bottom:0"><span class="field-lbl">Nome *</span><div class="field-inp">Seu nome</div></div>
-        <div class="form-field" style="margin-bottom:0"><span class="field-lbl">E-mail *</span><div class="field-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b3d6ded2dadff3d6dec3c1d6c0d29dd0dcde">[email&#160;protected]</a></div></div>
+        <div class="form-field" style="margin-bottom:0"><span class="field-lbl">E-mail *</span><div class="field-inp">seuemail@empresa.com</div></div>
       </div>
       <div class="form-row" style="margin-top:12px">
         <div class="form-field" style="margin-bottom:0"><span class="field-lbl">Telefone *</span><div class="field-inp">(00) 00000-0000</div></div>
@@ -326,6 +329,7 @@
     </div>
   </div>
 </div>
+
 <!-- ══ HEADER (global) ══ -->
 <div class="header">
   <div class="logo" onclick="goTo('listing')">LOGO SELBETTI</div>
@@ -338,10 +342,14 @@
   </div>
   <div class="header-right"></div>
 </div>
-<!-- PAGE 1 — LISTAGEM -->
+
+<!-- ════════════════════════════════════════════
+     PAGE 1 — LISTAGEM
+════════════════════════════════════════════ -->
 <div class="page active" id="page-listing">
   <span class="annot" style="padding-left:48px">Header fixo do site principal Selbetti · item "Treinamentos" ativo</span>
   <span class="annot" style="display:block;margin:6px 16px;padding:8px 12px;background:#FFF3EB;border:1.5px solid #FFB570;border-left:3px solid var(--annot);border-radius:4px;font-size:11px;line-height:1.6;text-transform:none;letter-spacing:0">MOBILE · ATENÇÃO: grande parte do tráfego B2C vem de dispositivos móveis. Esta página (catálogo) precisa de adaptação completa para 1 coluna.</span>
+
   <!-- BANNER -->
   <div class="static-banner">
     <span style="position:absolute;top:10px;left:12px;background:var(--g4);color:var(--white);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:3px;">Banner Principal</span>
@@ -350,12 +358,13 @@
         <span class="s1-tag">Treinamentos Selbetti</span>
         <div class="s1-h1">Certifique-se com quem<br/>é referência no mercado</div>
         <p class="s1-sub">Treinamentos oficiais, práticos e conduzidos por profissionais que vivem a TI todos os dias.</p>
-        <div class="btn-p">Garanta sua vaga!</div>
+        <div class="btn-p" onclick="document.getElementById('listing-form-bottom').scrollIntoView({behavior:'smooth'})">Garanta sua vaga!</div>
       </div>
       <div class="s1-img"><span>IMAGEM / ILUSTRAÇÃO DO BANNER</span></div>
     </div>
   </div>
   <span class="annot" style="padding-left:48px;display:block">Banner fixo. Não alterna. Trocado manualmente pelo time conforme campanha.</span>
+
   <!-- AGENDA -->
   <div class="agenda-fold" id="agenda-section">
     <div class="agenda-fold-inner">
@@ -373,6 +382,7 @@
     </div>
   </div>
   <span class="annot" style="padding-left:48px;display:block">Faixa agenda: fundo em contraste com banner. Imagem à esquerda.</span>
+
   <!-- POR QUE NOS ESCOLHER -->
   <div class="benefits-why-outer" style="background:var(--bg);padding:32px 48px 0;">
     <div style="max-width:1200px;margin:0 auto;">
@@ -405,6 +415,7 @@
       </div>
     </div>
   </div>
+
   <!-- TURMAS CORPORATIVAS -->
   <div style="background:var(--bg);padding:0 48px">
     <div style="max-width:1200px;margin:0 auto;padding:24px 0 0">
@@ -418,6 +429,7 @@
       <span class="annot" style="margin-bottom:0;display:block">Callout turmas fechadas. CTA ancora no formulário.</span>
     </div>
   </div>
+
   <!-- FILTROS -->
   <div class="filter-bar">
     <div class="filter-bar-inner">
@@ -442,18 +454,22 @@
     </div>
     <span class="annot">Filtros por categoria + busca por nome</span>
   </div>
+
   <div style="background:#FFF3EB;border-top:1.5px solid #FFB570;border-bottom:1.5px solid #FFB570;padding:8px 48px;">
     <div style="max-width:1200px;margin:0 auto;font-size:11px;color:var(--annot);font-weight:700;line-height:1.6">
       Produtos low ticket (até R$ 1.800) levam direto para a plataforma EAD · sem LP intermediária. Demais cursos abrem LP com formulário de captura de lead.
     </div>
   </div>
-  <!-- GRID -->
+
+  <!-- GRID DE CURSOS -->
   <div class="section">
     <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
       <div class="sec-count">Exibindo <strong>todos</strong> os cursos</div>
     </div>
     <div class="grid">
-      <div class="card">
+
+      <!-- ZCU → modal (sem LP própria) -->
+      <div class="card" onclick="openModal('Zabbix Certified User (ZCU)', 'Zabbix · 1 dia · Iniciante · Online')">
         <div class="card-cat-bar cat-zabbix"></div>
         <div class="card-thumb"><span class="card-thumb-lbl">Capa do treinamento</span></div>
         <div class="card-body">
@@ -464,6 +480,8 @@
           <div class="card-cta">Ver Treinamento →</div>
         </div>
       </div>
+
+      <!-- ZCS → LP própria (destaque laranja) -->
       <div class="card card-featured" onclick="goTo('curso-zcs')">
         <div class="card-cat-bar cat-zabbix"></div>
         <div class="card-thumb"><span class="card-thumb-lbl">Capa do treinamento</span></div>
@@ -475,7 +493,9 @@
           <div class="card-cta card-cta-featured">Ver Treinamento →</div>
         </div>
       </div>
-      <div class="card">
+
+      <!-- ZCP → modal (sem LP própria ainda) -->
+      <div class="card" onclick="openModal('Zabbix Certified Professional (ZCP)', 'Zabbix · 3 dias · Avançado · Online · Req: ZCS')">
         <div class="card-cat-bar cat-zabbix"></div>
         <div class="card-thumb"><span class="card-thumb-lbl">Capa do treinamento</span></div>
         <div class="card-body">
@@ -486,7 +506,9 @@
           <div class="card-cta">Ver Treinamento →</div>
         </div>
       </div>
-      <div class="card">
+
+      <!-- ZCE → modal (sem LP própria) -->
+      <div class="card" onclick="openModal('Zabbix Certified Expert (ZCE)', 'Zabbix · Avançado · Presencial · Req: ZCP')">
         <div class="card-cat-bar cat-zabbix"></div>
         <div class="card-thumb"><span class="card-thumb-lbl">Capa do treinamento</span></div>
         <div class="card-body">
@@ -497,6 +519,8 @@
           <div class="card-cta">Ver Treinamento →</div>
         </div>
       </div>
+
+      <!-- Exame ZCU → EAD (low ticket) -->
       <div class="card card-ead" onclick="showEad()">
         <div class="card-cat-bar cat-gratis"></div>
         <div class="card-thumb">
@@ -511,7 +535,9 @@
           <div class="card-cta card-cta-ead">Acessar →</div>
         </div>
       </div>
-      <div class="card">
+
+      <!-- Grafana → modal -->
+      <div class="card" onclick="openModal('Grafana', 'Observabilidade · Avançado · Online')">
         <div class="card-cat-bar cat-obs"></div>
         <div class="card-thumb"><span class="card-thumb-lbl">Capa do treinamento</span></div>
         <div class="card-body">
@@ -522,15 +548,17 @@
           <div class="card-cta">Ver Treinamento →</div>
         </div>
       </div>
+
     </div>
     <div style="text-align:center;margin-top:36px">
-      <div class="btn-s" style="padding:12px 40px;font-size:13px">Carregar mais treinamentos</div>
+      <div class="btn-s" style="padding:12px 40px;font-size:13px;cursor:pointer;">Carregar mais treinamentos</div>
     </div>
-    <span class="annot" style="margin-top:10px">ZCS tem LP própria (clique ativo). Exame ZCU é low ticket → direto pro EAD.</span>
+    <span class="annot" style="margin-top:10px">ZCS tem LP própria (borda laranja = clicável → goTo). ZCU, ZCP, ZCE e Grafana abrem modal. Exame ZCU é low ticket → direto pro EAD.</span>
   </div>
-  <!-- FORM FINAL -->
+
+  <!-- FORM FINAL LISTAGEM -->
   <div class="bottom-cta-section" id="listing-form-bottom">
-    <span class="annot" style="padding:0;display:block;margin-bottom:16px;color:#FFB570;border-color:#FFB570">Formulário da pagina · página de listagem. Converte quem navegou pelos cursos e quer falar com especialista ou pedir turma fechada</span>
+    <span class="annot" style="padding:0;display:block;margin-bottom:16px;color:#FFB570;border-color:#FFB570">Formulário da página de listagem. Converte quem navegou pelos cursos e quer falar com especialista ou pedir turma fechada.</span>
     <div class="bottom-cta-inner">
       <div class="bottom-cta-text">
         <strong>Fale com nosso time<br/>de especialistas.</strong>
@@ -549,7 +577,7 @@
           <div><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
           <div><span class="if-lbl">Telefone *</span><div class="if-inp">(00) 00000-0000</div></div>
         </div>
-        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2b4e464a42476b4e465b594e584a05484446">[email&#160;protected]</a></div></div>
+        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp">seuemail@empresa.com</div></div>
         <div class="if-row">
           <div><span class="if-lbl">Empresa</span><div class="if-inp">Nome da empresa</div></div>
           <div><span class="if-lbl">Cargo</span><div class="if-inp">Seu cargo</div></div>
@@ -560,11 +588,12 @@
       </div>
     </div>
   </div>
+
   <div class="footer">
     <div class="footer-inner">
       <div class="footer-cols">
         <div><div class="fc-logo">LOGO SELBETTI</div><p class="fc-desc">Treinamentos oficiais, práticos e conduzidos por profissionais que vivem a TI todos os dias. A Trainer Oficial Zabbix mais experiente do Brasil.</p></div>
-        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a>Carreira Zabbix</a><a>Observabilidade</a><a>Cibersegurança</a><a>Gratuitos</a><a>Ver agenda completa</a></div></div>
+        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a onclick="goTo('carreira-zabbix')">Carreira Zabbix</a><a>Observabilidade</a><a>Cibersegurança</a><a>Gratuitos</a><a>Ver agenda completa</a></div></div>
         <div><div class="fc-title">Selbetti</div><div class="fc-links"><a>IT Solutions</a><a>Selbetti Datacenter</a><a>Cybersecurity SOC</a><a>Business Consulting</a><a>Sobre nós</a></div></div>
         <div><div class="fc-title">Suporte</div><div class="fc-links"><a>Central de Ajuda</a><a>Fale Conosco</a><a>Blog Selbetti</a><a>Política de Privacidade</a><a>Termos de Uso</a></div></div>
       </div>
@@ -574,16 +603,21 @@
       </div>
     </div>
   </div>
-</div>
-<!-- BOTÃO FLUTUANTE TRILHA ZABBIX -->
+</div><!-- /page-listing -->
+
+<!-- ════════════════════════════════════════════
+     BOTÃO FLUTUANTE TRILHA ZABBIX
+════════════════════════════════════════════ -->
 <div id="btn-trilha" style="display:none;position:fixed;bottom:28px;right:calc(50% - 720px + 24px);z-index:8000;cursor:pointer;background:rgba(255,255,255,.95);color:var(--annot);font-size:11px;font-weight:700;padding:9px 16px;border-radius:999px;box-shadow:0 2px 12px rgba(0,0,0,.15);border:1.5px dashed var(--annot);letter-spacing:.04em;transition:all .2s;backdrop-filter:blur(4px);" onclick="goTo('carreira-zabbix')" onmouseover="this.style.background='#FFF3EB'" onmouseout="this.style.background='rgba(255,255,255,.95)'">
   Ver proposta: página Carreira Zabbix
 </div>
-<span class="annot" style="display:none" id="annot-btn-trilha">Botão flutuante discreto (laranja pontilhado). Só aparece após 300px de scroll. Sinalizador interno — não é elemento final do site.</span>
 
-<!-- PAGE 2 — LP CURSO ZCS -->
+<!-- ════════════════════════════════════════════
+     PAGE 2 — LP CURSO ZCS
+════════════════════════════════════════════ -->
 <div class="page" id="page-curso-zcs">
   <span class="annot" style="display:block;margin:6px 16px;padding:8px 12px;background:#FFF3EB;border:1.5px solid #FFB570;border-left:3px solid var(--annot);border-radius:4px;font-size:11px;line-height:1.6;text-transform:none;letter-spacing:0">MOBILE · ATENÇÃO: grande parte do tráfego B2C vem de dispositivos móveis. Esta página (LP do curso) precisa de adaptação completa para 1 coluna.</span>
+
   <div style="background:var(--white);border-bottom:1px solid var(--fill3)">
     <div class="breadcrumb">
       <a onclick="goTo('listing')">Treinamentos</a><span>/</span>
@@ -591,6 +625,7 @@
       <strong>Zabbix Certified Specialist</strong>
     </div>
   </div>
+
   <div class="hero">
     <div class="hero-inner">
       <div>
@@ -646,7 +681,7 @@
                 <div><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
                 <div><span class="if-lbl">Telefone *</span><div class="if-inp">(00) 00000-0000</div></div>
               </div>
-              <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afff7fbf3f6dafff7eae8ffe9fbb4f9f5f7">[email&#160;protected]</a></div></div>
+              <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp">seuemail@empresa.com</div></div>
               <div class="if-field"><span class="if-lbl">Cargo</span><div class="if-inp">Seu cargo</div></div>
               <div class="if-consent"><div class="if-consent-box"></div><p>Ao enviar, você concorda com nossa <strong>Política de Privacidade</strong></p></div>
               <div class="if-cta">Quero minha vaga →</div>
@@ -658,6 +693,7 @@
       </div>
     </div>
   </div>
+
   <div class="lp-content">
     <div class="lp-main">
       <div class="sec-h">Por que escolher nossos treinamentos</div>
@@ -669,6 +705,7 @@
         <div class="benefit-card2"><div class="bc-num">05</div><strong>Turmas Corporativas Exclusivas</strong><p>Capacitação personalizada e exclusiva para sua organização. Consulte nossos especialistas.</p></div>
         <div class="benefit-card2"><div class="bc-num">06</div><strong>Networking</strong><p>Profissionais de diferentes empresas e segmentos que compartilham desafios semelhantes aos seus.</p></div>
       </div>
+
       <div class="corp-callout">
         <div class="corp-callout-text">
           <strong>Precisa de uma turma exclusiva?</strong>
@@ -677,6 +714,7 @@
         <div class="corp-callout-cta" onclick="document.getElementById('form-bottom').scrollIntoView({behavior:'smooth'})">Quero uma turma para meu time →</div>
       </div>
       <span class="annot" style="margin-bottom:24px;display:block">Destaque para turmas corporativas, principal vetor de ticket alto para a Selbetti</span>
+
       <div class="sec-h">Conteúdo</div>
       <div class="syllabus">
         <div class="day-block">
@@ -729,6 +767,7 @@
         </div>
       </div>
       <span class="annot">SANFONA. Dia 1 começa expandido.</span>
+
       <div class="midform-section">
         <span class="annot" style="margin-bottom:12px;display:block">Formulário 2 — meio da página. Captura quem já leu conteúdo suficiente para converter.</span>
         <div class="midform-inner">
@@ -748,7 +787,7 @@
                 <div><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
                 <div><span class="if-lbl">Sobrenome *</span><div class="if-inp">Sobrenome</div></div>
               </div>
-              <div class="if-field"><span class="if-lbl">E-mail corporativo *</span><div class="if-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2e4b434f47426e4b435e5c4b5d4f004d4143">[email&#160;protected]</a></div></div>
+              <div class="if-field"><span class="if-lbl">E-mail corporativo *</span><div class="if-inp">seuemail@empresa.com</div></div>
               <div class="if-row">
                 <div><span class="if-lbl">Telefone *</span><div class="if-inp">(00) 00000-0000</div></div>
                 <div><span class="if-lbl">Empresa</span><div class="if-inp">Nome da empresa</div></div>
@@ -760,6 +799,7 @@
           </div>
         </div>
       </div>
+
       <div class="sec-h" style="margin-top:36px">Treinamentos oficiais Zabbix</div>
       <p style="font-size:12px;color:var(--g3);margin-bottom:24px;margin-top:-10px;font-style:italic">Como é a carreira Zabbix que a Selbetti fornece?</p>
       <div style="overflow-x:auto;margin-bottom:8px">
@@ -793,7 +833,8 @@
           </div>
         </div>
       </div>
-      <span class="annot" style="margin-bottom:32px;display:block">Diagrama de carreira Zabbix em escada. Modelo segue padrão já utilizado pelo fabricante.</span>
+      <span class="annot" style="margin-bottom:32px;display:block">Diagrama de carreira Zabbix em escada.</span>
+
       <div class="sec-h" style="margin-top:8px">Perguntas Frequentes</div>
       <div class="faq">
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Como funciona a carreira Zabbix?</span><span>▾</span></div><div class="faq-a open">A carreira Zabbix é composta de 4 níveis de certificações que iniciam do Certified User até o Certified Expert. É uma trilha que a partir do terceiro nível, o Professional, é necessário cumprir o nível anterior para prosseguir. Apenas User e Specialist não têm requisitos.</div></div>
@@ -803,16 +844,18 @@
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Os treinamentos são online ou presenciais?</span><span>▾</span></div><div class="faq-a">Prioritariamente online ao vivo. Para empresas, é possível agendar turmas fechadas exclusivas, online ou presenciais na sua região.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Qual a diferença entre os cursos?</span><span>▾</span></div><div class="faq-a">A trilha de treinamento Zabbix é um programa desenvolvido para participantes com diferentes habilidades e necessidades. Existem requisitos para alguns cursos — por exemplo, para receber o certificado de Profissional, é obrigatório ter concluído o de Especialista.</div></div>
       </div>
+
       <div class="sec-h" style="margin-top:8px">Cursos Relacionados</div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px">
-        <div class="card"><div class="card-cat-bar cat-zabbix"></div><div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">ZCU</span></div><div class="card-body"><span class="card-cat-label cat-zabbix">Zabbix</span><div class="card-title" style="font-size:13px">Zabbix Certified User (ZCU)</div><div class="card-desc" style="-webkit-line-clamp:1">Introdução à interface do Zabbix. Sem pré-requisitos.</div><div class="card-cta">Ver Treinamento</div></div></div>
-        <div class="card"><div class="card-cat-bar cat-zabbix"></div><div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">ZCP</span></div><div class="card-body"><span class="card-cat-label cat-zabbix">Zabbix</span><div class="card-title" style="font-size:13px">Zabbix Certified Professional (ZCP)</div><div class="card-desc" style="-webkit-line-clamp:1">Monitoramento avançado. Req: ZCS.</div><div class="card-cta">Ver Treinamento</div></div></div>
-        <div class="card"><div class="card-cat-bar cat-obs"></div><div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">Grafana</span></div><div class="card-body"><span class="card-cat-label cat-obs">Grafana</span><div class="card-title" style="font-size:13px">Grafana</div><div class="card-desc" style="-webkit-line-clamp:1">Dashboards profissionais e visualização de métricas.</div><div class="card-cta">Ver Treinamento</div></div></div>
+        <div class="card" onclick="openModal('Zabbix Certified User (ZCU)', 'Zabbix · 1 dia · Iniciante · Online')"><div class="card-cat-bar cat-zabbix"></div><div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">ZCU</span></div><div class="card-body"><span class="card-cat-label cat-zabbix">Zabbix</span><div class="card-title" style="font-size:13px">Zabbix Certified User (ZCU)</div><div class="card-desc" style="-webkit-line-clamp:1">Introdução à interface do Zabbix. Sem pré-requisitos.</div><div class="card-cta">Ver Treinamento</div></div></div>
+        <div class="card" onclick="openModal('Zabbix Certified Professional (ZCP)', 'Zabbix · 3 dias · Avançado · Online · Req: ZCS')"><div class="card-cat-bar cat-zabbix"></div><div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">ZCP</span></div><div class="card-body"><span class="card-cat-label cat-zabbix">Zabbix</span><div class="card-title" style="font-size:13px">Zabbix Certified Professional (ZCP)</div><div class="card-desc" style="-webkit-line-clamp:1">Monitoramento avançado. Req: ZCS.</div><div class="card-cta">Ver Treinamento</div></div></div>
+        <div class="card" onclick="openModal('Grafana', 'Observabilidade · Avançado · Online')"><div class="card-cat-bar cat-obs"></div><div class="card-thumb" style="height:100px"><span class="card-thumb-lbl">Grafana</span></div><div class="card-body"><span class="card-cat-label cat-obs">Grafana</span><div class="card-title" style="font-size:13px">Grafana</div><div class="card-desc" style="-webkit-line-clamp:1">Dashboards profissionais e visualização de métricas.</div><div class="card-cta">Ver Treinamento</div></div></div>
       </div>
-      <span class="annot" style="margin-bottom:8px;display:block">Cursos relacionados. Manter navegação do usuário.</span>
+      <span class="annot" style="margin-bottom:8px;display:block">Cursos relacionados clicáveis (abrem modal). Manter navegação do usuário.</span>
     </div>
   </div>
-  <!-- FORM 3 BOTTOM -->
+
+  <!-- FORM 3 BOTTOM LP ZCS -->
   <div class="bottom-cta-section" id="form-bottom">
     <span class="annot" style="padding:0;display:block;margin-bottom:16px;color:#FFB570;border-color:#FFB570">Formulário 3 · seção final antes do rodapé da LP.</span>
     <div class="bottom-cta-inner">
@@ -830,7 +873,7 @@
         <div class="bf-title">Fale com um especialista</div>
         <div class="bf-sub">Turma individual ou corporativa.</div>
         <div class="if-field"><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
-        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="acc9c1cdc5c0ecc9c1dcdec9dfcd82cfc3c1">[email&#160;protected]</a></div></div>
+        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp">seuemail@empresa.com</div></div>
         <div class="if-field"><span class="if-lbl">Telefone / WhatsApp *</span><div class="if-inp">(00) 00000-0000</div></div>
         <div class="if-field"><span class="if-lbl">Cargo</span><div class="if-inp">Seu cargo</div></div>
         <div class="if-field"><span class="if-lbl">Mensagem / dúvida</span><div class="if-inp" style="height:60px;align-items:flex-start;padding-top:10px;color:var(--g2)">Escreva aqui sua dúvida ou interesse...</div></div>
@@ -839,11 +882,12 @@
       </div>
     </div>
   </div>
+
   <div class="footer">
     <div class="footer-inner">
       <div class="footer-cols">
         <div><div class="fc-logo">LOGO SELBETTI</div><p class="fc-desc">Treinamentos oficiais, práticos e conduzidos por profissionais que vivem a TI todos os dias. A Trainer Oficial Zabbix mais experiente do Brasil.</p></div>
-        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a>Carreira Zabbix</a><a>Observabilidade</a><a>Cibersegurança</a><a>Gratuitos</a><a>Ver agenda completa</a></div></div>
+        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a onclick="goTo('carreira-zabbix')">Carreira Zabbix</a><a onclick="goTo('listing')">Observabilidade</a><a onclick="goTo('listing')">Cibersegurança</a><a onclick="goTo('listing')">Gratuitos</a><a>Ver agenda completa</a></div></div>
         <div><div class="fc-title">Selbetti</div><div class="fc-links"><a>IT Solutions</a><a>Selbetti Datacenter</a><a>Cybersecurity SOC</a><a>Business Consulting</a><a>Sobre nós</a></div></div>
         <div><div class="fc-title">Suporte</div><div class="fc-links"><a>Central de Ajuda</a><a>Fale Conosco</a><a>Blog Selbetti</a><a>Política de Privacidade</a><a>Termos de Uso</a></div></div>
       </div>
@@ -853,8 +897,11 @@
       </div>
     </div>
   </div>
-</div>
-<!-- PAGE 3 — TRILHA ZABBIX -->
+</div><!-- /page-curso-zcs -->
+
+<!-- ════════════════════════════════════════════
+     PAGE 3 — TRILHA ZABBIX
+════════════════════════════════════════════ -->
 <div class="page" id="page-carreira-zabbix">
   <span class="annot" style="display:block;margin:6px 16px;padding:8px 12px;background:#FFF3EB;border:1.5px solid #FFB570;border-left:3px solid var(--annot);border-radius:4px;font-size:11px;line-height:1.6;text-transform:none;letter-spacing:0">PAGINA INDEPENDENTE — Proposta da equipe para fortalecer o posicionamento da Selbetti na Carreira Zabbix. Não está atrelada ao fluxo principal do site. Apresentar como opção.</span>
 
@@ -874,195 +921,115 @@
   </div>
   <span class="annot" style="padding-left:48px;display:block">Hero escuro. Posicionamento institucional da Selbetti como Trainer Oficial.</span>
 
-  <!-- SOBRE A TRILHA -->
+  <!-- SOBRE A TRILHA / BADGES HEXAGONAIS -->
   <div style="background:var(--white);border-bottom:2px solid var(--fill3);padding:56px 48px;">
     <div style="max-width:1100px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:40px;">
         <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:10px;">A trilha oficial</div>
         <p style="font-size:13px;color:var(--g3);max-width:520px;margin:0 auto;line-height:1.7;">A trilha de certificações Zabbix é o caminho mais direto para se tornar referência em monitoramento de infraestrutura. Cada nível aprofunda o anterior e abre novas oportunidades de mercado.</p>
       </div>
-
-      <!-- TRILHA COM BADGES HEXAGONAIS -->
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-bottom:8px;padding-bottom:8px;">
         <div style="position:absolute;top:64px;left:12.5%;width:75%;height:3px;background:var(--g1);z-index:0;"></div>
-
-        <!-- ZCU hex -->
         <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 12px;position:relative;z-index:1;">
-          <svg width="96" height="108" viewBox="0 0 96 108" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#D4D4D4" stroke="#999" stroke-width="2.5"/>
-            <polygon points="48,14 82,33 82,75 48,94 14,75 14,33" fill="#C8C8C8"/>
-            <text x="48" y="50" text-anchor="middle" font-size="13" font-weight="900" fill="#444" font-family="Arial">ZCU</text>
-            <text x="48" y="64" text-anchor="middle" font-size="8" font-weight="700" fill="#666" font-family="Arial">CERTIFIED</text>
-            <text x="48" y="75" text-anchor="middle" font-size="8" font-weight="700" fill="#666" font-family="Arial">USER</text>
-          </svg>
-          <div style="text-align:center;">
-            <div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Certified User</div>
-            <div style="font-size:10px;color:var(--g3);margin-bottom:5px;">Sem pré-requisitos</div>
-            <span style="font-size:9px;font-weight:700;background:var(--fill3);color:var(--g3);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;">Iniciante</span>
-          </div>
+          <svg width="96" height="108" viewBox="0 0 96 108" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#D4D4D4" stroke="#999" stroke-width="2.5"/><polygon points="48,14 82,33 82,75 48,94 14,75 14,33" fill="#C8C8C8"/><text x="48" y="50" text-anchor="middle" font-size="13" font-weight="900" fill="#444" font-family="Arial">ZCU</text><text x="48" y="64" text-anchor="middle" font-size="8" font-weight="700" fill="#666" font-family="Arial">CERTIFIED</text><text x="48" y="75" text-anchor="middle" font-size="8" font-weight="700" fill="#666" font-family="Arial">USER</text></svg>
+          <div style="text-align:center;"><div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Certified User</div><div style="font-size:10px;color:var(--g3);margin-bottom:5px;">Sem pré-requisitos</div><span style="font-size:9px;font-weight:700;background:var(--fill3);color:var(--g3);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;">Iniciante</span></div>
         </div>
-
-        <!-- ZCS hex -->
         <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 12px;position:relative;z-index:1;">
-          <svg width="96" height="108" viewBox="0 0 96 108" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#C8C8C8" stroke="#666" stroke-width="2.5"/>
-            <polygon points="48,14 82,33 82,75 48,94 14,75 14,33" fill="#BBBBBB"/>
-            <text x="48" y="50" text-anchor="middle" font-size="13" font-weight="900" fill="#333" font-family="Arial">ZCS</text>
-            <text x="48" y="64" text-anchor="middle" font-size="8" font-weight="700" fill="#555" font-family="Arial">CERTIFIED</text>
-            <text x="48" y="75" text-anchor="middle" font-size="7" font-weight="700" fill="#555" font-family="Arial">SPECIALIST</text>
-          </svg>
-          <div style="text-align:center;">
-            <div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Certified Specialist</div>
-            <div style="font-size:10px;color:var(--g3);margin-bottom:5px;">Sem pré-requisitos</div>
-            <span style="font-size:9px;font-weight:700;background:var(--fill3);color:var(--g3);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;">Iniciante</span>
-          </div>
+          <svg width="96" height="108" viewBox="0 0 96 108" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#C8C8C8" stroke="#666" stroke-width="2.5"/><polygon points="48,14 82,33 82,75 48,94 14,75 14,33" fill="#BBBBBB"/><text x="48" y="50" text-anchor="middle" font-size="13" font-weight="900" fill="#333" font-family="Arial">ZCS</text><text x="48" y="64" text-anchor="middle" font-size="8" font-weight="700" fill="#555" font-family="Arial">CERTIFIED</text><text x="48" y="75" text-anchor="middle" font-size="7" font-weight="700" fill="#555" font-family="Arial">SPECIALIST</text></svg>
+          <div style="text-align:center;"><div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Certified Specialist</div><div style="font-size:10px;color:var(--g3);margin-bottom:5px;">Sem pré-requisitos</div><span style="font-size:9px;font-weight:700;background:var(--fill3);color:var(--g3);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;">Iniciante</span></div>
         </div>
-
-        <!-- ZCP hex -->
         <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 12px;position:relative;z-index:1;">
-          <svg width="96" height="108" viewBox="0 0 96 108" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#666" stroke="#444" stroke-width="2.5"/>
-            <polygon points="48,14 82,33 82,75 48,94 14,75 14,33" fill="#555"/>
-            <text x="48" y="50" text-anchor="middle" font-size="13" font-weight="900" fill="#fff" font-family="Arial">ZCP</text>
-            <text x="48" y="64" text-anchor="middle" font-size="8" font-weight="700" fill="#ccc" font-family="Arial">CERTIFIED</text>
-            <text x="48" y="75" text-anchor="middle" font-size="7" font-weight="700" fill="#ccc" font-family="Arial">PROFESSIONAL</text>
-          </svg>
-          <div style="text-align:center;">
-            <div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Certified Professional</div>
-            <div style="font-size:10px;color:var(--g3);margin-bottom:5px;">Req: ZCS</div>
-            <span style="font-size:9px;font-weight:700;background:var(--g3);color:var(--white);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;">Avançado</span>
-          </div>
+          <svg width="96" height="108" viewBox="0 0 96 108" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#666" stroke="#444" stroke-width="2.5"/><polygon points="48,14 82,33 82,75 48,94 14,75 14,33" fill="#555"/><text x="48" y="50" text-anchor="middle" font-size="13" font-weight="900" fill="#fff" font-family="Arial">ZCP</text><text x="48" y="64" text-anchor="middle" font-size="8" font-weight="700" fill="#ccc" font-family="Arial">CERTIFIED</text><text x="48" y="75" text-anchor="middle" font-size="7" font-weight="700" fill="#ccc" font-family="Arial">PROFESSIONAL</text></svg>
+          <div style="text-align:center;"><div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Certified Professional</div><div style="font-size:10px;color:var(--g3);margin-bottom:5px;">Req: ZCS</div><span style="font-size:9px;font-weight:700;background:var(--g3);color:var(--white);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;">Avançado</span></div>
         </div>
-
-        <!-- ZCE hex -->
         <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 12px;position:relative;z-index:1;">
-          <svg width="96" height="108" viewBox="0 0 96 108" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#222" stroke="#111" stroke-width="2.5"/>
-            <polygon points="48,14 82,33 82,75 48,94 14,75 14,33" fill="#1a1a1a"/>
-            <text x="48" y="50" text-anchor="middle" font-size="13" font-weight="900" fill="#fff" font-family="Arial">ZCE</text>
-            <text x="48" y="64" text-anchor="middle" font-size="8" font-weight="700" fill="#aaa" font-family="Arial">CERTIFIED</text>
-            <text x="48" y="75" text-anchor="middle" font-size="8" font-weight="700" fill="#aaa" font-family="Arial">EXPERT</text>
-          </svg>
-          <div style="text-align:center;">
-            <div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Certified Expert</div>
-            <div style="font-size:10px;color:var(--g3);margin-bottom:5px;">Req: ZCP</div>
-            <span style="font-size:9px;font-weight:700;background:var(--black);color:var(--white);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;">Expert</span>
-          </div>
+          <svg width="96" height="108" viewBox="0 0 96 108" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#222" stroke="#111" stroke-width="2.5"/><polygon points="48,14 82,33 82,75 48,94 14,75 14,33" fill="#1a1a1a"/><text x="48" y="50" text-anchor="middle" font-size="13" font-weight="900" fill="#fff" font-family="Arial">ZCE</text><text x="48" y="64" text-anchor="middle" font-size="8" font-weight="700" fill="#aaa" font-family="Arial">CERTIFIED</text><text x="48" y="75" text-anchor="middle" font-size="8" font-weight="700" fill="#aaa" font-family="Arial">EXPERT</text></svg>
+          <div style="text-align:center;"><div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Certified Expert</div><div style="font-size:10px;color:var(--g3);margin-bottom:5px;">Req: ZCP</div><span style="font-size:9px;font-weight:700;background:var(--black);color:var(--white);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;">Expert</span></div>
         </div>
       </div>
       <div style="text-align:center;font-size:11px;color:var(--g3);margin-bottom:16px;">ZCU e ZCS não exigem conhecimento prévio em Zabbix · ZCP requer ZCS · ZCE requer ZCP</div>
-      <span class="annot" style="margin-bottom:24px;display:block">Badges hexagonais: placeholder do formato oficial do fabricante. Os badges reais são emitidos pelo fabricante após aprovação.</span>
+      <span class="annot" style="margin-bottom:24px;display:block">Badges hexagonais: placeholder do formato oficial do fabricante.</span>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">Trilha com badges hexagonais. Escada de carreira fica exclusiva na LP do ZCS, onde contextualiza a progressão para quem já escolheu um curso.</span>
 
   <!-- OS 4 CURSOS -->
   <div style="background:var(--bg);padding:56px 48px;" id="trilha-cursos">
     <div style="max-width:1100px;margin:0 auto;">
       <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:10px;">Os cursos</div>
       <div style="font-size:24px;font-weight:900;color:var(--black);margin-bottom:32px;">Conheça cada nível da trilha</div>
-
       <div style="display:flex;flex-direction:column;gap:16px;">
 
         <!-- ZCU -->
-        <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:6px 1fr;">
+        <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:6px 1fr;cursor:pointer;" onclick="openModal('Zabbix Certified User (ZCU)', 'Zabbix · 1 dia · Iniciante · Online')">
           <div style="background:var(--g2);"></div>
           <div style="padding:24px 28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;">
             <div>
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
                 <svg width="44" height="50" viewBox="0 0 96 108" style="flex-shrink:0"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#D4D4D4" stroke="#999" stroke-width="2.5"/><text x="48" y="58" text-anchor="middle" font-size="14" font-weight="900" fill="#444" font-family="Arial">ZCU</text></svg>
-                <div>
-                  <div style="font-size:16px;font-weight:800;color:var(--black);">Zabbix Certified User</div>
-                  <div style="font-size:11px;color:var(--g3);">Nível 1 · Sem pré-requisitos · 1 dia</div>
-                </div>
+                <div><div style="font-size:16px;font-weight:800;color:var(--black);">Zabbix Certified User</div><div style="font-size:11px;color:var(--g3);">Nível 1 · Sem pré-requisitos · 1 dia</div></div>
               </div>
               <p style="font-size:13px;color:var(--g3);line-height:1.7;margin-bottom:14px;">Introdução à plataforma Zabbix. O aluno aprende a navegar na interface, interpretar dashboards, configurar alertas e entender o fluxo básico de monitoramento. Ideal para quem está tendo o primeiro contato com Zabbix.</p>
-              <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                <span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Online ao vivo</span>
-                <span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Exame disponível</span>
-                <span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Sem pré-req</span>
-              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;"><span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Online ao vivo</span><span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Exame disponível</span><span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Sem pré-req</span></div>
             </div>
             <div style="display:flex;flex-direction:column;gap:8px;min-width:140px;">
-              <div class="btn-block" style="margin:0;">Ver treinamento</div>
+              <div class="btn-block" style="margin:0;" onclick="event.stopPropagation();openModal('Zabbix Certified User (ZCU)', 'Zabbix · 1 dia · Iniciante · Online')">Ver treinamento</div>
               <div style="font-size:10px;color:var(--g3);text-align:center;">Turmas abertas e fechadas</div>
             </div>
           </div>
         </div>
 
-        <!-- ZCS -->
-        <div style="background:var(--white);border:2px solid var(--annot);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:6px 1fr;box-shadow:0 2px 12px rgba(255,107,0,.12);" onclick="goTo('curso-zcs')">
+        <!-- ZCS (destaque laranja → LP própria) -->
+        <div style="background:var(--white);border:2px solid var(--annot);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:6px 1fr;box-shadow:0 2px 12px rgba(255,107,0,.12);cursor:pointer;" onclick="goTo('curso-zcs')">
           <div style="background:var(--g3);"></div>
           <div style="padding:24px 28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;">
             <div>
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
                 <svg width="44" height="50" viewBox="0 0 96 108" style="flex-shrink:0"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#C8C8C8" stroke="#666" stroke-width="2.5"/><text x="48" y="58" text-anchor="middle" font-size="14" font-weight="900" fill="#333" font-family="Arial">ZCS</text></svg>
-                <div>
-                  <div style="font-size:16px;font-weight:800;color:var(--black);">Zabbix Certified Specialist</div>
-                  <div style="font-size:11px;color:var(--g3);">Nível 2 · Sem pré-requisitos · 5 dias</div>
-                </div>
+                <div><div style="font-size:16px;font-weight:800;color:var(--black);">Zabbix Certified Specialist</div><div style="font-size:11px;color:var(--g3);">Nível 2 · Sem pré-requisitos · 5 dias</div></div>
               </div>
               <p style="font-size:13px;color:var(--g3);line-height:1.7;margin-bottom:14px;">Treinamento principal da trilha. Abrange arquitetura do Zabbix, configuração de hosts, coleta de dados com múltiplos protocolos, triggers, templates, proxies e visualização. Prepara o profissional para ambientes reais de monitoramento.</p>
-              <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                <span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Online ao vivo</span>
-                <span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Exame incluído</span>
-                <span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Sem pré-req</span>
-              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;"><span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Online ao vivo</span><span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Exame incluído</span><span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Sem pré-req</span></div>
             </div>
             <div style="display:flex;flex-direction:column;gap:8px;min-width:140px;">
-              <div class="btn-block" style="margin:0;background:var(--annot);">Ver treinamento →</div>
+              <div class="btn-block" style="margin:0;background:var(--annot);" onclick="event.stopPropagation();goTo('curso-zcs')">Ver treinamento →</div>
               <div style="font-size:10px;color:var(--g3);text-align:center;">Turmas abertas e fechadas</div>
             </div>
           </div>
         </div>
 
         <!-- ZCP -->
-        <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:6px 1fr;">
+        <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:6px 1fr;cursor:pointer;" onclick="openModal('Zabbix Certified Professional (ZCP)', 'Zabbix · 3 dias · Avançado · Online · Req: ZCS')">
           <div style="background:var(--g4);"></div>
           <div style="padding:24px 28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;">
             <div>
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
                 <svg width="44" height="50" viewBox="0 0 96 108" style="flex-shrink:0"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#666" stroke="#444" stroke-width="2.5"/><text x="48" y="58" text-anchor="middle" font-size="14" font-weight="900" fill="#fff" font-family="Arial">ZCP</text></svg>
-                <div>
-                  <div style="font-size:16px;font-weight:800;color:var(--black);">Zabbix Certified Professional</div>
-                  <div style="font-size:11px;color:var(--g3);">Nível 3 · Req: ZCS · 3 dias</div>
-                </div>
+                <div><div style="font-size:16px;font-weight:800;color:var(--black);">Zabbix Certified Professional</div><div style="font-size:11px;color:var(--g3);">Nível 3 · Req: ZCS · 3 dias</div></div>
               </div>
               <p style="font-size:13px;color:var(--g3);line-height:1.7;margin-bottom:14px;">Nível avançado da trilha. Aprofunda em Low-Level Discovery, triggers complexas, Zabbix Proxy em escala, monitoramento SNMP, VMware e ajuste de performance. Para quem já atua com Zabbix e quer evoluir.</p>
-              <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                <span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Online ao vivo</span>
-                <span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Exame incluído</span>
-                <span style="font-size:10px;font-weight:700;background:var(--g3);color:var(--white);padding:3px 10px;border-radius:3px;">Req: ZCS</span>
-              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;"><span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Online ao vivo</span><span style="font-size:10px;font-weight:700;background:var(--fill3);color:var(--g3);padding:3px 10px;border-radius:3px;">Exame incluído</span><span style="font-size:10px;font-weight:700;background:var(--g3);color:var(--white);padding:3px 10px;border-radius:3px;">Req: ZCS</span></div>
             </div>
             <div style="display:flex;flex-direction:column;gap:8px;min-width:140px;">
-              <div class="btn-block" style="margin:0;">Ver treinamento</div>
+              <div class="btn-block" style="margin:0;" onclick="event.stopPropagation();openModal('Zabbix Certified Professional (ZCP)', 'Zabbix · 3 dias · Avançado · Online · Req: ZCS')">Ver treinamento</div>
               <div style="font-size:10px;color:var(--g3);text-align:center;">Turmas abertas e fechadas</div>
             </div>
           </div>
         </div>
 
         <!-- ZCE -->
-        <div style="background:var(--black);border:1.5px solid var(--g3);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:6px 1fr;">
+        <div style="background:var(--black);border:1.5px solid var(--g3);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:6px 1fr;cursor:pointer;" onclick="openModal('Zabbix Certified Expert (ZCE)', 'Zabbix · Avançado · Presencial · Req: ZCP')">
           <div style="background:var(--annot);"></div>
           <div style="padding:24px 28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;">
             <div>
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
                 <svg width="44" height="50" viewBox="0 0 96 108" style="flex-shrink:0"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#222" stroke="#111" stroke-width="2.5"/><text x="48" y="58" text-anchor="middle" font-size="14" font-weight="900" fill="#fff" font-family="Arial">ZCE</text></svg>
-                <div>
-                  <div style="font-size:16px;font-weight:800;color:var(--white);">Zabbix Certified Expert</div>
-                  <div style="font-size:11px;color:var(--g2);">Nível máximo · Req: ZCP · Presencial</div>
-                </div>
+                <div><div style="font-size:16px;font-weight:800;color:var(--white);">Zabbix Certified Expert</div><div style="font-size:11px;color:var(--g2);">Nível máximo · Req: ZCP · Presencial</div></div>
               </div>
               <p style="font-size:13px;color:var(--g2);line-height:1.7;margin-bottom:14px;">O nível mais alto da carreira Zabbix. Arquitetura de alta disponibilidade, tuning avançado, troubleshooting em ambientes complexos e HA clustering. Formação para quem quer ser referência absoluta em Zabbix.</p>
-              <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                <span style="font-size:10px;font-weight:700;background:var(--g4);color:var(--g1);padding:3px 10px;border-radius:3px;">Presencial</span>
-                <span style="font-size:10px;font-weight:700;background:var(--g4);color:var(--g1);padding:3px 10px;border-radius:3px;">Exame incluído</span>
-                <span style="font-size:10px;font-weight:700;background:var(--annot);color:var(--white);padding:3px 10px;border-radius:3px;">Req: ZCP</span>
-              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;"><span style="font-size:10px;font-weight:700;background:var(--g4);color:var(--g1);padding:3px 10px;border-radius:3px;">Presencial</span><span style="font-size:10px;font-weight:700;background:var(--g4);color:var(--g1);padding:3px 10px;border-radius:3px;">Exame incluído</span><span style="font-size:10px;font-weight:700;background:var(--annot);color:var(--white);padding:3px 10px;border-radius:3px;">Req: ZCP</span></div>
             </div>
             <div style="display:flex;flex-direction:column;gap:8px;min-width:140px;">
-              <div class="btn-block" style="margin:0;background:var(--white);color:var(--black);">Ver treinamento</div>
+              <div class="btn-block" style="margin:0;background:var(--white);color:var(--black);" onclick="event.stopPropagation();openModal('Zabbix Certified Expert (ZCE)', 'Zabbix · Avançado · Presencial · Req: ZCP')">Ver treinamento</div>
               <div style="font-size:10px;color:var(--g3);text-align:center;">Consulte disponibilidade</div>
             </div>
           </div>
@@ -1071,7 +1038,7 @@
       </div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">Cards dos 4 cursos. ZCS já tem LP (borda laranja = clicável). Demais abrem modal futuramente.</span>
+  <span class="annot" style="padding-left:48px;display:block">Cards dos 4 cursos. ZCS tem LP (borda laranja → goTo). ZCU, ZCP, ZCE abrem modal.</span>
 
   <!-- UPGRADES -->
   <div style="background:var(--white);border-top:2px solid var(--fill3);border-bottom:2px solid var(--fill3);padding:48px 48px 40px;">
@@ -1080,30 +1047,18 @@
       <div style="font-size:20px;font-weight:900;color:var(--black);margin-bottom:6px;">Cursos de Upgrade</div>
       <p style="font-size:12px;color:var(--g3);margin-bottom:24px;line-height:1.6;">Já é certificado mas sua versão ficou para trás? Os cursos de upgrade atualizam seu conhecimento e certificação para a versão mais recente do Zabbix — sem precisar refazer o treinamento completo.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;">
-
         <div style="background:var(--fill);border:1.5px solid var(--g1);border-radius:8px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;">
           <svg width="40" height="46" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#C8C8C8" stroke="#666" stroke-width="2.5"/><text x="48" y="52" text-anchor="middle" font-size="11" font-weight="900" fill="#333" font-family="Arial">ZCS</text><text x="48" y="65" text-anchor="middle" font-size="8" font-weight="700" fill="#666" font-family="Arial">UPGRADE</text></svg>
-          <div style="flex:1;">
-            <div style="font-size:13px;font-weight:800;color:var(--black);margin-bottom:2px;">Zabbix Certified Specialist: Upgrade</div>
-            <div style="font-size:10px;color:var(--g3);margin-bottom:8px;">Req: ZCS versão anterior · Online ao vivo</div>
-            <div style="font-size:11px;color:var(--g3);line-height:1.6;">Atualiza a certificação ZCS para a versão mais recente. Foca exclusivamente nas mudanças e novas funcionalidades introduzidas desde a versão que o aluno já possui.</div>
-          </div>
+          <div style="flex:1;"><div style="font-size:13px;font-weight:800;color:var(--black);margin-bottom:2px;">Zabbix Certified Specialist: Upgrade</div><div style="font-size:10px;color:var(--g3);margin-bottom:8px;">Req: ZCS versão anterior · Online ao vivo</div><div style="font-size:11px;color:var(--g3);line-height:1.6;">Atualiza a certificação ZCS para a versão mais recente. Foca exclusivamente nas mudanças e novas funcionalidades introduzidas desde a versão que o aluno já possui.</div></div>
         </div>
-
         <div style="background:var(--fill);border:1.5px solid var(--g1);border-radius:8px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;">
           <svg width="40" height="46" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#666" stroke="#444" stroke-width="2.5"/><text x="48" y="52" text-anchor="middle" font-size="11" font-weight="900" fill="#fff" font-family="Arial">ZCP</text><text x="48" y="65" text-anchor="middle" font-size="8" font-weight="700" fill="#ccc" font-family="Arial">UPGRADE</text></svg>
-          <div style="flex:1;">
-            <div style="font-size:13px;font-weight:800;color:var(--black);margin-bottom:2px;">Zabbix Certified Professional: Upgrade</div>
-            <div style="font-size:10px;color:var(--g3);margin-bottom:8px;">Req: ZCP versão anterior · Online ao vivo</div>
-            <div style="font-size:11px;color:var(--g3);line-height:1.6;">Atualiza a certificação ZCP para a versão mais recente. Cobre as evoluções da plataforma relevantes para profissionais avançados, com foco nas mudanças de arquitetura e novos recursos.</div>
-          </div>
+          <div style="flex:1;"><div style="font-size:13px;font-weight:800;color:var(--black);margin-bottom:2px;">Zabbix Certified Professional: Upgrade</div><div style="font-size:10px;color:var(--g3);margin-bottom:8px;">Req: ZCP versão anterior · Online ao vivo</div><div style="font-size:11px;color:var(--g3);line-height:1.6;">Atualiza a certificação ZCP para a versão mais recente. Cobre as evoluções da plataforma relevantes para profissionais avançados.</div></div>
         </div>
-
       </div>
       <div class="card-cta card-cta-ead" style="display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:4px;font-size:12px;cursor:pointer;">Ver cursos de Upgrade via EAD</div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">Upgrades: 1 botão EAD único abaixo dos 2 cards. Leva para LP de Upgrade na plataforma. 1 decisão para o usuario.</span>
 
   <!-- CURSOS OFICIAIS EXTRAS -->
   <div style="background:var(--bg);padding:48px 48px 40px;">
@@ -1112,58 +1067,31 @@
       <div style="font-size:20px;font-weight:900;color:var(--black);margin-bottom:6px;">Treinamentos Oficiais Extras</div>
       <p style="font-size:12px;color:var(--g3);margin-bottom:24px;line-height:1.6;">Treinamentos oficiais do fabricante Zabbix que aprofundam tópicos específicos da plataforma. Não fazem parte da carreira de certificações, mas são reconhecidos pelo fabricante e voltados a quem já tem base no Zabbix.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-
         <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;">
           <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;text-align:center;line-height:1.2;">API</div>
-          <div>
-            <div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:4px;">Automation and Integration with Zabbix API</div>
-            <div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:8px;">Automatize tarefas administrativas e integre o Zabbix com outros sistemas via API REST. Criação de hosts, items, triggers e dashboards de forma programática.</div>
-            <div class="btn-s" style="padding:6px 14px;font-size:10px;display:inline-flex;">Ver treinamento</div>
-          </div>
+          <div><div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:4px;">Automation and Integration with Zabbix API</div><div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:8px;">Automatize tarefas administrativas e integre o Zabbix com outros sistemas via API REST. Criação de hosts, items, triggers e dashboards de forma programática.</div><div class="btn-s" style="padding:6px 14px;font-size:10px;display:inline-flex;cursor:pointer;" onclick="openModal('Automation and Integration with Zabbix API', 'Zabbix Oficial · Avançado · Online')">Ver treinamento</div></div>
         </div>
-
         <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;">
           <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;text-align:center;line-height:1.2;">PRE</div>
-          <div>
-            <div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:4px;">Advanced Zabbix Data Pre-processing</div>
-            <div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:8px;">Domine as técnicas avançadas de pré-processamento de dados. Transformações, expressões regulares, scripts JavaScript e normalização de métricas de qualquer fonte.</div>
-            <div class="btn-s" style="padding:6px 14px;font-size:10px;display:inline-flex;">Ver treinamento</div>
-          </div>
+          <div><div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:4px;">Advanced Zabbix Data Pre-processing</div><div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:8px;">Domine as técnicas avançadas de pré-processamento de dados. Transformações, expressões regulares, scripts JavaScript e normalização de métricas de qualquer fonte.</div><div class="btn-s" style="padding:6px 14px;font-size:10px;display:inline-flex;cursor:pointer;" onclick="openModal('Advanced Zabbix Data Pre-processing', 'Zabbix Oficial · Avançado · Online')">Ver treinamento</div></div>
         </div>
-
         <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;">
           <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;text-align:center;line-height:1.2;">SEC</div>
-          <div>
-            <div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:4px;">Advanced Zabbix Security Administration</div>
-            <div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:8px;">Hardening do ambiente Zabbix: criptografia TLS, autenticação avançada, gerenciamento de permissões, auditoria e boas práticas de segurança em infraestrutura de monitoramento.</div>
-            <div class="btn-s" style="padding:6px 14px;font-size:10px;display:inline-flex;">Ver treinamento</div>
-          </div>
+          <div><div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:4px;">Advanced Zabbix Security Administration</div><div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:8px;">Hardening do ambiente Zabbix: criptografia TLS, autenticação avançada, gerenciamento de permissões, auditoria e boas práticas de segurança em infraestrutura de monitoramento.</div><div class="btn-s" style="padding:6px 14px;font-size:10px;display:inline-flex;cursor:pointer;" onclick="openModal('Advanced Zabbix Security Administration', 'Zabbix Oficial · Avançado · Online')">Ver treinamento</div></div>
         </div>
-
         <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;">
           <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;text-align:center;line-height:1.2;">ANA</div>
-          <div>
-            <div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:4px;">Advanced Problem and Anomaly Detection with Zabbix</div>
-            <div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:8px;">Detecção inteligente de problemas e anomalias. Baselines dinâmicos, correlação de eventos, root cause analysis e uso de Machine Learning nativo do Zabbix.</div>
-            <div class="btn-s" style="padding:6px 14px;font-size:10px;display:inline-flex;">Ver treinamento</div>
-          </div>
+          <div><div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:4px;">Advanced Problem and Anomaly Detection with Zabbix</div><div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:8px;">Detecção inteligente de problemas e anomalias. Baselines dinâmicos, correlação de eventos, root cause analysis e uso de Machine Learning nativo do Zabbix.</div><div class="btn-s" style="padding:6px 14px;font-size:10px;display:inline-flex;cursor:pointer;" onclick="openModal('Advanced Problem and Anomaly Detection', 'Zabbix Oficial · Avançado · Online')">Ver treinamento</div></div>
         </div>
-
         <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;grid-column:1/-1;max-width:calc(50% - 6px);">
           <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;text-align:center;line-height:1.2;">SNMP</div>
-          <div>
-            <div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:4px;">Advanced Zabbix SNMP Monitoring</div>
-            <div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:8px;">Monitoramento SNMP avançado no Zabbix: MIBs, OIDs, SNMP traps, WALK e integração com equipamentos de rede, switches, roteadores e appliances.</div>
-            <div class="btn-s" style="padding:6px 14px;font-size:10px;display:inline-flex;">Ver treinamento</div>
-          </div>
+          <div><div style="font-size:12px;font-weight:800;color:var(--black);margin-bottom:4px;">Advanced Zabbix SNMP Monitoring</div><div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:8px;">Monitoramento SNMP avançado no Zabbix: MIBs, OIDs, SNMP traps, WALK e integração com equipamentos de rede, switches, roteadores e appliances.</div><div class="btn-s" style="padding:6px 14px;font-size:10px;display:inline-flex;cursor:pointer;" onclick="openModal('Advanced Zabbix SNMP Monitoring', 'Zabbix Oficial · Avançado · Online')">Ver treinamento</div></div>
         </div>
-
       </div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">5 treinamentos oficiais extras. Reconhecidos pelo fabricante, fora da carreira de certificações.</span>
 
-  <!-- TURMA EXCLUSIVA -->
+  <!-- TURMA EXCLUSIVA CALLOUT -->
   <div style="background:var(--bg);padding:0 48px 0;">
     <div style="max-width:1100px;margin:0 auto;padding:32px 0 0">
       <div class="corp-callout">
@@ -1173,11 +1101,10 @@
         </div>
         <div class="corp-callout-cta" onclick="document.getElementById('trilha-form').scrollIntoView({behavior:'smooth'})">Quero uma turma para meu time →</div>
       </div>
-      <span class="annot" style="margin-bottom:0;display:block">Callout turmas fechadas. CTA ancora no formulário.</span>
     </div>
   </div>
 
-  <!-- EXAMES (LOW TICKET / EAD) -->
+  <!-- EXAMES EAD -->
   <div style="background:var(--white);border-top:2px solid var(--fill3);border-bottom:2px solid var(--fill3);padding:36px 48px;">
     <div style="max-width:1100px;margin:0 auto;">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;">
@@ -1185,43 +1112,26 @@
           <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px;">Só o exame</div>
           <div style="font-size:18px;font-weight:900;color:var(--black);margin-bottom:14px;">Exames Oficiais de Certificação</div>
           <div class="card-cta card-cta-ead" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:4px;font-size:12px;cursor:pointer;margin-bottom:16px;">Agendar exame via EAD</div>
-          <p style="font-size:12px;color:var(--g3);line-height:1.6;max-width:420px;">Para quem já tem experiência sólida com Zabbix e quer formalizar o conhecimento com a certificação oficial do fabricante. Os exames são agendados pela plataforma EAD Selbetti e realizados em data combinada.</p>
+          <p style="font-size:12px;color:var(--g3);line-height:1.6;max-width:420px;">Para quem já tem experiência sólida com Zabbix e quer formalizar o conhecimento com a certificação oficial do fabricante.</p>
           <div style="margin-top:10px;font-size:11px;color:var(--g3);line-height:1.6;max-width:420px;font-style:italic;">Vale lembrar: as provas são exigentes. Se tiver dúvida se está pronto, nossos instrutores podem orientar.</div>
-          <div style="margin-top:12px;padding:10px 14px;background:var(--fill);border:1.5px solid var(--g1);border-radius:6px;font-size:11px;color:var(--g3);">
-            Botão "Agendar exame" leva para o fluxo de agendamento na plataforma EAD Selbetti. As 3 linhas abaixo são informativas.
-          </div>
         </div>
         <div style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:8px;">
-
-          <div style="background:var(--fill);border:2px solid var(--annot);border-radius:6px;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <svg width="28" height="32" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#D4D4D4" stroke="#999" stroke-width="3"/><text x="48" y="62" text-anchor="middle" font-size="18" font-weight="900" fill="#444" font-family="Arial">ZCU</text></svg>
-              <div><div style="font-size:12px;font-weight:700;color:var(--black);">Zabbix Certified User Exam</div><div style="font-size:10px;color:var(--g3);">Sem pré-requisitos</div></div>
-            </div>
+          <div style="background:var(--fill);border:2px solid var(--annot);border-radius:6px;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onclick="showEad()">
+            <div style="display:flex;align-items:center;gap:10px;"><svg width="28" height="32" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#D4D4D4" stroke="#999" stroke-width="3"/><text x="48" y="62" text-anchor="middle" font-size="18" font-weight="900" fill="#444" font-family="Arial">ZCU</text></svg><div><div style="font-size:12px;font-weight:700;color:var(--black);">Zabbix Certified User Exam</div><div style="font-size:10px;color:var(--g3);">Sem pré-requisitos</div></div></div>
             <div class="card-cta-ead" style="background:var(--annot);color:var(--white);font-size:11px;font-weight:700;padding:7px 16px;border-radius:4px;cursor:pointer;white-space:nowrap;">Acessar →</div>
           </div>
-
-          <div style="background:var(--fill);border:2px solid var(--annot);border-radius:6px;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <svg width="28" height="32" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#C8C8C8" stroke="#666" stroke-width="3"/><text x="48" y="62" text-anchor="middle" font-size="18" font-weight="900" fill="#333" font-family="Arial">ZCS</text></svg>
-              <div><div style="font-size:12px;font-weight:700;color:var(--black);">Zabbix Certified Specialist Exam</div><div style="font-size:10px;color:var(--g3);">Sem pré-requisitos</div></div>
-            </div>
+          <div style="background:var(--fill);border:2px solid var(--annot);border-radius:6px;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onclick="showEad()">
+            <div style="display:flex;align-items:center;gap:10px;"><svg width="28" height="32" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#C8C8C8" stroke="#666" stroke-width="3"/><text x="48" y="62" text-anchor="middle" font-size="18" font-weight="900" fill="#333" font-family="Arial">ZCS</text></svg><div><div style="font-size:12px;font-weight:700;color:var(--black);">Zabbix Certified Specialist Exam</div><div style="font-size:10px;color:var(--g3);">Sem pré-requisitos</div></div></div>
             <div class="card-cta-ead" style="background:var(--annot);color:var(--white);font-size:11px;font-weight:700;padding:7px 16px;border-radius:4px;cursor:pointer;white-space:nowrap;">Acessar →</div>
           </div>
-
-          <div style="background:var(--fill);border:2px solid var(--annot);border-radius:6px;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <svg width="28" height="32" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#666" stroke="#444" stroke-width="3"/><text x="48" y="62" text-anchor="middle" font-size="18" font-weight="900" fill="#fff" font-family="Arial">ZCP</text></svg>
-              <div><div style="font-size:12px;font-weight:700;color:var(--black);">Zabbix Certified Professional Exam</div><div style="font-size:10px;color:var(--g3);">Req: ZCS</div></div>
-            </div>
+          <div style="background:var(--fill);border:2px solid var(--annot);border-radius:6px;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onclick="showEad()">
+            <div style="display:flex;align-items:center;gap:10px;"><svg width="28" height="32" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#666" stroke="#444" stroke-width="3"/><text x="48" y="62" text-anchor="middle" font-size="18" font-weight="900" fill="#fff" font-family="Arial">ZCP</text></svg><div><div style="font-size:12px;font-weight:700;color:var(--black);">Zabbix Certified Professional Exam</div><div style="font-size:10px;color:var(--g3);">Req: ZCS</div></div></div>
             <div class="card-cta-ead" style="background:var(--annot);color:var(--white);font-size:11px;font-weight:700;padding:7px 16px;border-radius:4px;cursor:pointer;white-space:nowrap;">Acessar →</div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">Exames: borda e botão laranja = mesmo esquema EAD do catálogo. Agendamento via plataforma Selbetti.</span>
 
   <!-- FAQ CARREIRA ZABBIX -->
   <div style="background:var(--bg);padding:48px 48px 40px;">
@@ -1230,21 +1140,20 @@
       <div style="font-size:20px;font-weight:900;color:var(--black);margin-bottom:24px;">Perguntas sobre a Carreira Zabbix</div>
       <div class="faq" style="margin-bottom:0">
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Como funciona a carreira de certificações Zabbix?</span><span>▾</span></div><div class="faq-a open">A carreira Zabbix é composta por 4 níveis de certificações: Certified User (ZCU), Certified Specialist (ZCS), Certified Professional (ZCP) e Certified Expert (ZCE). ZCU e ZCS não exigem pré-requisitos. Para o ZCP é necessário ter o ZCS e para o ZCE é necessário ter o ZCP, sempre na mesma versão do Zabbix.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Por onde devo começar?</span><span>▾</span></div><div class="faq-a">Para quem está entrando no Zabbix agora, o ZCU é uma boa introdução à plataforma. Para quem já tem alguma experiência ou quer ingressar diretamente na carreira técnica, o ZCS é o ponto de partida mais comum — é o treinamento mais completo e prepara para os níveis seguintes.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Por onde devo começar?</span><span>▾</span></div><div class="faq-a">Para quem está entrando no Zabbix agora, o ZCU é uma boa introdução à plataforma. Para quem já tem alguma experiência ou quer ingressar diretamente na carreira técnica, o ZCS é o ponto de partida mais comum.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>O exame já vem incluído nos treinamentos?</span><span>▾</span></div><div class="faq-a">Sim. Nos treinamentos ZCS, ZCP e ZCE o exame de certificação está incluído. Ao final do treinamento, o participante recebe um voucher para agendar a prova. Sendo aprovado, a certificação oficial é emitida diretamente pelo fabricante Zabbix.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>As provas são difíceis?</span><span>▾</span></div><div class="faq-a">As provas do fabricante são exigentes e testam tanto o conhecimento teórico quanto a aplicação prática. O treinamento oficial é projetado para preparar o aluno para a prova, mas dedicação e estudo complementar fazem diferença. Nossos instrutores orientam sobre os pontos de maior atenção ao longo do curso.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Posso fazer o ZCP sem ter feito o ZCS com a Selbetti?</span><span>▾</span></div><div class="faq-a">Sim. O pré-requisito é a certificação ZCS, independente de onde foi obtida. Se você já tem o ZCS de outra escola ou pelo exame avulso, pode ingressar diretamente no ZCP. O importante é que a versão do ZCS seja compatível com a versão do ZCP desejado.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Os treinamentos são online ou presenciais?</span><span>▾</span></div><div class="faq-a">Os treinamentos ZCU, ZCS e ZCP são realizados online ao vivo com instrutor. O ZCE é presencial. Para empresas, é possível contratar turmas fechadas exclusivas em qualquer formato — online ou presencial na sua localidade. Consulte nossos especialistas.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>O que muda entre versões do Zabbix?</span><span>▾</span></div><div class="faq-a">O Zabbix lança novas versões LTS periodicamente com mudanças significativas na plataforma. As certificações são vinculadas à versão — um ZCS 6.0 não equivale a um ZCS 7.0. Para quem já é certificado em versão anterior, os cursos de Upgrade atualizam a certificação para a versão mais recente sem precisar refazer o treinamento completo.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Como funciona o agendamento do exame avulso?</span><span>▾</span></div><div class="faq-a">Para quem adquire apenas o exame (sem o treinamento), o agendamento é feito pela plataforma EAD Selbetti após a compra. A prova é realizada em data combinada com o candidato, conforme disponibilidade da agenda.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>As provas são difíceis?</span><span>▾</span></div><div class="faq-a">As provas do fabricante são exigentes e testam tanto o conhecimento teórico quanto a aplicação prática. O treinamento oficial é projetado para preparar o aluno para a prova, mas dedicação e estudo complementar fazem diferença.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Posso fazer o ZCP sem ter feito o ZCS com a Selbetti?</span><span>▾</span></div><div class="faq-a">Sim. O pré-requisito é a certificação ZCS, independente de onde foi obtida. Se você já tem o ZCS de outra escola ou pelo exame avulso, pode ingressar diretamente no ZCP.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Os treinamentos são online ou presenciais?</span><span>▾</span></div><div class="faq-a">Os treinamentos ZCU, ZCS e ZCP são realizados online ao vivo com instrutor. O ZCE é presencial. Para empresas, é possível contratar turmas fechadas exclusivas em qualquer formato.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>O que muda entre versões do Zabbix?</span><span>▾</span></div><div class="faq-a">O Zabbix lança novas versões LTS periodicamente com mudanças significativas na plataforma. As certificações são vinculadas à versão — um ZCS 6.0 não equivale a um ZCS 7.0. Para quem já é certificado em versão anterior, os cursos de Upgrade atualizam a certificação.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Como funciona o agendamento do exame avulso?</span><span>▾</span></div><div class="faq-a">Para quem adquire apenas o exame (sem o treinamento), o agendamento é feito pela plataforma EAD Selbetti após a compra. A prova é realizada em data combinada com o candidato.</div></div>
       </div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">FAQ da Carreira Zabbix. 8 perguntas cobrindo progressão, exames, versões e turmas.</span>
 
-  <!-- FORMULÁRIO -->
+  <!-- FORMULÁRIO TRILHA -->
   <div class="bottom-cta-section" id="trilha-form">
-    <span class="annot" style="padding:0;display:block;margin-bottom:16px;color:#FFB570;border-color:#FFB570">Formulário único da página de trilha. Captura quem quer se certificar ou montar turma corporativa.</span>
+    <span class="annot" style="padding:0;display:block;margin-bottom:16px;color:#FFB570;border-color:#FFB570">Formulário único da página de trilha.</span>
     <div class="bottom-cta-inner">
       <div class="bottom-cta-text">
         <strong>Comece sua jornada<br/>de certificação.</strong>
@@ -1260,12 +1169,10 @@
         <div class="bf-title">Fale com um especialista</div>
         <div class="bf-sub">Certificação individual ou para equipes.</div>
         <div class="if-field"><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
-        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afff7fbf3f6dafff7eae8ffe9fbb4f9f5f7">[email&#160;protected]</a></div></div>
+        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp">seuemail@empresa.com</div></div>
         <div class="if-field"><span class="if-lbl">Telefone / WhatsApp *</span><div class="if-inp">(00) 00000-0000</div></div>
         <div class="if-field"><span class="if-lbl">Qual certificação te interessa?</span>
-          <div class="field-sel" style="background:var(--fill);border:1.5px solid var(--g1);border-radius:4px;height:36px;padding:0 11px;font-size:12px;color:var(--g2);display:flex;align-items:center;justify-content:space-between;">
-            <span>ZCU / ZCS / ZCP / ZCE</span><span>▾</span>
-          </div>
+          <div class="field-sel" style="background:var(--fill);border:1.5px solid var(--g1);border-radius:4px;height:36px;padding:0 11px;font-size:12px;color:var(--g2);display:flex;align-items:center;justify-content:space-between;"><span>ZCU / ZCS / ZCP / ZCE</span><span>▾</span></div>
         </div>
         <div class="if-field"><span class="if-lbl">Mensagem</span><div class="if-inp" style="height:56px;align-items:flex-start;padding-top:10px;color:var(--g2)">Dúvidas, interesse em turma fechada...</div></div>
         <div class="if-consent"><div class="if-consent-box"></div><p>Ao enviar, você concorda com nossa <strong>Política de Privacidade</strong></p></div>
@@ -1278,7 +1185,7 @@
     <div class="footer-inner">
       <div class="footer-cols">
         <div><div class="fc-logo">LOGO SELBETTI</div><p class="fc-desc">Treinamentos oficiais, práticos e conduzidos por profissionais que vivem a TI todos os dias. A Trainer Oficial Zabbix mais experiente do Brasil.</p></div>
-        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a onclick="goTo('listing')">Ver todos os cursos</a><a>Carreira Zabbix</a><a>Observabilidade</a><a>Cibersegurança</a></div></div>
+        <div><div class="fc-title">Treinamentos</div><div class="fc-links"><a onclick="goTo('listing')">Ver todos os cursos</a><a onclick="goTo('carreira-zabbix')">Carreira Zabbix</a><a onclick="goTo('listing')">Observabilidade</a><a onclick="goTo('listing')">Cibersegurança</a></div></div>
         <div><div class="fc-title">Selbetti</div><div class="fc-links"><a>IT Solutions</a><a>Selbetti Datacenter</a><a>Cybersecurity SOC</a><a>Sobre nós</a></div></div>
         <div><div class="fc-title">Suporte</div><div class="fc-links"><a>Central de Ajuda</a><a>Fale Conosco</a><a>Blog Selbetti</a><a>Política de Privacidade</a></div></div>
       </div>
@@ -1290,12 +1197,15 @@
   </div>
 </div><!-- /page-carreira-zabbix -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+  // ── NAVEGAÇÃO ENTRE PÁGINAS ──
   function goTo(page) {
     document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
     document.getElementById('page-' + page).classList.add('active');
     window.scrollTo(0,0);
   }
+
+  // ── MODAL ──
   function openModal(name, meta) {
     if(name) document.getElementById('modal-course-name').textContent = name;
     if(meta) document.getElementById('modal-course-meta').textContent = meta;
@@ -1303,6 +1213,8 @@
   }
   function closeModal() { document.getElementById('modal').classList.remove('open'); }
   document.getElementById('modal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+
+  // ── FILTRO CATEGORIA ──
   function toggleCat(){
     document.getElementById('catBtn').classList.toggle('open');
     document.getElementById('catMenu').classList.toggle('open');
@@ -1313,14 +1225,30 @@
     el.classList.add('selected');
     toggleCat();
   }
+
+  // ── SANFONA CONTEÚDO ──
   function toggleDay(el){ el.nextElementSibling.classList.toggle('open'); }
+
+  // ── FAQ ──
   function toggleFaq(el){ el.nextElementSibling.classList.toggle('open'); }
+
+  // ── OVERLAY EAD ──
   function showEad(){
     var ov = document.getElementById('ead-overlay');
     ov.classList.add('show');
     setTimeout(function(){ ov.classList.remove('show'); }, 2200);
   }
+
+  // ── BOTÃO FLUTUANTE (aparece após 300px de scroll na página de listagem) ──
   window.addEventListener('scroll', function(){
     var btn = document.getElementById('btn-trilha');
-    var leg = document.querySelector('.legend');
-    var appRect = document.ge
+    var activePage = document.querySelector('.page.active');
+    if(activePage && activePage.id === 'page-listing') {
+      btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>
