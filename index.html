@@ -275,6 +275,8 @@
       .if-row { grid-template-columns:1fr; }
       .form-row { grid-template-columns:1fr; }
       .breadcrumb { padding:10px 16px; }
+      .benefits-why-outer { padding:24px 16px 0; }
+      .benefits-why-grid { grid-template-columns:1fr !important; }
     }
   </style>
 </head>
@@ -309,7 +311,7 @@
       <div class="wf-tag" style="margin-bottom:12px">Seus dados</div>
       <div class="form-row">
         <div class="form-field" style="margin-bottom:0"><span class="field-lbl">Nome *</span><div class="field-inp">Seu nome</div></div>
-        <div class="form-field" style="margin-bottom:0"><span class="field-lbl">E-mail *</span><div class="field-inp">email@empresa.com</div></div>
+        <div class="form-field" style="margin-bottom:0"><span class="field-lbl">E-mail *</span><div class="field-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b3d6ded2dadff3d6dec3c1d6c0d29dd0dcde">[email&#160;protected]</a></div></div>
       </div>
       <div class="form-row" style="margin-top:12px">
         <div class="form-field" style="margin-bottom:0"><span class="field-lbl">Telefone *</span><div class="field-inp">(00) 00000-0000</div></div>
@@ -320,7 +322,7 @@
       <div class="if-consent" style="margin-bottom:14px"><div class="if-consent-box"></div><p style="font-size:11px;color:var(--g3)">Ao enviar, você concorda com nossa <strong>Política de Privacidade</strong></p></div>
       <div class="btn-block" onclick="closeModal()">Quero minha vaga →</div>
       <div class="btn-block-s" onclick="closeModal()">Pular e acessar sem salvar meus dados</div>
-      <div class="modal-annot">🔶 FLUXO: "Quero minha vaga" → salva lead no CRM → redireciona para EAD. "Pular" → redireciona direto. Decidir se essa opção deve existir.</div>
+      <div class="modal-annot">FLUXO: "Quero minha vaga" → salva lead no CRM → redireciona para EAD. "Pular" → redireciona direto. Decidir se essa opção deve existir.</div>
     </div>
   </div>
 </div>
@@ -339,7 +341,7 @@
 <!-- PAGE 1 — LISTAGEM -->
 <div class="page active" id="page-listing">
   <span class="annot" style="padding-left:48px">Header fixo do site principal Selbetti · item "Treinamentos" ativo</span>
-  <span class="annot" style="display:block;margin:6px 16px;padding:8px 12px;background:#FFF3EB;border:1.5px solid #FFB570;border-left:3px solid var(--annot);border-radius:4px;font-size:11px;line-height:1.6;text-transform:none;letter-spacing:0">📱 MOBILE · ATENÇÃO: grande parte do tráfego B2C vem de dispositivos móveis. Esta página (catálogo) precisa de adaptação completa para 1 coluna.</span>
+  <span class="annot" style="display:block;margin:6px 16px;padding:8px 12px;background:#FFF3EB;border:1.5px solid #FFB570;border-left:3px solid var(--annot);border-radius:4px;font-size:11px;line-height:1.6;text-transform:none;letter-spacing:0">MOBILE · ATENÇÃO: grande parte do tráfego B2C vem de dispositivos móveis. Esta página (catálogo) precisa de adaptação completa para 1 coluna.</span>
   <!-- BANNER -->
   <div class="static-banner">
     <span style="position:absolute;top:10px;left:12px;background:var(--g4);color:var(--white);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:3px;">Banner Principal</span>
@@ -372,10 +374,10 @@
   </div>
   <span class="annot" style="padding-left:48px;display:block">Faixa agenda: fundo em contraste com banner. Imagem à esquerda.</span>
   <!-- POR QUE NOS ESCOLHER -->
-  <div style="background:var(--bg);padding:32px 48px 0;">
+  <div class="benefits-why-outer" style="background:var(--bg);padding:32px 48px 0;">
     <div style="max-width:1200px;margin:0 auto;">
       <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);margin-bottom:16px;">Por que nos escolher</div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <div class="benefits-why-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
         <div style="background:var(--white);border:1.5px solid var(--g1);border-radius:8px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;">
           <div style="width:36px;height:36px;background:var(--fill3);border:1.5px dashed var(--g1);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--g2);font-weight:700;">ICO</div>
           <div><strong style="display:block;font-size:12px;font-weight:800;color:var(--black);margin-bottom:3px;">Conhecimento Prático</strong><span style="font-size:11px;color:var(--g3);line-height:1.5;">Instrutores que atuam em projetos reais.</span></div>
@@ -442,7 +444,7 @@
   </div>
   <div style="background:#FFF3EB;border-top:1.5px solid #FFB570;border-bottom:1.5px solid #FFB570;padding:8px 48px;">
     <div style="max-width:1200px;margin:0 auto;font-size:11px;color:var(--annot);font-weight:700;line-height:1.6">
-      🔶 Produtos low ticket (até R$ 1.800) levam direto para a plataforma EAD · sem LP intermediária. Demais cursos abrem LP com formulário de captura de lead.
+      Produtos low ticket (até R$ 1.800) levam direto para a plataforma EAD · sem LP intermediária. Demais cursos abrem LP com formulário de captura de lead.
     </div>
   </div>
   <!-- GRID -->
@@ -547,7 +549,7 @@
           <div><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
           <div><span class="if-lbl">Telefone *</span><div class="if-inp">(00) 00000-0000</div></div>
         </div>
-        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp">email@empresa.com</div></div>
+        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2b4e464a42476b4e465b594e584a05484446">[email&#160;protected]</a></div></div>
         <div class="if-row">
           <div><span class="if-lbl">Empresa</span><div class="if-inp">Nome da empresa</div></div>
           <div><span class="if-lbl">Cargo</span><div class="if-inp">Seu cargo</div></div>
@@ -575,13 +577,13 @@
 </div>
 <!-- BOTÃO FLUTUANTE TRILHA ZABBIX -->
 <div id="btn-trilha" style="display:none;position:fixed;bottom:28px;right:calc(50% - 720px + 24px);z-index:8000;cursor:pointer;background:rgba(255,255,255,.95);color:var(--annot);font-size:11px;font-weight:700;padding:9px 16px;border-radius:999px;box-shadow:0 2px 12px rgba(0,0,0,.15);border:1.5px dashed var(--annot);letter-spacing:.04em;transition:all .2s;backdrop-filter:blur(4px);" onclick="goTo('carreira-zabbix')" onmouseover="this.style.background='#FFF3EB'" onmouseout="this.style.background='rgba(255,255,255,.95)'">
-  ⬡ Ver proposta: página Carreira Zabbix
+  Ver proposta: página Carreira Zabbix
 </div>
 <span class="annot" style="display:none" id="annot-btn-trilha">Botão flutuante discreto (laranja pontilhado). Só aparece após 300px de scroll. Sinalizador interno — não é elemento final do site.</span>
 
 <!-- PAGE 2 — LP CURSO ZCS -->
 <div class="page" id="page-curso-zcs">
-  <span class="annot" style="display:block;margin:6px 16px;padding:8px 12px;background:#FFF3EB;border:1.5px solid #FFB570;border-left:3px solid var(--annot);border-radius:4px;font-size:11px;line-height:1.6;text-transform:none;letter-spacing:0">📱 MOBILE · ATENÇÃO: grande parte do tráfego B2C vem de dispositivos móveis. Esta página (LP do curso) precisa de adaptação completa para 1 coluna.</span>
+  <span class="annot" style="display:block;margin:6px 16px;padding:8px 12px;background:#FFF3EB;border:1.5px solid #FFB570;border-left:3px solid var(--annot);border-radius:4px;font-size:11px;line-height:1.6;text-transform:none;letter-spacing:0">MOBILE · ATENÇÃO: grande parte do tráfego B2C vem de dispositivos móveis. Esta página (LP do curso) precisa de adaptação completa para 1 coluna.</span>
   <div style="background:var(--white);border-bottom:1px solid var(--fill3)">
     <div class="breadcrumb">
       <a onclick="goTo('listing')">Treinamentos</a><span>/</span>
@@ -644,7 +646,7 @@
                 <div><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
                 <div><span class="if-lbl">Telefone *</span><div class="if-inp">(00) 00000-0000</div></div>
               </div>
-              <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp">email@empresa.com</div></div>
+              <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afff7fbf3f6dafff7eae8ffe9fbb4f9f5f7">[email&#160;protected]</a></div></div>
               <div class="if-field"><span class="if-lbl">Cargo</span><div class="if-inp">Seu cargo</div></div>
               <div class="if-consent"><div class="if-consent-box"></div><p>Ao enviar, você concorda com nossa <strong>Política de Privacidade</strong></p></div>
               <div class="if-cta">Quero minha vaga →</div>
@@ -746,7 +748,7 @@
                 <div><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
                 <div><span class="if-lbl">Sobrenome *</span><div class="if-inp">Sobrenome</div></div>
               </div>
-              <div class="if-field"><span class="if-lbl">E-mail corporativo *</span><div class="if-inp">email@empresa.com</div></div>
+              <div class="if-field"><span class="if-lbl">E-mail corporativo *</span><div class="if-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2e4b434f47426e4b435e5c4b5d4f004d4143">[email&#160;protected]</a></div></div>
               <div class="if-row">
                 <div><span class="if-lbl">Telefone *</span><div class="if-inp">(00) 00000-0000</div></div>
                 <div><span class="if-lbl">Empresa</span><div class="if-inp">Nome da empresa</div></div>
@@ -828,7 +830,7 @@
         <div class="bf-title">Fale com um especialista</div>
         <div class="bf-sub">Turma individual ou corporativa.</div>
         <div class="if-field"><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
-        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp">email@empresa.com</div></div>
+        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="acc9c1cdc5c0ecc9c1dcdec9dfcd82cfc3c1">[email&#160;protected]</a></div></div>
         <div class="if-field"><span class="if-lbl">Telefone / WhatsApp *</span><div class="if-inp">(00) 00000-0000</div></div>
         <div class="if-field"><span class="if-lbl">Cargo</span><div class="if-inp">Seu cargo</div></div>
         <div class="if-field"><span class="if-lbl">Mensagem / dúvida</span><div class="if-inp" style="height:60px;align-items:flex-start;padding-top:10px;color:var(--g2)">Escreva aqui sua dúvida ou interesse...</div></div>
@@ -854,7 +856,7 @@
 </div>
 <!-- PAGE 3 — TRILHA ZABBIX -->
 <div class="page" id="page-carreira-zabbix">
-  <span class="annot" style="display:block;margin:6px 16px;padding:8px 12px;background:#FFF3EB;border:1.5px solid #FFB570;border-left:3px solid var(--annot);border-radius:4px;font-size:11px;line-height:1.6;text-transform:none;letter-spacing:0">📋 PÁGINA INDEPENDENTE — Proposta da equipe para fortalecer o posicionamento da Selbetti na Carreira Zabbix. Não está atrelada ao fluxo principal do site. Apresentar como opção.</span>
+  <span class="annot" style="display:block;margin:6px 16px;padding:8px 12px;background:#FFF3EB;border:1.5px solid #FFB570;border-left:3px solid var(--annot);border-radius:4px;font-size:11px;line-height:1.6;text-transform:none;letter-spacing:0">PAGINA INDEPENDENTE — Proposta da equipe para fortalecer o posicionamento da Selbetti na Carreira Zabbix. Não está atrelada ao fluxo principal do site. Apresentar como opção.</span>
 
   <!-- HERO TRILHA -->
   <div style="background:var(--black);padding:64px 48px;border-bottom:2px solid var(--g3);">
@@ -1077,15 +1079,14 @@
       <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px;">Atualize sua certificação</div>
       <div style="font-size:20px;font-weight:900;color:var(--black);margin-bottom:6px;">Cursos de Upgrade</div>
       <p style="font-size:12px;color:var(--g3);margin-bottom:24px;line-height:1.6;">Já é certificado mas sua versão ficou para trás? Os cursos de upgrade atualizam seu conhecimento e certificação para a versão mais recente do Zabbix — sem precisar refazer o treinamento completo.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;">
 
         <div style="background:var(--fill);border:1.5px solid var(--g1);border-radius:8px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;">
           <svg width="40" height="46" viewBox="0 0 96 108"><polygon points="48,4 92,28 92,80 48,104 4,80 4,28" fill="#C8C8C8" stroke="#666" stroke-width="2.5"/><text x="48" y="52" text-anchor="middle" font-size="11" font-weight="900" fill="#333" font-family="Arial">ZCS</text><text x="48" y="65" text-anchor="middle" font-size="8" font-weight="700" fill="#666" font-family="Arial">UPGRADE</text></svg>
           <div style="flex:1;">
             <div style="font-size:13px;font-weight:800;color:var(--black);margin-bottom:2px;">Zabbix Certified Specialist: Upgrade</div>
             <div style="font-size:10px;color:var(--g3);margin-bottom:8px;">Req: ZCS versão anterior · Online ao vivo</div>
-            <div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:12px;">Atualiza a certificação ZCS para a versão mais recente. Foca exclusivamente nas mudanças e novas funcionalidades introduzidas desde a versão que o aluno já possui.</div>
-            <div class="card-cta card-cta-ead" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:4px;font-size:11px;cursor:pointer;width:auto;">⬡ Acessar via EAD →</div>
+            <div style="font-size:11px;color:var(--g3);line-height:1.6;">Atualiza a certificação ZCS para a versão mais recente. Foca exclusivamente nas mudanças e novas funcionalidades introduzidas desde a versão que o aluno já possui.</div>
           </div>
         </div>
 
@@ -1094,15 +1095,15 @@
           <div style="flex:1;">
             <div style="font-size:13px;font-weight:800;color:var(--black);margin-bottom:2px;">Zabbix Certified Professional: Upgrade</div>
             <div style="font-size:10px;color:var(--g3);margin-bottom:8px;">Req: ZCP versão anterior · Online ao vivo</div>
-            <div style="font-size:11px;color:var(--g3);line-height:1.6;margin-bottom:12px;">Atualiza a certificação ZCP para a versão mais recente. Cobre as evoluções da plataforma relevantes para profissionais avançados, com foco nas mudanças de arquitetura e novos recursos.</div>
-            <div class="card-cta card-cta-ead" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:4px;font-size:11px;cursor:pointer;width:auto;">⬡ Acessar via EAD →</div>
+            <div style="font-size:11px;color:var(--g3);line-height:1.6;">Atualiza a certificação ZCP para a versão mais recente. Cobre as evoluções da plataforma relevantes para profissionais avançados, com foco nas mudanças de arquitetura e novos recursos.</div>
           </div>
         </div>
 
       </div>
+      <div class="card-cta card-cta-ead" style="display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:4px;font-size:12px;cursor:pointer;">Ver cursos de Upgrade via EAD</div>
     </div>
   </div>
-  <span class="annot" style="padding-left:48px;display:block">Upgrades: botão laranja EAD único. Para quem já tem ZCS ou ZCP em versão anterior.</span>
+  <span class="annot" style="padding-left:48px;display:block">Upgrades: 1 botão EAD único abaixo dos 2 cards. Leva para LP de Upgrade na plataforma. 1 decisão para o usuario.</span>
 
   <!-- CURSOS OFICIAIS EXTRAS -->
   <div style="background:var(--bg);padding:48px 48px 40px;">
@@ -1182,11 +1183,12 @@
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;">
         <div style="flex:1;min-width:280px;">
           <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px;">Só o exame</div>
-          <div style="font-size:18px;font-weight:900;color:var(--black);margin-bottom:6px;">Exames Oficiais de Certificação</div>
+          <div style="font-size:18px;font-weight:900;color:var(--black);margin-bottom:14px;">Exames Oficiais de Certificação</div>
+          <div class="card-cta card-cta-ead" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:4px;font-size:12px;cursor:pointer;margin-bottom:16px;">Agendar exame via EAD</div>
           <p style="font-size:12px;color:var(--g3);line-height:1.6;max-width:420px;">Para quem já tem experiência sólida com Zabbix e quer formalizar o conhecimento com a certificação oficial do fabricante. Os exames são agendados pela plataforma EAD Selbetti e realizados em data combinada.</p>
           <div style="margin-top:10px;font-size:11px;color:var(--g3);line-height:1.6;max-width:420px;font-style:italic;">Vale lembrar: as provas são exigentes. Se tiver dúvida se está pronto, nossos instrutores podem orientar.</div>
           <div style="margin-top:12px;padding:10px 14px;background:var(--fill);border:1.5px solid var(--g1);border-radius:6px;font-size:11px;color:var(--g3);">
-            🔶 EAD · Botão "Acessar" inicia o fluxo de agendamento do exame na plataforma Selbetti.
+            Botão "Agendar exame" leva para o fluxo de agendamento na plataforma EAD Selbetti. As 3 linhas abaixo são informativas.
           </div>
         </div>
         <div style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:8px;">
@@ -1258,7 +1260,7 @@
         <div class="bf-title">Fale com um especialista</div>
         <div class="bf-sub">Certificação individual ou para equipes.</div>
         <div class="if-field"><span class="if-lbl">Nome *</span><div class="if-inp">Seu nome</div></div>
-        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp">email@empresa.com</div></div>
+        <div class="if-field"><span class="if-lbl">E-mail *</span><div class="if-inp"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afff7fbf3f6dafff7eae8ffe9fbb4f9f5f7">[email&#160;protected]</a></div></div>
         <div class="if-field"><span class="if-lbl">Telefone / WhatsApp *</span><div class="if-inp">(00) 00000-0000</div></div>
         <div class="if-field"><span class="if-lbl">Qual certificação te interessa?</span>
           <div class="field-sel" style="background:var(--fill);border:1.5px solid var(--g1);border-radius:4px;height:36px;padding:0 11px;font-size:12px;color:var(--g2);display:flex;align-items:center;justify-content:space-between;">
@@ -1288,7 +1290,7 @@
   </div>
 </div><!-- /page-carreira-zabbix -->
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function goTo(page) {
     document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
     document.getElementById('page-' + page).classList.add('active');
@@ -1321,28 +1323,4 @@
   window.addEventListener('scroll', function(){
     var btn = document.getElementById('btn-trilha');
     var leg = document.querySelector('.legend');
-    var appRect = document.getElementById('app').getBoundingClientRect();
-    if(leg) leg.style.left = Math.max(8, appRect.left + 16) + 'px';
-    if(window.scrollY > 300){
-      btn.style.display='block';
-      btn.style.right = (window.innerWidth - appRect.right + 24) + 'px';
-    } else {
-      btn.style.display='none';
-    }
-  });
-  // run once on load
-  (function(){
-    var leg = document.querySelector('.legend');
-    var appRect = document.getElementById('app').getBoundingClientRect();
-    if(leg) leg.style.left = Math.max(8, appRect.left + 16) + 'px';
-  })();
-  document.addEventListener('click', function(e){
-    if(!e.target.closest('.cat-dropdown')){ 
-      document.getElementById('catBtn').classList.remove('open');
-      document.getElementById('catMenu').classList.remove('open');
-    }
-  });
-</script>
-</div><!-- /app -->
-</body>
-</html>
+    var appRect = document.ge
