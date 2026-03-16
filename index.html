@@ -1249,6 +1249,263 @@
       btn.style.display = 'none';
     }
   });
+
+  // ── JORNADA DE COMPRA ──
+  var jornadaStages = [
+    {
+      label: 'Aprendizado e Descoberta', cliente: 'Visitante',
+      objetivo: 'Informar, educar, trazer consciência, mostrar desafios e oportunidades de mercado.',
+      kpis: ['Alcance', 'Número de visitantes'],
+      contatos: ['Redes sociais', 'Site e blog', 'Ebook e materiais ricos', 'Busca paga e orgânica'],
+      marcos: ['Conteúdo claro e de fácil acesso', 'Conteúdo relevante e aplicável'],
+      friccoes: ['Conteúdo lento ou desatualizado']
+    },
+    {
+      label: 'Consideração da Solução', cliente: 'Pré-lead',
+      objetivo: 'Demonstrar domínio do tema, autoridade e credibilidade. Apresentar cases e materiais de apoio.',
+      kpis: ['Número de leads', 'Número de oportunidades', 'Taxa de conversão', 'CPA'],
+      contatos: ['Cases de Sucesso', 'Formulários do site', 'Depoimentos de clientes', 'Redes sociais', 'Eventos online e offline', 'Canais de atendimento'],
+      marcos: ['Conteúdo relevante e aplicável', 'Clareza do site', 'Velocidade do site'],
+      friccoes: ['Demora ou falta de retorno', 'Site lento ou fora do ar', 'Informações confusas']
+    },
+    {
+      label: 'Decisão de Compra', cliente: 'Lead / Oportunidade',
+      objetivo: 'Conversão e condução ao fechamento. Demonstrar clareza na oferta e no valor entregue.',
+      kpis: ['Conversão (Win Rate)', 'Volume de vendas', 'Taxa de ocupação', 'CAC', 'Tempo do ciclo de venda'],
+      contatos: ['Canais de atendimento', 'Canais de comunicação', 'Site (loja)', 'Proposta comercial', 'Plataforma de assinaturas', 'Financeiro (a definir)'],
+      marcos: ['Contrato e propostas claras', 'Fluidez e clareza na comunicação', 'Flexibilidade para pagamentos', 'Transparência e agilidade'],
+      friccoes: ['Excesso ou falta de informações', 'Falha de comunicação / muitos interlocutores', 'Despreparo do interlocutor']
+    },
+    {
+      label: 'Consumo', cliente: 'Aluno',
+      objetivo: 'Entrega de valor. Experiência de aprendizado positiva, fluida, geradora de satisfação.',
+      kpis: ['NPS (Zabbix)', 'Taxa de aproveitamento (aprovações)'],
+      contatos: ['EAD e Moodle Zabbix', 'Canais de atendimento', 'Trainer', 'Acesso à prova', 'VM Zabbix', 'Material de treinamentos Zabbix'],
+      marcos: ['Acesso rápido e sem fricção', 'Instrutor preparado e presente', 'Material de qualidade'],
+      friccoes: ['Falha no acesso à plataforma', 'Suporte lento durante o curso']
+    },
+    {
+      label: 'Fidelização e Expansão', cliente: 'Case',
+      objetivo: 'Criação de vínculo, promoção de resultados. Gerar indicações, cases e novos negócios.',
+      kpis: ['Taxa de indicação', 'Taxa de recompra (CRR)', 'Cases publicados'],
+      contatos: ['Portal do Aluno', 'Recebimento do certificado', 'Nutrição e Remarketing', 'Testimonials e cases', 'Atualização da certificação', 'Programa de Embaixadores'],
+      marcos: ['Certificação entregue com sucesso', 'Aluno torna-se referência na comunidade'],
+      friccoes: ['Falta de nutrição pós-curso', 'Ausência de programa de continuidade']
+    }
+  ];
+  var jornadaActiveStage = 0;
+  var jornadaActiveView = 'jornada';
+
+  function openJornada() {
+    document.getElementById('jornada-overlay').classList.add('open');
+    renderJornadaStage(0);
+  }
+  function closeJornada() {
+    document.getElementById('jornada-overlay').classList.remove('open');
+  }
+  function setJornadaView(view) {
+    jornadaActiveView = view;
+    document.getElementById('jornada-tab-jornada').style.background = view === 'jornada' ? '#1B4332' : 'transparent';
+    document.getElementById('jornada-tab-jornada').style.color = view === 'jornada' ? '#fff' : '#666';
+    document.getElementById('jornada-tab-fluxo').style.background = view === 'fluxo' ? '#1B4332' : 'transparent';
+    document.getElementById('jornada-tab-fluxo').style.color = view === 'fluxo' ? '#fff' : '#666';
+    document.getElementById('jornada-view-jornada').style.display = view === 'jornada' ? 'block' : 'none';
+    document.getElementById('jornada-view-fluxo').style.display = view === 'fluxo' ? 'block' : 'none';
+  }
+  function renderJornadaStage(i) {
+    jornadaActiveStage = i;
+    var s = jornadaStages[i];
+    var btns = document.querySelectorAll('.jornada-stage-btn');
+    btns.forEach(function(b, j) {
+      b.style.background = j === i ? '#1B4332' : '#f0f0f0';
+      b.style.color = j === i ? '#fff' : '#666';
+      b.style.borderColor = j === i ? '#1B4332' : '#ccc';
+    });
+    var tag = function(text, type) {
+      var colors = {
+        orange: 'background:#FEF3E8;color:#874E12;border:1px solid #F4C08A',
+        green: 'background:#E8F5EE;color:#1B4332;border:1px solid #A8D5B8',
+        pink: 'background:#FDE8E8;color:#C0392B;border:1px solid #F5C0C0',
+        gray: 'background:#f0f0f0;color:#444;border:1px solid #ccc'
+      };
+      return '<span style="display:inline-block;padding:3px 9px;border-radius:5px;font-size:11px;font-weight:600;margin:2px 2px;line-height:1.4;' + colors[type] + '">' + text + '</span>';
+    };
+    document.getElementById('jornada-panel').innerHTML =
+      '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #ddd">' +
+        '<span style="background:#1B4332;color:#fff;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:600">' + s.label + '</span>' +
+        '<span style="background:#E8F5EE;color:#1B4332;border:1px solid #A8D5B8;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:600">cliente: ' + s.cliente + '</span>' +
+      '</div>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">' +
+        '<div>' +
+          '<div style="font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#888;margin-bottom:8px">Objetivo</div>' +
+          '<p style="font-size:11px;color:#555;line-height:1.6;margin-bottom:12px">' + s.objetivo + '</p>' +
+          '<div style="font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#888;margin-bottom:6px">KPIs</div>' +
+          s.kpis.map(function(k){ return tag(k,'orange'); }).join('') +
+        '</div>' +
+        '<div>' +
+          '<div style="font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#888;margin-bottom:8px">Pontos de contato</div>' +
+          s.contatos.map(function(c){ return tag(c,'gray'); }).join('') +
+        '</div>' +
+        '<div>' +
+          '<div style="font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#888;margin-bottom:8px">Marcos de sucesso</div>' +
+          s.marcos.map(function(m){ return tag(m,'green'); }).join('') +
+          '<div style="font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#888;margin-bottom:6px;margin-top:12px">Pontos de fricção</div>' +
+          s.friccoes.map(function(f){ return tag(f,'pink'); }).join('') +
+        '</div>' +
+      '</div>';
+  }
 </script>
+
+<!-- BOTÃO FLUTUANTE JORNADA -->
+<style>
+  .jornada-fab {
+    position: fixed; left: 0; top: 50%; transform: translateY(-50%);
+    z-index: 8000; background: #1B4332; color: #fff;
+    writing-mode: vertical-rl; text-orientation: mixed;
+    padding: 18px 10px; border-radius: 0 8px 8px 0;
+    font-size: 11px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; cursor: pointer;
+    box-shadow: 2px 0 16px rgba(0,0,0,.18);
+    transition: background .2s, padding .2s;
+    display: flex; align-items: center; gap: 8px;
+    border: none; outline: none;
+  }
+  .jornada-fab:hover { background: #2D6A4F; padding-left: 14px; }
+  .jornada-fab-dot { width: 6px; height: 6px; border-radius: 50%; background: #E07B2A; flex-shrink: 0; }
+
+  #jornada-overlay {
+    display: none; position: fixed; inset: 0; z-index: 9500;
+    background: rgba(0,0,0,.6); align-items: center; justify-content: center;
+  }
+  #jornada-overlay.open { display: flex; }
+  .jornada-modal {
+    background: #fff; border-radius: 12px; width: 92vw; max-width: 860px;
+    max-height: 90vh; overflow-y: auto;
+    box-shadow: 0 32px 80px rgba(0,0,0,.3);
+    border: 1.5px solid #ccc;
+  }
+  .jornada-modal-head {
+    background: #1B4332; padding: 18px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-radius: 10px 10px 0 0; position: sticky; top: 0; z-index: 10;
+  }
+  .jornada-modal-head h3 { color: #fff; font-size: 15px; font-weight: 700; margin: 0; }
+  .jornada-modal-head p { color: #A8D5B8; font-size: 11px; margin: 2px 0 0; }
+  .jornada-modal-close {
+    background: rgba(255,255,255,.15); border: none; color: #fff;
+    width: 28px; height: 28px; border-radius: 6px; cursor: pointer;
+    font-size: 16px; display: flex; align-items: center; justify-content: center;
+  }
+  .jornada-modal-close:hover { background: rgba(255,255,255,.28); }
+  .jornada-tabs {
+    display: flex; gap: 0; padding: 16px 24px 0;
+    border-bottom: 1px solid #ddd; background: #f8f8f8;
+  }
+  .jornada-tab {
+    padding: 8px 20px; border-radius: 6px 6px 0 0; border: none;
+    font-size: 12px; font-weight: 700; cursor: pointer;
+    transition: background .15s, color .15s;
+    letter-spacing: .04em;
+  }
+  .jornada-stage-nav {
+    display: flex; gap: 0; padding: 16px 24px 0;
+    background: #f8f8f8; flex-wrap: wrap; gap: 6px; padding-bottom: 14px;
+    border-bottom: 1px solid #ddd;
+  }
+  .jornada-stage-btn {
+    padding: 6px 14px; border-radius: 20px; border: 1.5px solid #ccc;
+    font-size: 11px; font-weight: 600; cursor: pointer;
+    transition: background .15s, color .15s, border-color .15s;
+    background: #f0f0f0; color: #666;
+  }
+  #jornada-panel { padding: 20px 24px; min-height: 220px; }
+
+  .fluxo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 24px; }
+  .fluxo-card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; background: #fafafa; }
+  .fluxo-card h4 { font-size: 12px; font-weight: 700; color: #222; margin: 0 0 12px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+  .fluxo-step { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 7px; }
+  .fluxo-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .fluxo-step span { font-size: 11px; color: #555; line-height: 1.5; }
+  .fluxo-step span strong { color: #222; font-weight: 600; }
+  .resp-tbl { width: 100%; border-collapse: collapse; font-size: 11px; margin: 0 24px; width: calc(100% - 48px); }
+  .resp-tbl th { text-align: left; font-size: 9px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: #888; padding: 8px 10px; border-bottom: 1.5px solid #ddd; }
+  .resp-tbl td { padding: 7px 10px; border-bottom: 1px solid #f0f0f0; color: #333; }
+  .resp-tbl tr:nth-child(even) td { background: #f8f8f8; }
+  .tbd-txt { color: #E07B2A; font-style: italic; }
+</style>
+
+<button class="jornada-fab" onclick="openJornada()">
+  <span class="jornada-fab-dot"></span>
+  Jornada de Compra
+</button>
+
+<div id="jornada-overlay" onclick="if(event.target===this)closeJornada()">
+  <div class="jornada-modal">
+    <div class="jornada-modal-head">
+      <div>
+        <h3>Jornada do Cliente — Selbetti Treinamentos</h3>
+        <p>Versão 1.4 · Responsável: Marketing</p>
+      </div>
+      <button class="jornada-modal-close" onclick="closeJornada()">✕</button>
+    </div>
+    <div class="jornada-tabs">
+      <button class="jornada-tab" id="jornada-tab-jornada" onclick="setJornadaView('jornada')" style="background:#1B4332;color:#fff">Etapas da Jornada</button>
+      <button class="jornada-tab" id="jornada-tab-fluxo" onclick="setJornadaView('fluxo')" style="background:transparent;color:#666">Fluxo de Compra</button>
+    </div>
+
+    <!-- VIEW JORNADA -->
+    <div id="jornada-view-jornada">
+      <div class="jornada-stage-nav">
+        <button class="jornada-stage-btn" onclick="renderJornadaStage(0)" style="background:#1B4332;color:#fff;border-color:#1B4332">Aprendizado e Descoberta</button>
+        <button class="jornada-stage-btn" onclick="renderJornadaStage(1)">Consideração da Solução</button>
+        <button class="jornada-stage-btn" onclick="renderJornadaStage(2)">Decisão de Compra</button>
+        <button class="jornada-stage-btn" onclick="renderJornadaStage(3)">Consumo</button>
+        <button class="jornada-stage-btn" onclick="renderJornadaStage(4)">Fidelização e Expansão</button>
+      </div>
+      <div id="jornada-panel"></div>
+    </div>
+
+    <!-- VIEW FLUXO -->
+    <div id="jornada-view-fluxo" style="display:none">
+      <div class="fluxo-grid">
+        <div class="fluxo-card">
+          <h4>Low ticket — automação total (abaixo de R$ 1.800)</h4>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#1B4332"></span><span>Acesso direto à <strong>plataforma EAD externa</strong></span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#1B4332"></span><span><strong>Checkout</strong> na plataforma</span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#E07B2A"></span><span>Pagamento negado → <strong>abandono de carrinho</strong> (automação na plataforma)</span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#1B4332"></span><span>Pagamento aprovado → <strong>acesso liberado</strong></span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#1B4332"></span><span><strong>E-mail de boas-vindas</strong> configurado por turma</span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#1B4332"></span><span>Integração <strong>HubSpot + Salesforce</strong></span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#E07B2A"></span><span>Suporte — <strong class="tbd-txt">modelo a definir</strong></span></div>
+        </div>
+        <div class="fluxo-card">
+          <h4>High ticket — jornada comercial (acima de R$ 1.800)</h4>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#1B4332"></span><span><strong>LP individual</strong> no HubSpot</span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#1B4332"></span><span>CTA → <strong>formulário de interesse</strong> (HubSpot Form)</span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#1B4332"></span><span><strong>Lead enviado</strong> ao time de Vendas</span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#E07B2A"></span><span>Lead não qualificado → <strong>nutrição via CRM</strong> (Marketing retoma)</span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#1B4332"></span><span>Lead qualificado → <strong>proposta comercial</strong> e negociação</span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#1B4332"></span><span>Fechamento → <strong>matrícula confirmada</strong></span></div>
+          <div class="fluxo-step"><span class="fluxo-dot" style="background:#1B4332"></span><span><strong>Acesso liberado</strong> na plataforma EAD</span></div>
+        </div>
+      </div>
+      <div style="padding: 0 24px 20px">
+        <p style="font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#888;margin:0 0 8px">Responsáveis por etapa</p>
+        <table class="resp-tbl">
+          <thead><tr><th>Etapa</th><th>Responsável</th></tr></thead>
+          <tbody>
+            <tr><td>Banner de agenda (troca a cada 30 dias)</td><td>Marketing</td></tr>
+            <tr><td>Checkout low ticket</td><td>BU</td></tr>
+            <tr><td>Abandono de carrinho — automação</td><td>Plataforma EAD</td></tr>
+            <tr><td>E-mail de boas-vindas por turma</td><td>Marketing / Plataforma</td></tr>
+            <tr><td>Integração HubSpot e Salesforce</td><td>TI</td></tr>
+            <tr><td>Suporte</td><td class="tbd-txt">A definir</td></tr>
+            <tr><td>LPs high ticket no HubSpot</td><td>Marketing</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
